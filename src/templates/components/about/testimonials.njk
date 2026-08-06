@@ -1,0 +1,23 @@
+{% from "ui/section-tag.njk" import section_tag %}
+
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__intro">
+        {{ section_tag('Отзывы') }}
+        <h2>Что говорят наши клиенты</h2>
+      </div>
+    </div>
+
+    <div class="grid grid--3">
+      {% for item in testimonials.items %}
+      <article class="testimonial-card">
+        <span class="testimonial-card__avatar" aria-hidden="true">{{ item.name[0] }}</span>
+        <p class="testimonial-card__quote">«{{ item.quote }}»</p>
+        <p class="testimonial-card__name">{{ item.name }}</p>
+        <p class="testimonial-card__role">{{ item.role }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

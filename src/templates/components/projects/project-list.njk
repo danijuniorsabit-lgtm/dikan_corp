@@ -1,0 +1,23 @@
+{% from "ui/section-tag.njk" import section_tag %}
+{% from "ui/button.njk" import button %}
+{% from "projects/project-card.njk" import project_card %}
+
+<section class="section projects">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__intro">
+        {{ section_tag('Проекты') }}
+        <h2>Реализованные объекты</h2>
+      </div>
+      {{ button('Все проекты', { href: '/projects.html', variant: 'outline', icon: false }) }}
+    </div>
+
+    <div class="project-list">
+      {% for item in projects.items %}
+      {% if loop.index <= 3 %}
+      {{ project_card(item, { layout: 'row' }) }}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

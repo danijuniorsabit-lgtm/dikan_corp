@@ -1,0 +1,26 @@
+{#
+  project_card(item, opts) — item: { title, location, year, client, category }.
+  opts.layout: 'row' (default, home page list) | 'grid' (projects.html cards).
+#}
+{% macro project_card(item, opts={}) %}
+<article class="project-card project-card--{{ opts.layout or 'row' }}" data-category="{{ item.category }}">
+  <div class="project-card__media" aria-hidden="true"></div>
+  <div class="project-card__body">
+    <h3 class="project-card__title">{{ item.title }}</h3>
+    <dl class="project-card__meta">
+      <div>
+        <dt>Место расположения</dt>
+        <dd>{{ item.location }}</dd>
+      </div>
+      <div>
+        <dt>Год реализации</dt>
+        <dd>{{ item.year }}</dd>
+      </div>
+      <div>
+        <dt>Заказчик</dt>
+        <dd>{{ item.client }}</dd>
+      </div>
+    </dl>
+  </div>
+</article>
+{% endmacro %}

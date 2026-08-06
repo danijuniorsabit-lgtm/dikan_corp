@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+
+.gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(2);
+  padding: space(5);
+  border-radius: $radius-md;
+  background-color: color('surface');
+  text-align: center;
+}
+
+.gauge__dial {
+  width: 100%;
+  max-width: 12rem;
+}
+
+.gauge__track {
+  stroke: color('surface-alt');
+}
+
+.gauge__arc {
+  stroke: color('brand');
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.gauge__needle {
+  stroke: color('ink');
+  stroke-width: 2;
+  stroke-linecap: round;
+  transform-origin: 60px 65px;
+  transition: transform 0.3s ease;
+}
+
+.gauge__pivot {
+  fill: color('ink');
+}
+
+.gauge__scale {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 12rem;
+  margin-top: -#{space(4)};
+  font-size: map-get($font-sizes, 'tiny');
+  color: color('text-secondary');
+}
+
+.gauge__value {
+  font-family: $font-family-display;
+  font-weight: 800;
+  font-size: map-get($font-sizes, 'h3');
+}
+
+.gauge__label {
+  font-weight: 700;
+  padding: space(1) space(4);
+  border-radius: $radius-pill;
+  background-color: color('brand');
+}

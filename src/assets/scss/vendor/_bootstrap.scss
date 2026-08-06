@@ -1,0 +1,25 @@
+@use '../abstracts' as fn;
+
+// Only the root CSS vars + utility engine are pulled in. Bootstrap's own
+// grid/_containers.scss is deliberately NOT imported — its `.container`
+// class collides with ours (layout/_container.scss) and its `.row`/`.col-*`
+// grid is unused (every layout here is CSS Grid/Flexbox in each component's
+// own partial, or layout/_grid.scss's `.grid--N` utilities). Reboot is also
+// skipped (we ship our own base/_reset.scss), and no Bootstrap JS/components
+// are used anywhere in this project (no jQuery dependency).
+$primary: fn.color('brand');
+$dark: fn.color('ink');
+$body-color: fn.color('ink');
+$body-bg: fn.color('bg');
+$font-family-base: 'Manrope', sans-serif;
+$enable-negative-margins: true;
+
+// stylelint-disable-next-line scss/at-import-partial-extension, scss/load-no-partial-leading-underscore
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/utilities/api';

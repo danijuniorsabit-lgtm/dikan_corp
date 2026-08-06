@@ -1,0 +1,57 @@
+@use 'variables' as *;
+@use 'breakpoints' as *;
+@use 'functions' as *;
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-inline: auto;
+  padding-inline: $container-padding-inline;
+}
+
+@mixin section-spacing {
+  padding-block: space(9);
+
+  @include respond-max('sm') {
+    padding-block: space(7);
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin focus-ring {
+  outline: 2px solid color('ink');
+  outline-offset: 2px;
+}
+
+@mixin card {
+  background-color: color('surface');
+  border-radius: $radius-md;
+}
+
+@mixin button-reset {
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+// n-line clamp used across card/testimonial excerpts to keep grids aligned.
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -1,0 +1,51 @@
+<section class="section contact">
+  <div class="container contact__inner">
+    <div class="contact__info">
+      <p class="eyebrow">Свяжитесь с нами сейчас</p>
+      <h2>Свяжитесь с нами прямо сейчас</h2>
+      <p class="text-secondary">
+        Мы — команда, которая создаёт современные и стильные решения с акцентом на качество,
+        креатив и внимание к деталям.
+      </p>
+
+      <dl class="contact__details">
+        <div>
+          <dt>Телефон</dt>
+          <dd><a href="tel:{{ nav.phone | replace(' ', '') }}">{{ nav.phone }}</a></dd>
+          <dd><a href="tel:+77010200100">+7 701 020 01 00</a></dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:dikan@gmail.com">dikan@gmail.com</a></dd>
+        </div>
+        <div>
+          <dt>Адрес</dt>
+          <dd>г. Астана, Республика Казахстан</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form class="contact-form" data-contact-form novalidate>
+      <div class="contact-form__field">
+        <label class="visually-hidden" for="contact-name">Ваше имя</label>
+        <input id="contact-name" name="name" type="text" placeholder="Ваше имя" required />
+      </div>
+      <div class="contact-form__field">
+        <label class="visually-hidden" for="contact-phone">Номер телефона</label>
+        <input id="contact-phone" name="phone" type="tel" placeholder="Номер телефона" required />
+      </div>
+      <div class="contact-form__field">
+        <label class="visually-hidden" for="contact-email">Ваш email</label>
+        <input id="contact-email" name="email" type="email" placeholder="Ваш email" required />
+      </div>
+      <div class="contact-form__field">
+        <label class="visually-hidden" for="contact-message">Ваше сообщение</label>
+        <textarea id="contact-message" name="message" rows="4" placeholder="Ваше сообщение"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary btn--block">
+        <span>Отправить сообщение</span>
+      </button>
+      <p class="contact-form__status text-small" data-contact-status role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

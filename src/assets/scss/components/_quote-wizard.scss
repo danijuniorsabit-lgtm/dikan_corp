@@ -1,0 +1,176 @@
+@use '../abstracts' as *;
+
+.quote-wizard__inner {
+  max-width: 46rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.quote-wizard__meta {
+  display: flex;
+  align-items: center;
+  gap: space(4);
+  margin-bottom: space(6);
+}
+
+.quote-wizard__brand {
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.quote-wizard__progress {
+  display: flex;
+  flex: 1;
+  gap: space(2);
+}
+
+.quote-wizard__progress-segment {
+  flex: 1;
+  height: 4px;
+  border-radius: $radius-pill;
+  background-color: color('surface-alt');
+
+  &.is-active {
+    background-color: color('brand');
+  }
+}
+
+.quote-wizard__step-label {
+  flex-shrink: 0;
+  font-size: map-get($font-sizes, 'small');
+  color: color('text-secondary');
+}
+
+.quote-wizard__title {
+  margin-bottom: space(8);
+}
+
+.wizard-step__question {
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  font-size: map-get($font-sizes, 'h4');
+  margin-bottom: space(6);
+  padding: 0;
+  border: 0;
+  text-align: center;
+}
+
+.wizard-step__options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: space(4);
+  margin-bottom: space(7);
+
+  @include respond-max('xxs') {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.wizard-step__contact {
+  display: flex;
+  flex-direction: column;
+  gap: space(4);
+  max-width: 26rem;
+  margin-inline: auto space(7);
+}
+
+.option-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(3);
+  padding: space(6) space(4);
+  border: 1px solid color('border');
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    border-color: color('ink');
+  }
+}
+
+.option-card__icon {
+  display: inline-flex;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.option-card__label {
+  font-weight: 700;
+}
+
+.option-card__bar {
+  width: 100%;
+  height: 3px;
+  border-radius: $radius-pill;
+  background-color: color('surface-alt');
+}
+
+.option-card:has(input:checked) {
+  background-color: color('brand');
+  border-color: color('brand');
+}
+
+.option-card:has(input:checked) .option-card__bar {
+  background-color: color('ink');
+}
+
+.option-card:has(input:focus-visible) {
+  outline: 2px solid color('ink');
+  outline-offset: 2px;
+}
+
+.quote-wizard__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: space(5);
+  margin-bottom: space(4);
+}
+
+.quote-wizard__back {
+  @include button-reset;
+
+  font-weight: 600;
+  color: color('text-secondary');
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.quote-wizard__hint {
+  text-align: center;
+}
+
+.quote-wizard__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(4);
+  padding-block: space(9);
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.quote-wizard__success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: color('brand');
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

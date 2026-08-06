@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+.breadcrumbs {
+  margin-bottom: space(5);
+  font-size: map-get($font-sizes, 'small');
+  color: color('text-secondary');
+}
+
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: space(2);
+}
+
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+  gap: space(2);
+
+  &:not(:last-child)::after {
+    content: '›';
+    opacity: 0.6;
+  }
+}
+
+.breadcrumbs__link {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.breadcrumbs__item[aria-current='page'] {
+  color: currentcolor;
+  font-weight: 600;
+}
+
+.breadcrumbs--on-dark {
+  color: rgb(255 255 255 / 75%);
+
+  .breadcrumbs__item[aria-current='page'] {
+    color: color('white');
+  }
+}

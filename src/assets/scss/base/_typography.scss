@@ -1,0 +1,92 @@
+@use '../abstracts' as *;
+
+body {
+  font-family: $font-family-body;
+  font-size: map-get($font-sizes, 'body');
+  line-height: $line-height-body;
+  color: color('ink');
+  background-color: color('bg');
+
+  // `anywhere` (not `break-word`) — break-word only affects overflow
+  // handling once a definite width exists; it doesn't reduce an element's
+  // min-content size, so flex/grid items sized via fit-content()/auto can
+  // still be forced wider than their container by one long word. `anywhere`
+  // is counted in min-content too, which is what actually prevents that.
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: $font-family-display;
+  font-weight: 800;
+  line-height: $line-height-heading;
+  color: color('ink');
+
+  // `anywhere` (not `break-word`) — break-word only affects overflow
+  // handling once a definite width exists; it doesn't reduce an element's
+  // min-content size, so flex/grid items sized via fit-content()/auto can
+  // still be forced wider than their container by one long word. `anywhere`
+  // is counted in min-content too, which is what actually prevents that.
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+h1,
+.h1 {
+  font-size: map-get($font-sizes, 'h1');
+
+  @include respond-max('sm') {
+    font-size: rem(40);
+  }
+
+  @include respond-max('xxs') {
+    font-size: rem(32);
+  }
+}
+
+h2,
+.h2 {
+  font-size: map-get($font-sizes, 'h2');
+
+  @include respond-max('sm') {
+    font-size: rem(32);
+  }
+}
+
+h3,
+.h3 {
+  font-size: map-get($font-sizes, 'h3');
+}
+
+h4,
+.h4 {
+  font-size: map-get($font-sizes, 'h4');
+}
+
+small,
+.text-small {
+  font-size: map-get($font-sizes, 'small');
+}
+
+.text-tiny {
+  font-size: map-get($font-sizes, 'tiny');
+}
+
+.text-secondary {
+  color: color('text-secondary');
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: map-get($font-sizes, 'small');
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

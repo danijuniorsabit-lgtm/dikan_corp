@@ -1,0 +1,11 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "selector-class-pattern": "^[a-z0-9]+(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+    "scss/load-partial-extension": "never",
+    "no-descending-specificity": null,
+    "import-notation": null,
+    "scss/no-global-function-names": null
+  },
+  "ignoreFiles": ["dist/**/*", "node_modules/**/*"]
+}

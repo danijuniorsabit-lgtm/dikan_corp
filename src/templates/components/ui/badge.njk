@@ -1,0 +1,11 @@
+{#
+  badge(text, opts) — opts:
+    variant: 'brand' (default) | 'dark' | 'outline'
+    class: extra classes
+#}
+{% macro badge(text, opts={}) %}
+{% set classes = 'badge' %}
+{% if opts.variant and opts.variant != 'brand' %}{% set classes = classes ~ ' badge--' ~ opts.variant %}{% endif %}
+{% if opts.class %}{% set classes = classes ~ ' ' ~ opts.class %}{% endif %}
+<span class="{{ classes }}">{{ text }}</span>
+{% endmacro %}

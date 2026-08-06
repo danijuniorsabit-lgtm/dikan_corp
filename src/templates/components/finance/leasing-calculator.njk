@@ -1,0 +1,40 @@
+{% from "ui/range-field.njk" import range_field %}
+
+<div class="finance-panel" data-finance-panel="leasing" id="finance-panel">
+  <div class="container">
+    <h2>Калькулятор лизинга</h2>
+    <div class="leasing-calculator">
+      <div class="leasing-calculator__inputs">
+        {{ range_field({ id: 'leasing-cost', label: 'Стоимость оборудования, млн тг', min: 5, max: 100, value: 20, suffix: ' млн тг' }) }}
+        {{ range_field({ id: 'leasing-term', label: 'Срок лизинга, лет', min: 1, max: 7, value: 3, suffix: ' лет' }) }}
+        {{ range_field({ id: 'leasing-down', label: 'Первый взнос, %', min: 0, max: 50, step: 5, value: 20, suffix: '%' }) }}
+      </div>
+      <div class="leasing-calculator__results">
+        <div class="leasing-result leasing-result--accent">
+          <span class="leasing-result__label">Ежемесячный платёж</span>
+          <span class="leasing-result__value"><span data-leasing-monthly>0</span> тг/мес</span>
+        </div>
+        <div class="leasing-result leasing-result--dark">
+          <span class="leasing-result__label">Ваша экономия</span>
+          <span class="leasing-result__value"><span data-leasing-savings>0</span> млн тг/сезон</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="finance-panel" data-finance-panel="credit" hidden>
+  <div class="container">
+    <h2>Кредит на технику</h2>
+    <p class="text-secondary finance-panel__lede">
+      Совместно с банками-партнёрами оформляем кредит на приобретение зерноочистительной техники
+      DIKAN — без необходимости вносить полную стоимость сразу.
+    </p>
+    <ul class="finance-panel__list">
+      <li>Первый взнос от 10% стоимости техники</li>
+      <li>Срок кредитования до 5 лет</li>
+      <li>Решение по заявке в течение 3 рабочих дней</li>
+      <li>Техника может выступать залогом по кредиту</li>
+    </ul>
+  </div>
+</div>

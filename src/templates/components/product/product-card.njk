@@ -1,0 +1,25 @@
+{% from "ui/button.njk" import button %}
+
+{#
+  product_card(item, opts) — item from data/products.json.
+  opts.cta: 'quote' -> "Заказать КП" (used in "Похожие решения"), otherwise "Подробнее".
+#}
+{% macro product_card(item, opts={}) %}
+<article class="product-card" data-category="{{ item.category }}">
+  <div class="product-card__media">
+    {% if item.isNew %}<span class="badge badge--corner">New</span>{% endif %}
+  </div>
+  <div class="product-card__body">
+    <div class="product-card__row">
+      <span class="product-card__name">{{ item.shortName or item.name }}</span>
+      <span class="product-card__spec">{{ item.capacity }} т/ч</span>
+    </div>
+    <p class="product-card__price">от {{ item.priceFrom }} млн ₸</p>
+    {% if opts.cta == 'quote' %}
+    {{ button('Заказать КП', { href: '/calculator.html', class: 'btn--block', icon: 'right' }) }}
+    {% else %}
+    {{ button('Подробнее', { href: '/product-detail.html?slug=' ~ item.slug, class: 'btn--block' }) }}
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}

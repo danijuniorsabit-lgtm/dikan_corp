@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.economy-calculator__hint {
+  margin-block: space(3) space(7);
+  max-width: 46ch;
+}
+
+.economy-calculator__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: space(9);
+  align-items: start;
+
+  @include respond-max('sm') {
+    grid-template-columns: minmax(0, 1fr);
+    gap: space(6);
+  }
+}
+
+.economy-calculator__outputs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: space(4);
+
+  @include respond-max('xxs') {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

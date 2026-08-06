@@ -1,0 +1,22 @@
+{% from "ui/section-tag.njk" import section_tag %}
+{% from "ui/icons.njk" import download %}
+
+<section class="section downloads">
+  <div class="container">
+    {{ section_tag('Гайды') }}
+    <h2 class="downloads__title">Скачать бесплатно</h2>
+
+    <div class="grid grid--3">
+      {% for item in downloads.items %}
+      <article class="download-card">
+        <span class="download-card__type">{{ item.type }} файл</span>
+        <p class="download-card__name">{{ item.title }}</p>
+        <a class="download-card__action" href="{{ item.href }}" download>
+          <span>{{ item.size }}</span>
+          <span class="download-card__icon" aria-hidden="true">{{ download() }}</span>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

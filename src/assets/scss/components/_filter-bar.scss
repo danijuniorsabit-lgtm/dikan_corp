@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: space(2);
+  padding: space(2);
+  margin-bottom: space(7);
+  border-radius: $radius-pill;
+  background-color: color('ink');
+  width: fit-content;
+}
+
+.filter-bar__pill {
+  @include button-reset;
+
+  padding: space(2) space(5);
+  border-radius: $radius-pill;
+  font-weight: 700;
+  font-size: map-get($font-sizes, 'small');
+  color: color('white');
+
+  &.is-active {
+    background-color: color('brand');
+    color: color('ink');
+  }
+
+  &:not(.is-active):hover {
+    background-color: rgb(255 255 255 / 10%);
+  }
+}
+
+@include respond-max('xs') {
+  .filter-bar {
+    width: 100%;
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,27 @@
+{#
+  range_field(opts) — opts: { id, label, min, max, step, value, suffix, format }
+  format: 'thousands' formats the live output with thousands separators.
+#}
+{% macro range_field(opts) %}
+<div class="range-field">
+  <div class="range-field__row">
+    <label for="{{ opts.id }}">{{ opts.label }}</label>
+    <span class="range-field__output" id="{{ opts.id }}-output">{{ opts.value }}{{ opts.suffix }}</span>
+  </div>
+  <input
+    type="range"
+    id="{{ opts.id }}"
+    min="{{ opts.min }}"
+    max="{{ opts.max }}"
+    step="{{ opts.step or 1 }}"
+    value="{{ opts.value }}"
+    data-range-output="{{ opts.id }}-output"
+    data-range-suffix="{{ opts.suffix }}"
+    {%- if opts.format %} data-range-format="{{ opts.format }}"{% endif %}
+  />
+  <div class="range-field__scale">
+    <span>{{ opts.min }}</span>
+    <span>{{ opts.max }}</span>
+  </div>
+</div>
+{% endmacro %}

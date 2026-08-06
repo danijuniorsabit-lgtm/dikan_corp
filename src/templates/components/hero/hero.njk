@@ -1,0 +1,9 @@
+{% from "ui/button.njk" import button %}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <h1 class="hero__title">Зерноочистка, которая окупается за&nbsp;1&nbsp;сезон.</h1>
+    <p class="hero__lede">Подберём технику под ваше хозяйство за 90 секунд — с расчётом окупаемости.</p>
+    {{ button('Попробовать', { href: '/calculator.html', class: 'hero__cta' }) }}
+  </div>
+</section>

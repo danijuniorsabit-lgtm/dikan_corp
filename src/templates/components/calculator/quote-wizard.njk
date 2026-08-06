@@ -1,0 +1,120 @@
+{% from "ui/icons.njk" import tractor, check %}
+
+{% macro option_card(name, value, label) %}
+<label class="option-card">
+  <input class="visually-hidden" type="radio" name="{{ name }}" value="{{ value }}" required />
+  <span class="option-card__icon" aria-hidden="true">{{ tractor() }}</span>
+  <span class="option-card__label">{{ label }}</span>
+  <span class="option-card__bar" aria-hidden="true"></span>
+</label>
+{% endmacro %}
+
+{% set areaOptions = [
+  { value: 'lt1000', label: 'до 1000 га' },
+  { value: '1000-3000', label: '1000–3000 га' },
+  { value: '3000-10000', label: '3000–10000 га' },
+  { value: 'gt10000', label: 'более 10000 га' }
+] %}
+{% set cropOptions = [
+  { value: 'wheat', label: 'Пшеница' },
+  { value: 'barley', label: 'Ячмень' },
+  { value: 'flax', label: 'Лён' },
+  { value: 'other', label: 'Другое' }
+] %}
+{% set methodOptions = [
+  { value: 'none', label: 'Оборудования нет' },
+  { value: 'outdated', label: 'Устаревшее оборудование' },
+  { value: 'extra-line', label: 'Нужна доп. линия' },
+  { value: 'upgrade', label: 'Модернизация текущей' }
+] %}
+{% set purchaseOptions = [
+  { value: 'full', label: 'Оплата сразу' },
+  { value: 'leasing', label: 'Лизинг' },
+  { value: 'credit', label: 'Кредит' },
+  { value: 'trade-in', label: 'Трейд-ин' }
+] %}
+
+<section class="section quote-wizard" data-quote-wizard>
+  <div class="container quote-wizard__inner">
+    <div class="quote-wizard__meta" data-wizard-meta>
+      <span class="quote-wizard__brand">dikan.kz</span>
+      <div class="quote-wizard__progress" data-wizard-progress>
+        {% for i in range(0, 5) %}
+        <span class="quote-wizard__progress-segment{% if i == 0 %} is-active{% endif %}" data-wizard-segment></span>
+        {% endfor %}
+      </div>
+      <span class="quote-wizard__step-label" data-wizard-step-label>Шаг 1 из 5</span>
+    </div>
+
+    <h1 class="quote-wizard__title">Рассчитать КП за 90 секунд</h1>
+
+    <form class="quote-wizard__form" data-wizard-form novalidate>
+      <fieldset class="wizard-step" data-wizard-step>
+        <legend class="wizard-step__question">Какая у вас площадь посева?</legend>
+        <div class="wizard-step__options">
+          {% for opt in areaOptions %}
+          {{ option_card('area', opt.value, opt.label) }}
+          {% endfor %}
+        </div>
+      </fieldset>
+
+      <fieldset class="wizard-step" data-wizard-step hidden>
+        <legend class="wizard-step__question">Какую культуру вы выращиваете?</legend>
+        <div class="wizard-step__options">
+          {% for opt in cropOptions %}
+          {{ option_card('crop', opt.value, opt.label) }}
+          {% endfor %}
+        </div>
+      </fieldset>
+
+      <fieldset class="wizard-step" data-wizard-step hidden>
+        <legend class="wizard-step__question">Как сейчас организована очистка зерна?</legend>
+        <div class="wizard-step__options">
+          {% for opt in methodOptions %}
+          {{ option_card('method', opt.value, opt.label) }}
+          {% endfor %}
+        </div>
+      </fieldset>
+
+      <fieldset class="wizard-step" data-wizard-step hidden>
+        <legend class="wizard-step__question">Какой формат приобретения вам удобен?</legend>
+        <div class="wizard-step__options">
+          {% for opt in purchaseOptions %}
+          {{ option_card('purchase', opt.value, opt.label) }}
+          {% endfor %}
+        </div>
+      </fieldset>
+
+      <fieldset class="wizard-step" data-wizard-step hidden>
+        <legend class="wizard-step__question">Куда отправить коммерческое предложение?</legend>
+        <div class="wizard-step__contact">
+          <div class="contact-form__field">
+            <label class="visually-hidden" for="wizard-name">Ваше имя</label>
+            <input id="wizard-name" name="name" type="text" placeholder="Ваше имя" required />
+          </div>
+          <div class="contact-form__field">
+            <label class="visually-hidden" for="wizard-phone">Номер телефона</label>
+            <input id="wizard-phone" name="phone" type="tel" placeholder="Номер телефона" required />
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="quote-wizard__actions">
+        <button type="button" class="quote-wizard__back" data-wizard-back hidden>← Назад</button>
+        <button type="button" class="btn btn--primary" data-wizard-next disabled>
+          <span>Далее</span>
+        </button>
+      </div>
+      <p class="text-secondary text-small quote-wizard__hint">Варианты ответов: кликните на карточку</p>
+    </form>
+
+    <div class="quote-wizard__success" data-wizard-success hidden>
+      <span class="quote-wizard__success-icon" aria-hidden="true">{{ check() }}</span>
+      <h2>Заявка принята</h2>
+      <p class="text-secondary">
+        Спасибо! Наш менеджер свяжется с вами в течение рабочего дня и пришлёт коммерческое
+        предложение с расчётом окупаемости.
+      </p>
+    </div>
+  </div>
+</section>

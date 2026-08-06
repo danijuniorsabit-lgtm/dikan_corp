@@ -1,0 +1,28 @@
+{% extends "base.njk" %}
+{% from "hero/page-hero.njk" import page_hero %}
+{% from "ui/filter-bar.njk" import filter_bar %}
+{% from "product/product-card.njk" import product_card %}
+
+{% block content %}
+{{ page_hero('Каталог техники', [
+  { label: 'Главная', href: '/index.html' },
+  { label: 'Продукция', href: '/products.html' },
+  { label: 'Зерноочистители' }
+]) }}
+
+<section class="section">
+  <div class="container" data-filter-scope>
+    {{ filter_bar(products.categories, 'Фильтр по типу техники') }}
+
+    <div class="grid grid--3" data-filter-grid>
+      {% for item in products.items %}
+      {{ product_card(item) }}
+      {% endfor %}
+    </div>
+
+    <p class="text-secondary text-small" data-filter-empty hidden>
+      По выбранному фильтру техники не найдено.
+    </p>
+  </div>
+</section>
+{% endblock %}

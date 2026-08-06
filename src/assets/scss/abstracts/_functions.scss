@@ -1,0 +1,36 @@
+@use 'sass:math';
+@use 'variables' as *;
+
+@function color($name) {
+  $value: map-get($colors, $name);
+
+  @if not $value {
+    @error 'Unknown color token `#{$name}`.';
+  }
+
+  @return $value;
+}
+
+@function space($step) {
+  $value: map-get($spacing, $step);
+
+  @if not $value {
+    @error 'Unknown spacing step `#{$step}`.';
+  }
+
+  @return $value;
+}
+
+@function rem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+
+@function z($layer) {
+  $value: map-get($z-index, $layer);
+
+  @if not $value {
+    @error 'Unknown z-index layer `#{$layer}`.';
+  }
+
+  @return $value;
+}

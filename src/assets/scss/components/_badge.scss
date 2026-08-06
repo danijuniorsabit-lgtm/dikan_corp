@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: space(2) space(4);
+  border-radius: $radius-pill;
+  background-color: color('brand');
+  color: color('ink');
+  font-size: map-get($font-sizes, 'small');
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge--dark {
+  background-color: color('ink');
+  color: color('white');
+}
+
+.badge--outline {
+  background-color: transparent;
+  border: 1px solid color('border');
+  color: color('ink');
+}
+
+.badge--corner {
+  position: absolute;
+  top: space(4);
+  left: space(4);
+  z-index: 1;
+}

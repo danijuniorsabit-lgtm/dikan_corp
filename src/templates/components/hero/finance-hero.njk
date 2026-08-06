@@ -1,0 +1,24 @@
+{% from "ui/button.njk" import button %}
+
+<section class="finance-hero">
+  <div class="container finance-hero__inner">
+    <h1 class="finance-hero__title">Финансовые решения для вашего хозяйства</h1>
+    {{ button('Подробнее', { href: '#finance-panel', icon: false }) }}
+
+    <div class="finance-hero__tabs" role="tablist" aria-label="Способ приобретения">
+      <button type="button" class="finance-hero__tab" data-finance-tab="credit" role="tab" aria-selected="false">
+        Кредит
+      </button>
+      <button
+        type="button"
+        class="finance-hero__tab is-active"
+        data-finance-tab="leasing"
+        role="tab"
+        aria-selected="true"
+      >
+        Лизинг
+      </button>
+      <a class="finance-hero__tab" href="#trade-in">Трейд-ин</a>
+    </div>
+  </div>
+</section>

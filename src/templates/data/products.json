@@ -1,0 +1,76 @@
+{
+  "categories": [
+    { "key": "all", "label": "Фильтры" },
+    { "key": "barrel", "label": "Барабанное" },
+    { "key": "vibration", "label": "Вибрационные" },
+    { "key": "air", "label": "Воздушные" }
+  ],
+  "items": [
+    {
+      "slug": "vibromax-jcm-10223",
+      "name": "Зерноочиститель VibroMax JCM 10223",
+      "shortName": "Зерночиститель",
+      "category": "vibration",
+      "capacity": 100,
+      "power": 9.5,
+      "priceFrom": 18.5,
+      "isNew": true,
+      "description": "Зерноочиститель VibroMax JCM 10223 для качественной очистки зерна. Гарантия окупаемости за 1 сезон."
+    },
+    {
+      "slug": "barrelclean-jcm-8100",
+      "name": "Зерноочиститель BarrelClean JCM 8100",
+      "shortName": "Зерночиститель",
+      "category": "barrel",
+      "capacity": 80,
+      "power": 7.5,
+      "priceFrom": 15.2,
+      "isNew": false,
+      "description": "Барабанный зерноочиститель для первичной очистки крупных партий зерна."
+    },
+    {
+      "slug": "airflow-jcm-6000",
+      "name": "Зерноочиститель AirFlow JCM 6000",
+      "shortName": "Зерночиститель",
+      "category": "air",
+      "capacity": 60,
+      "power": 5.2,
+      "priceFrom": 11.8,
+      "isNew": false,
+      "description": "Воздушный сепаратор для лёгкой финишной очистки семенного материала."
+    },
+    {
+      "slug": "vibromax-jcm-12300",
+      "name": "Зерноочиститель VibroMax JCM 12300",
+      "shortName": "Зерночиститель",
+      "category": "vibration",
+      "capacity": 120,
+      "power": 11,
+      "priceFrom": 21.4,
+      "isNew": false,
+      "description": "Увеличенная производительность для крупных хозяйств и элеваторов."
+    },
+    {
+      "slug": "barrelclean-jcm-9500",
+      "name": "Зерноочиститель BarrelClean JCM 9500",
+      "shortName": "Зерночиститель",
+      "category": "barrel",
+      "capacity": 95,
+      "power": 8.4,
+      "priceFrom": 17.1,
+      "isNew": false,
+      "description": "Барабанный зерноочиститель со сниженным потреблением энергии."
+    },
+    {
+      "slug": "airflow-jcm-7200",
+      "name": "Зерноочиститель AirFlow JCM 7200",
+      "shortName": "Зерночиститель",
+      "category": "air",
+      "capacity": 72,
+      "power": 6.1,
+      "priceFrom": 13.6,
+      "isNew": false,
+      "description": "Воздушный сепаратор среднего класса для фермерских хозяйств."
+    }
+  ]
+}

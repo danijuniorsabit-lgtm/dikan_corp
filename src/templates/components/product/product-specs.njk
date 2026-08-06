@@ -1,0 +1,30 @@
+{% from "ui/button.njk" import button %}
+
+{# product_specs(item) #}
+{% macro product_specs(item) %}
+<div class="product-specs">
+  <h2 class="product-specs__title">{{ item.name }}</h2>
+  <p class="product-specs__description">{{ item.description }}</p>
+
+  <dl class="product-specs__list">
+    <div>
+      <dt>Мощность</dt>
+      <dd>{{ item.power }} кВт</dd>
+    </div>
+    <div>
+      <dt>Производительность</dt>
+      <dd>{{ item.capacity }} т/ч</dd>
+    </div>
+  </dl>
+
+  <p class="product-specs__price-label">Цена:</p>
+  <p class="product-specs__price">от {{ item.priceFrom }} млн ₸</p>
+
+  <div class="product-specs__actions">
+    {{ button('Лизинг', { href: '/finance.html', variant: 'dark', icon: false }) }}
+    {{ button('Сравнить', { tag: 'button', type: 'button', variant: 'outline', icon: false, attrs: 'data-compare-toggle' }) }}
+  </div>
+
+  {{ button('Заказать КП', { href: '/calculator.html', class: 'btn--block product-specs__cta' }) }}
+</div>
+{% endmacro %}

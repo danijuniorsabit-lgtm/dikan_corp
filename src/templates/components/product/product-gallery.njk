@@ -1,0 +1,18 @@
+{# product_gallery(item) — main image + 3 thumbnails, NEW badge #}
+{% macro product_gallery(item) %}
+<div class="product-gallery" data-product-gallery>
+  <div class="product-gallery__main">
+    {% if item.isNew %}<span class="badge badge--corner">New</span>{% endif %}
+  </div>
+  <div class="product-gallery__thumbs">
+    {% for i in range(0, 3) %}
+    <button
+      type="button"
+      class="product-gallery__thumb{% if loop.first %} is-active{% endif %}"
+      data-gallery-thumb
+      aria-label="Изображение {{ i + 1 }}"
+    ></button>
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}

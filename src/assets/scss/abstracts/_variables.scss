@@ -1,0 +1,57 @@
+// Design tokens sampled directly from design/*.png (pixel histogram), not eyeballed.
+$colors: (
+  'brand': #cff248,
+  // lime — primary CTA, active filters, accents
+  'brand-dark': #b8d93e,
+  // pressed/hover state, derived from brand
+  'ink': #14130e,
+  // near-black — headings, dark sections, text
+  'bg': #fff,
+  'surface': #f0f0f0,
+  // card backgrounds
+  'surface-alt': #e0e0e0,
+  // secondary surfaces / dividers
+  'text-secondary': #6b6b66,
+  'border': #d9d9d4,
+  'white': #fff,
+);
+$font-family-display: 'Unbounded', 'Manrope', sans-serif;
+$font-family-body: 'Manrope', sans-serif;
+$font-sizes: (
+  'h1': 3.5rem,
+  'h2': 2.5rem,
+  'h3': 1.75rem,
+  'h4': 1.25rem,
+  'body': 1rem,
+  'small': 0.875rem,
+  'tiny': 0.75rem,
+);
+$line-height-heading: 1.15;
+$line-height-body: 1.5;
+
+// 8px grid
+$spacing: (
+  0: 0,
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 24px,
+  6: 32px,
+  7: 40px,
+  8: 48px,
+  9: 64px,
+  10: 80px,
+  11: 96px,
+  12: 128px,
+);
+$radius-pill: 999px;
+$radius-md: 16px;
+$radius-sm: 8px;
+$container-max-width: 1320px;
+$container-padding-inline: 24px;
+$z-index: (
+  'header': 100,
+  'overlay': 200,
+  'modal': 300,
+);

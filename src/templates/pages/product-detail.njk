@@ -1,0 +1,44 @@
+{% extends "base.njk" %}
+{% from "hero/page-hero.njk" import page_hero %}
+{% from "product/product-gallery.njk" import product_gallery %}
+{% from "product/product-specs.njk" import product_specs %}
+{% from "product/similar-products.njk" import similar_products %}
+
+{% block head %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "{{ currentProduct.name }}",
+    "description": "{{ currentProduct.description }}",
+    "brand": { "@type": "Brand", "name": "DIKAN" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "KZT",
+      "price": "{{ (currentProduct.priceFrom * 1000000) | int }}",
+      "availability": "https://schema.org/InStock",
+      "url": "https://dikan.kz/product-detail.html"
+    }
+  }
+</script>
+{% endblock %}
+
+{% block content %}
+{{ page_hero('Зерноочиститель VibroMax', [
+  { label: 'Главная', href: '/index.html' },
+  { label: 'Продукция', href: '/products.html' },
+  { label: 'Зерноочистители' }
+]) }}
+
+<section class="section">
+  <div class="container product-detail__grid">
+    {{ product_gallery(currentProduct) }}
+    {{ product_specs(currentProduct) }}
+  </div>
+</section>
+
+{{ similar_products(similarProducts) }}
+
+{% include "about/trust-badges.njk" %}
+{% include "calculator/economy-calculator.njk" %}
+{% endblock %}

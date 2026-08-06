@@ -1,0 +1,83 @@
+@use '../abstracts' as *;
+
+.finance-panel {
+  padding-block: space(9);
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.finance-panel__lede {
+  max-width: 56ch;
+  margin-block: space(3) space(5);
+}
+
+.finance-panel__list {
+  display: flex;
+  flex-direction: column;
+  gap: space(3);
+  max-width: 46ch;
+
+  li {
+    padding-left: space(5);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: color('brand');
+    }
+  }
+}
+
+.leasing-calculator {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: space(9);
+  align-items: start;
+  margin-top: space(6);
+
+  @include respond-max('sm') {
+    grid-template-columns: minmax(0, 1fr);
+    gap: space(6);
+  }
+}
+
+.leasing-calculator__results {
+  display: flex;
+  flex-direction: column;
+  gap: space(4);
+}
+
+.leasing-result {
+  display: flex;
+  flex-direction: column;
+  gap: space(2);
+  padding: space(5);
+  border-radius: $radius-md;
+}
+
+.leasing-result--accent {
+  background-color: color('brand');
+}
+
+.leasing-result--dark {
+  background-color: color('ink');
+  color: color('white');
+}
+
+.leasing-result__label {
+  font-size: map-get($font-sizes, 'small');
+}
+
+.leasing-result__value {
+  font-family: $font-family-display;
+  font-weight: 800;
+  font-size: map-get($font-sizes, 'h4');
+}

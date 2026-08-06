@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+.product-specs__title {
+  margin-bottom: space(3);
+}
+
+.product-specs__description {
+  color: color('text-secondary');
+  margin-bottom: space(5);
+}
+
+.product-specs__list {
+  display: flex;
+  flex-direction: column;
+  gap: space(3);
+  margin-bottom: space(5);
+  padding-block: space(4);
+  border-block: 1px solid color('border');
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  dt {
+    color: color('text-secondary');
+  }
+
+  dd {
+    font-weight: 700;
+  }
+}
+
+.product-specs__price-label {
+  color: color('text-secondary');
+  margin-bottom: space(1);
+}
+
+.product-specs__price {
+  font-family: $font-family-display;
+  font-weight: 800;
+  font-size: map-get($font-sizes, 'h3');
+  margin-bottom: space(5);
+}
+
+.product-specs__actions {
+  display: flex;
+  gap: space(3);
+  margin-bottom: space(4);
+
+  .btn {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  @include respond-max('xxs') {
+    flex-direction: column;
+  }
+}
+
+.product-specs__cta {
+  justify-content: center;
+}

@@ -1,0 +1,6 @@
+{% from "ui/badge.njk" import badge %}
+
+{# section_tag(text) — the small pill label above section headings ("О нас", "Проекты", "Отзывы"). #}
+{% macro section_tag(text) %}
+{{ badge(text, { class: 'section-tag' }) }}
+{% endmacro %}

@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+.services__title {
+  margin-block: space(3);
+}
+
+.services__lede {
+  max-width: 60ch;
+  margin-bottom: space(7);
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: space(3);
+  padding: space(6);
+  border-radius: $radius-md;
+  background-color: color('surface');
+}
+
+.service-card__index {
+  font-family: $font-family-display;
+  font-weight: 800;
+  font-size: map-get($font-sizes, 'h3');
+  color: color('brand-dark');
+}
+
+.service-card__title {
+  font-size: map-get($font-sizes, 'h4');
+}

@@ -1,0 +1,32 @@
+{% from "ui/icons.njk" import arrow_right, arrow_up_right %}
+
+{#
+  button(text, opts) — opts:
+    tag: 'a' (default) | 'button'
+    href: url, used when tag='a'
+    type: 'button' | 'submit', used when tag='button'
+    variant: 'primary' (default) | 'dark' | 'outline'
+    size: 'sm'
+    icon: true (default, straight arrow) | 'right' (diagonal ↗) | false (no icon)
+    block: true -> full width
+    class: extra classes
+    attrs: raw extra attributes string (e.g. 'data-action="submit-quote"')
+#}
+{% macro button(text, opts={}) %}
+{% set tag = opts.tag or 'a' %}
+{% set variant = opts.variant or 'primary' %}
+{% set classes = 'btn btn--' ~ variant %}
+{% if opts.size %}{% set classes = classes ~ ' btn--' ~ opts.size %}{% endif %}
+{% if opts.block %}{% set classes = classes ~ ' btn--block' %}{% endif %}
+{% if opts.class %}{% set classes = classes ~ ' ' ~ opts.class %}{% endif %}
+<{{ tag }}
+  class="{{ classes }}"
+  {%- if tag == 'a' %} href="{{ opts.href or '#' }}"{% else %} type="{{ opts.type or 'button' }}"{% endif %}
+  {%- if opts.attrs %} {{ opts.attrs | safe }}{% endif %}
+>
+  <span>{{ text }}</span>
+  {%- if opts.icon != false %}
+  <span class="btn__icon" aria-hidden="true">{% if opts.icon == 'right' %}{{ arrow_up_right() }}{% else %}{{ arrow_right() }}{% endif %}</span>
+  {%- endif %}
+</{{ tag }}>
+{% endmacro %}

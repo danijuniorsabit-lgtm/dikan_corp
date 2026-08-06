@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+// Single source of truth for the token maps in abstracts/_variables.scss —
+// emitted once here so runtime JS (getComputedStyle) and future theming can
+// read the same values SCSS uses at compile time.
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $step, $value in $spacing {
+    --space-#{$step}: #{$value};
+  }
+}
+
+::selection {
+  background-color: color('brand');
+  color: color('ink');
+}
+
+:focus-visible {
+  outline: 2px solid color('ink');
+  outline-offset: 2px;
+}
+
+.container {
+  @include container;
+}
+
+.section {
+  @include section-spacing;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: space(4);
+  z-index: z('modal');
+  padding: space(2) space(4);
+  background-color: color('ink');
+  color: color('white');
+  border-radius: $radius-sm;
+
+  &:focus {
+    top: space(2);
+  }
+}

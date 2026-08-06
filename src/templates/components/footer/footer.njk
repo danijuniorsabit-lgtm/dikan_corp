@@ -1,0 +1,68 @@
+{% from "ui/icons.njk" import facebook, twitter, youtube, instagram %}
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <p class="footer__logo">DIKAN</p>
+      <p class="footer__tagline text-secondary">
+        Зерноочистительное оборудование, которое окупается за 1 сезон.
+      </p>
+      <ul class="footer__socials">
+        <li>
+          <a class="footer__social-link" href="#" aria-label="DIKAN во Facebook">{{ facebook() }}</a>
+        </li>
+        <li>
+          <a class="footer__social-link" href="#" aria-label="DIKAN в Twitter">{{ twitter() }}</a>
+        </li>
+        <li>
+          <a class="footer__social-link" href="#" aria-label="DIKAN на YouTube">{{ youtube() }}</a>
+        </li>
+        <li>
+          <a class="footer__social-link" href="#" aria-label="DIKAN в Instagram">{{ instagram() }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <nav class="footer__links" aria-label="Полезные ссылки">
+      <p class="footer__heading">Полезные ссылки</p>
+      <ul>
+        <li><a href="/projects.html">Новые проекты</a></li>
+        <li><a href="/services.html">Наши услуги</a></li>
+        <li><a href="/products.html">Рекомендации</a></li>
+        <li><a href="/about.html">О нас</a></li>
+        <li><a href="/finance.html">Связаться с нами</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__newsletter">
+      <p class="footer__heading">Новостная рассылка</p>
+      <p class="text-secondary">
+        Подпишитесь на нашу еженедельную рассылку новостей и получайте обновления по электронной
+        почте.
+      </p>
+      <form class="newsletter-form" data-newsletter-form novalidate>
+        <label class="visually-hidden" for="newsletter-email">Email</label>
+        <input
+          id="newsletter-email"
+          class="newsletter-form__input"
+          type="email"
+          name="email"
+          placeholder="Enter yor mail here..."
+          required
+        />
+        <button type="submit" class="newsletter-form__submit">GO</button>
+      </form>
+      <p class="newsletter-form__status text-small" data-newsletter-status role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>Copyright ©DIKAN. Все права защищены.</p>
+      <div class="footer__legal">
+        <a href="#">Правила &amp; Условия</a>
+        <a href="#">Политика Конфиденциальности</a>
+      </div>
+    </div>
+  </div>
+</footer>

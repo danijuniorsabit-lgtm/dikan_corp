@@ -1,0 +1,42 @@
+{% extends "base.njk" %}
+{% from "hero/page-hero.njk" import page_hero %}
+{% from "ui/section-tag.njk" import section_tag %}
+
+{% set services = [
+  { title: 'Поставка техники', description: 'Подбор и поставка зерноочистительного оборудования под задачи вашего хозяйства — от отдельной машины до полной линии.' },
+  { title: 'Монтаж и пусконаладка', description: 'Собственная инженерная служба выполняет монтаж, электрику и пусконаладку с выездом на объект.' },
+  { title: 'Сервисное обслуживание', description: 'Плановое и аварийное обслуживание техники DIKAN — выезд инженера в течение 48 часов по Казахстану.' },
+  { title: 'Поставка запчастей', description: 'Собственный склад запчастей: 94% позиций в наличии, отгрузка в день обращения.' },
+  { title: 'Обучение персонала', description: 'Обучаем операторов и механиков хозяйства работе с оборудованием и его обслуживанию.' },
+  { title: 'Модернизация линий', description: 'Дооснащаем и модернизируем существующие линии очистки без полной замены оборудования.' }
+] %}
+
+{% block content %}
+{{ page_hero('Услуги', [
+  { label: 'Главная', href: '/index.html' },
+  { label: 'Услуги' }
+]) }}
+
+<section class="section">
+  <div class="container">
+    {{ section_tag('Что мы делаем') }}
+    <h2 class="services__title">Полный цикл — от подбора до сервиса</h2>
+    <p class="text-secondary services__lede">
+      DIKAN сопровождает хозяйство на каждом этапе: от расчёта экономики и подбора техники до
+      монтажа, обучения персонала и сервисного обслуживания на весь срок службы оборудования.
+    </p>
+
+    <div class="grid grid--3">
+      {% for service in services %}
+      <article class="service-card">
+        <span class="service-card__index">{{ ('0' if loop.index < 10 else '') ~ loop.index }}</span>
+        <h3 class="service-card__title">{{ service.title }}</h3>
+        <p class="text-secondary">{{ service.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "contacts/contact-form.njk" %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% from "ui/section-tag.njk" import section_tag %}
+
+<section class="section partners">
+  <div class="container">
+    {{ section_tag('Партнёры') }}
+    <h2 class="partners__title">Наши финансовые партнёры</h2>
+    <p class="text-secondary partners__lede">
+      Мы сотрудничаем с надёжными финансовыми партнёрами, которые помогают обеспечивать
+      безопасность, стабильность и удобство для наших клиентов.
+    </p>
+
+    <div class="grid grid--3">
+      {% for item in partners.items %}
+      <article class="partner-card">
+        <p class="partner-card__name">{{ item.name }}</p>
+        <p class="partner-card__product text-secondary">{{ item.product }}</p>
+        <a class="partner-card__link" href="{{ item.href }}">Подробнее</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

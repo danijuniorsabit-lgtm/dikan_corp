@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+.trust-badges {
+  padding-block: space(8);
+  background: linear-gradient(180deg, rgb(20 19 14 / 55%) 0%, rgb(20 19 14 / 55%) 100%), #7a6a34;
+}
+
+.trust-badges__inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: space(4);
+
+  @include respond-max('xs') {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: space(1);
+  padding: space(5);
+  text-align: center;
+  border-radius: $radius-md;
+  background-color: color('white');
+  color: color('ink');
+}
+
+.trust-badge--accent {
+  background-color: color('brand');
+}
+
+.trust-badge__value {
+  font-family: $font-family-display;
+  font-weight: 800;
+  font-size: map-get($font-sizes, 'h4');
+}
+
+.trust-badge__label {
+  font-size: map-get($font-sizes, 'small');
+  font-weight: 600;
+}

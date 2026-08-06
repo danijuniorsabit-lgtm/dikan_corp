@@ -1,0 +1,7 @@
+// Barrel: every other partial imports abstracts with a single
+// `@use '../abstracts' as *;` (or `@use 'abstracts' as *;` from main.scss)
+// instead of hand-picking variables/functions/mixins/breakpoints each time.
+@forward 'variables';
+@forward 'breakpoints';
+@forward 'functions';
+@forward 'mixins';

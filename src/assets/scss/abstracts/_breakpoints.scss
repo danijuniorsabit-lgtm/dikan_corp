@@ -1,0 +1,36 @@
+// Matches the 7 target viewports from the brief.
+$breakpoints: (
+  'xxl': 1920px,
+  'xl': 1440px,
+  'lg': 1280px,
+  'md': 1024px,
+  'sm': 768px,
+  'xs': 480px,
+  'xxs': 375px,
+);
+
+// Desktop-first: styles apply at and below the named breakpoint.
+@mixin respond-max($name) {
+  $value: map-get($breakpoints, $name);
+
+  @if not $value {
+    @error 'Unknown breakpoint `#{$name}`.';
+  }
+
+  @media (max-width: $value) {
+    @content;
+  }
+}
+
+// Mobile-first companion, used where a min-width query reads more clearly.
+@mixin respond-min($name) {
+  $value: map-get($breakpoints, $name);
+
+  @if not $value {
+    @error 'Unknown breakpoint `#{$name}`.';
+  }
+
+  @media (min-width: $value) {
+    @content;
+  }
+}

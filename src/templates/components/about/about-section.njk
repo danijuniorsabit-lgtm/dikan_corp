@@ -1,0 +1,36 @@
+{% from "ui/button.njk" import button %}
+{% from "ui/section-tag.njk" import section_tag %}
+
+<section class="section about-section" id="about">
+  <div class="container">
+    <div class="about-section__intro">
+      {{ section_tag('О нас') }}
+      <p class="about-section__lead">
+        Компания «DIKAN» была основана в 2005 году и на сегодняшний день представляет собой
+        компанию с широкой товарной линейкой сельскохозяйственной техники различного назначения.
+      </p>
+      <p class="text-secondary">
+        Компания «DIKAN» является эксклюзивным дилером завода по производству техники для
+        обработки почвы «ARTAYUS» в Республике Казахстан.
+      </p>
+      {{ button('Узнать больше', { href: '/about.html', variant: 'outline', icon: false }) }}
+    </div>
+
+    <div class="about-stats">
+      <div class="about-stats__item about-stats__item--image" data-tone="wheat">
+        <span class="about-stats__caption">Экономия зерна при уборке</span>
+      </div>
+      <div class="about-stats__item about-stats__item--stat">
+        <span class="about-stats__value">10%</span>
+        <span class="about-stats__caption">снижение потерь при уборке</span>
+      </div>
+      <div class="about-stats__item about-stats__item--image" data-tone="grain">
+        <span class="about-stats__caption">Собственный склад запчастей</span>
+      </div>
+      <div class="about-stats__item about-stats__item--stat">
+        <span class="about-stats__value">50%</span>
+        <span class="about-stats__caption">рост срока службы техники</span>
+      </div>
+    </div>
+  </div>
+</section>

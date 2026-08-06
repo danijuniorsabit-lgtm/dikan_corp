@@ -1,0 +1,65 @@
+@use '../abstracts' as *;
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: space(9);
+
+  @include respond-max('sm') {
+    grid-template-columns: minmax(0, 1fr);
+    gap: space(6);
+  }
+}
+
+.contact__info h2 {
+  margin-block: space(3) space(4);
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: space(5);
+  margin-top: space(6);
+
+  dt {
+    font-size: map-get($font-sizes, 'small');
+    color: color('text-secondary');
+    margin-bottom: space(1);
+  }
+
+  dd {
+    font-weight: 700;
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: space(4);
+}
+
+.contact-form__field input,
+.contact-form__field textarea {
+  width: 100%;
+  padding: space(4);
+  border: 1px solid color('border');
+  border-radius: $radius-sm;
+  background-color: color('surface');
+
+  &:focus-visible {
+    border-color: color('ink');
+  }
+}
+
+.contact-form__field textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.contact-form__status {
+  min-height: 1.2em;
+}

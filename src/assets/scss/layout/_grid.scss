@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+// Lightweight CSS-grid utility for card layouts (products, projects,
+// testimonials, downloads) — the only grid system in this project (no
+// Bootstrap grid/row/col, see vendor/_bootstrap.scss for why).
+// Tracks use minmax(0, 1fr) rather than bare 1fr: a bare `1fr` track is
+// `minmax(auto, 1fr)`, so a child with wide intrinsic content (e.g. a
+// flex row of buttons) can force the track — and the whole grid — wider
+// than its container, overflowing the viewport. minmax(0, 1fr) lets the
+// track actually shrink to the space available.
+.grid {
+  display: grid;
+  gap: space(5);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @include respond-max('sm') {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  @include respond-max('md') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include respond-max('xs') {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  @include respond-max('lg') {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @include respond-max('md') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include respond-max('xs') {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

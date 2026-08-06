@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.product-gallery__main {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: $radius-md;
+  background: linear-gradient(155deg, #e7e7e2 0%, #cfd0c8 100%);
+}
+
+.product-gallery__thumbs {
+  display: flex;
+  gap: space(3);
+  margin-top: space(3);
+}
+
+.product-gallery__thumb {
+  @include button-reset;
+
+  width: 5rem;
+  height: 3.75rem;
+  border-radius: $radius-sm;
+  background: linear-gradient(155deg, #e7e7e2 0%, #cfd0c8 100%);
+  border: 2px solid transparent;
+
+  &.is-active {
+    border-color: color('brand');
+  }
+}

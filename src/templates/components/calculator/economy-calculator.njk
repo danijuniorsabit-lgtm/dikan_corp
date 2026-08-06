@@ -1,0 +1,41 @@
+{% from "ui/section-tag.njk" import section_tag %}
+{% from "ui/range-field.njk" import range_field %}
+
+{% macro gauge(opts) %}
+<div class="gauge" data-gauge="{{ opts.key }}" data-gauge-min="{{ opts.min }}" data-gauge-max="{{ opts.max }}" data-gauge-format="round">
+  <svg class="gauge__dial" viewBox="0 0 120 70" aria-hidden="true">
+    <path class="gauge__track" d="M10 65 A50 50 0 0 1 110 65" fill="none" stroke-width="10" stroke-linecap="round" />
+    <path class="gauge__arc" d="M10 65 A50 50 0 0 1 110 65" fill="none" stroke-width="10" stroke-linecap="round" />
+    <line class="gauge__needle" data-gauge-needle x1="60" y1="65" x2="60" y2="22" />
+    <circle class="gauge__pivot" cx="60" cy="65" r="5" />
+  </svg>
+  <div class="gauge__scale">
+    <span>{{ opts.min }}</span>
+    <span>{{ opts.max }}</span>
+  </div>
+  <p class="gauge__value"><span data-gauge-value>{{ opts.min }}</span>{{ opts.suffix }}</p>
+  <p class="gauge__label">{{ opts.label }}</p>
+</div>
+{% endmacro %}
+
+<section class="section economy-calculator" data-economy-calculator>
+  <div class="container">
+    {{ section_tag('Калькулятор') }}
+    <h2>Калькулятор экономики</h2>
+    <p class="text-secondary economy-calculator__hint">
+      Передвиньте ползунки, чтобы оценить примерную экономию для вашего хозяйства.
+    </p>
+
+    <div class="economy-calculator__grid">
+      <div class="economy-calculator__inputs">
+        {{ range_field({ id: 'economy-volume', label: 'Объём зерна за сезон, т', min: 0, max: 1000, value: 400, suffix: ' т', format: 'thousands' }) }}
+        {{ range_field({ id: 'economy-loss', label: 'Текущие потери при очистке, %', min: 0, max: 30, value: 12, suffix: '%' }) }}
+        {{ range_field({ id: 'economy-price', label: 'Цена реализации зерна, ₸/т', min: 30000, max: 120000, step: 1000, value: 70000, suffix: ' ₸', format: 'thousands' }) }}
+      </div>
+      <div class="economy-calculator__outputs">
+        {{ gauge({ key: 'savings', min: 0, max: 100, label: 'Экономия за сезон', suffix: '%' }) }}
+        {{ gauge({ key: 'payback', min: 0, max: 24, label: 'Окупаемость', suffix: ' мес' }) }}
+      </div>
+    </div>
+  </div>
+</section>

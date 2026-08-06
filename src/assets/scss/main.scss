@@ -1,0 +1,45 @@
+// Entry point — import order matters: vendor resets first, then our base,
+// then layout primitives, then components (alphabetical-ish by build order),
+// then page-specific overrides last so they can win on specificity ties.
+
+@use 'vendor/bootstrap';
+@use 'base/reset';
+@use 'base/fonts';
+@use 'base/typography';
+@use 'base/global';
+@use 'layout/container';
+@use 'layout/grid';
+@use 'layout/section';
+@use 'components/button';
+@use 'components/badge';
+@use 'components/breadcrumbs';
+@use 'components/header';
+@use 'components/cta-banner';
+@use 'components/footer';
+@use 'components/hero';
+@use 'components/about';
+@use 'components/roi-banner';
+@use 'components/testimonials';
+@use 'components/trust-badges';
+@use 'components/projects';
+@use 'components/downloads';
+@use 'components/contact-form';
+@use 'components/page-hero';
+@use 'components/filter-bar';
+@use 'components/product-card';
+@use 'components/product-gallery';
+@use 'components/product-specs';
+@use 'components/gauge';
+@use 'components/range-slider';
+@use 'components/economy-calculator';
+@use 'components/quote-wizard';
+@use 'components/finance-hero';
+@use 'components/leasing-calculator';
+@use 'components/partner-card';
+@use 'components/trade-in-steps';
+@use 'components/service-card';
+
+// Further components are appended here as they're built (see docs/UI-KIT.md).
+
+@use 'pages/product-detail';
+@use 'pages/about' as page-about;

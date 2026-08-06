@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: $radius-md;
+  background-color: color('surface');
+  overflow: hidden;
+}
+
+.product-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(155deg, #e7e7e2 0%, #cfd0c8 100%);
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: space(3);
+  padding: space(5);
+}
+
+.product-card__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: space(3);
+}
+
+.product-card__name {
+  font-weight: 700;
+}
+
+.product-card__spec {
+  font-size: map-get($font-sizes, 'small');
+  color: color('text-secondary');
+  white-space: nowrap;
+}
+
+.product-card__price {
+  font-family: $font-family-display;
+  font-weight: 800;
+}

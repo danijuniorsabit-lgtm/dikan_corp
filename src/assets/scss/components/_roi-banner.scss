@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+.roi-banner {
+  padding-block: space(11);
+  color: color('white');
+  background:
+    linear-gradient(180deg, rgb(20 19 14 / 35%) 0%, rgb(20 19 14 / 80%) 100%),
+    linear-gradient(100deg, #6b5a26 0%, #a08a3e 60%, #d8c374 100%);
+}
+
+.roi-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: space(6);
+
+  @include respond-max('sm') {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.roi-banner__title {
+  color: color('white');
+  max-width: 26ch;
+}
+
+.roi-banner__play {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(3);
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.roi-banner__play-icon {
+  display: inline-flex;
+  width: 4rem;
+  height: 4rem;
+  transition: transform 0.2s ease;
+}
+
+.roi-banner__play:hover .roi-banner__play-icon {
+  transform: scale(1.08);
+}
+
+.roi-banner__play-label {
+  font-size: map-get($font-sizes, 'small');
+  font-weight: 600;
+}

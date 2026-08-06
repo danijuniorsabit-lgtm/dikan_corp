@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.page-hero {
+  padding-block: space(9) space(8);
+  color: color('white');
+  background:
+    linear-gradient(180deg, rgb(20 19 14 / 35%) 0%, rgb(20 19 14 / 75%) 100%),
+    linear-gradient(120deg, #6b5a26 0%, #a08a3e 60%, #d8c374 100%);
+}
+
+.page-hero__title {
+  color: color('white');
+}

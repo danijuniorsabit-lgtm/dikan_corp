@@ -1,0 +1,14 @@
+{# filter_bar(categories, label) — reused by the product catalog and the projects grid; categories: [{key,label}] #}
+{% macro filter_bar(categories, label) %}
+<div class="filter-bar" data-filter role="tablist" aria-label="{{ label }}">
+  {% for cat in categories %}
+  <button
+    type="button"
+    class="filter-bar__pill{% if loop.first %} is-active{% endif %}"
+    data-filter-value="{{ cat.key }}"
+    role="tab"
+    aria-selected="{{ 'true' if loop.first else 'false' }}"
+  >{{ cat.label }}</button>
+  {% endfor %}
+</div>
+{% endmacro %}

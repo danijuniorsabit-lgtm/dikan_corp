@@ -1,0 +1,13 @@
+// Manrope (body) + Unbounded (display) are loaded via Google Fonts <link>
+// tags in src/templates/layouts/base.njk (with preconnect + font-display:
+// swap) rather than self-hosted here — no source webfont files exist in this
+// project yet. Once real brand font files are supplied, drop the .woff2
+// files into this folder and swap the @font-face blocks below in, then
+// replace the <link> tags in base.njk.
+
+// @font-face {
+//   font-family: 'Unbounded';
+//   src: url('./unbounded-variable.woff2') format('woff2');
+//   font-weight: 400 800;
+//   font-display: swap;
+// }

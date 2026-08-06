@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+.downloads {
+  color: color('white');
+  background:
+    linear-gradient(180deg, rgb(20 19 14 / 55%) 0%, rgb(20 19 14 / 75%) 100%),
+    linear-gradient(120deg, #6b5a26 0%, #a08a3e 60%, #d8c374 100%);
+}
+
+.downloads__title {
+  color: color('white');
+  margin-block: space(3) space(7);
+}
+
+.download-card {
+  display: flex;
+  flex-direction: column;
+  gap: space(5);
+  padding: space(5);
+  border-radius: $radius-md;
+  background-color: color('white');
+  color: color('ink');
+}
+
+.download-card__type {
+  align-self: flex-start;
+  padding: space(1) space(3);
+  border-radius: $radius-pill;
+  background-color: color('surface');
+  font-size: map-get($font-sizes, 'tiny');
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.download-card__name {
+  flex: 1;
+  font-weight: 700;
+}
+
+.download-card__action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: space(2) space(2) space(2) space(4);
+  border-radius: $radius-pill;
+  background-color: color('brand');
+  font-weight: 700;
+}
+
+.download-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: color('ink');
+  color: color('white');
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}

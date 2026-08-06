@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+.finance-hero {
+  padding-block: space(11) space(9);
+  color: color('white');
+  background:
+    linear-gradient(180deg, rgb(20 19 14 / 55%) 0%, rgb(20 19 14 / 82%) 100%),
+    linear-gradient(120deg, #3d4a63 0%, #6b7a99 100%);
+}
+
+.finance-hero__title {
+  max-width: 32ch;
+  color: color('white');
+  margin-bottom: space(5);
+}
+
+.finance-hero__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(3);
+  margin-top: space(7);
+}
+
+.finance-hero__tab {
+  padding: space(3) space(6);
+  border-radius: $radius-pill;
+  border: 1px solid rgb(255 255 255 / 40%);
+  font-weight: 700;
+  color: color('white');
+
+  &.is-active {
+    background-color: color('white');
+    color: color('ink');
+    border-color: color('white');
+  }
+}

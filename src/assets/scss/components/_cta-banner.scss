@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+
+.cta-banner {
+  padding-block: space(8);
+  color: color('white');
+  background:
+    linear-gradient(100deg, rgb(20 19 14 / 88%) 0%, rgb(58 51 20 / 72%) 100%),
+    repeating-linear-gradient(
+      120deg,
+      rgb(207 242 72 / 6%) 0,
+      rgb(207 242 72 / 6%) 2px,
+      transparent 2px,
+      transparent 14px
+    ),
+    #2a2718;
+}
+
+.cta-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: space(6);
+
+  @include respond-max('xs') {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.cta-banner__brand {
+  display: flex;
+  align-items: center;
+  gap: space(4);
+}
+
+.cta-banner__mark {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.cta-banner__text {
+  font-family: $font-family-display;
+  font-weight: 700;
+  font-size: map-get($font-sizes, 'h4');
+  text-wrap: balance;
+}

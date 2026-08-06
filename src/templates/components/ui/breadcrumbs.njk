@@ -1,0 +1,37 @@
+{#
+  breadcrumbs(items, opts) — items: [{ label, href }], last item is treated
+  as the current page (no link). opts.dark renders the light-on-dark variant
+  used over photo hero bands (products/product-detail pages). Emits matching
+  BreadcrumbList JSON-LD alongside the visible nav so both stay in sync.
+#}
+{% macro breadcrumbs(items, opts={}) %}
+<nav class="breadcrumbs{% if opts.dark %} breadcrumbs--on-dark{% endif %}" aria-label="Хлебные крошки">
+  <ol class="breadcrumbs__list">
+    {% for item in items %}
+    {% if loop.last %}
+    <li class="breadcrumbs__item" aria-current="page">{{ item.label }}</li>
+    {% else %}
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="{{ item.href }}">{{ item.label }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ol>
+</nav>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {% for item in items %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "name": "{{ item.label }}"{% if item.href %},
+      "item": "https://dikan.kz{{ item.href }}"{% endif %}
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endmacro %}

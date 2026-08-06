@@ -1,0 +1,33 @@
+{
+  "name": "dikan-corp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DIKAN corporate website — frontend (pre-Bitrix integration)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint \"src/assets/js/**/*.js\"",
+    "lint:styles": "stylelint \"src/assets/scss/**/*.scss\"",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "gsap": "^3.12.5",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "nunjucks": "^3.2.4",
+    "prettier": "^3.3.3",
+    "sass": "^1.79.4",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "vite": "^5.4.8"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ]
+}

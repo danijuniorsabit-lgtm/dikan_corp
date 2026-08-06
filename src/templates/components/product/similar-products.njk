@@ -1,0 +1,25 @@
+{% from "ui/section-tag.njk" import section_tag %}
+{% from "product/product-card.njk" import product_card %}
+
+{# similar_products(items) — items: array from data/products.json, already excluding the current product #}
+{% macro similar_products(items) %}
+<section class="section similar-products">
+  <div class="container">
+    {{ section_tag('Похожие решения') }}
+    <div class="grid grid--3">
+      {% for item in items %}
+      {% if loop.index <= 3 %}
+      {{ product_card(item, { cta: 'quote' }) }}
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="grid grid--3">
+      {% for item in items %}
+      {% if loop.index > 3 and loop.index <= 6 %}
+      {{ product_card(item) }}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endmacro %}

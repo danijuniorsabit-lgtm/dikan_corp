@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+.product-detail__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: space(9);
+
+  @include respond-max('sm') {
+    grid-template-columns: minmax(0, 1fr);
+    gap: space(6);
+  }
+}

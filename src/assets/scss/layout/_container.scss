@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.container {
+  @include container;
+}
+
+.container--narrow {
+  @include container;
+
+  max-width: 920px;
+}
+
+.container--wide {
+  @include container;
+
+  max-width: 1560px;
+}

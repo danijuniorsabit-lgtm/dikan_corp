@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+.partners__title {
+  margin-block: space(3);
+}
+
+.partners__lede {
+  max-width: 56ch;
+  margin-bottom: space(7);
+}
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: space(2);
+  padding: space(6);
+  border-radius: $radius-md;
+  background-color: color('surface');
+}
+
+.partner-card__name {
+  font-family: $font-family-display;
+  font-weight: 700;
+  font-size: map-get($font-sizes, 'h4');
+}
+
+.partner-card__link {
+  margin-top: space(3);
+  padding: space(2) space(5);
+  border-radius: $radius-pill;
+  background-color: color('brand');
+  font-weight: 700;
+  font-size: map-get($font-sizes, 'small');
+}
