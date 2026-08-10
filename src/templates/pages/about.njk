@@ -3,10 +3,19 @@
 {% from "ui/section-tag.njk" import section_tag %}
 
 {% set team = [
-  { name: 'Ерлан Дикамбаев', role: 'Генеральный директор' },
-  { name: 'Мадина Сатпаева', role: 'Директор по продажам' },
-  { name: 'Тимур Ахметов', role: 'Главный инженер сервиса' },
-  { name: 'Айгуль Нурланова', role: 'Руководитель отдела снабжения' }
+  { name: 'Динара Искакова', role: 'Учредитель компании', photo: 'https://dikan.kz/upload/iblock/ec2/k8xxa7v2oj9xo9ovv835lr2ynjy5umvr.jpg' },
+  { name: 'Кайрат Искаков', role: 'Генеральный директор', photo: 'https://dikan.kz/upload/iblock/7f0/5ucyo3sw0n4agz8cnffog31n7l76qhrk.jpg' },
+  { name: 'Марат Искаков', role: 'Технический директор', photo: 'https://dikan.kz/upload/iblock/95a/x32vc9jwmd2qzrqixlkfn22o9k0gayec.jpg' },
+  { name: 'Ерканат Рыспаев', role: 'Исполнительный директор', photo: 'https://dikan.kz/upload/iblock/1ec/7j2wbu1dlidbfftegbykr6hp81dy9vo1.jpg' },
+  { name: 'Анатолий Баранов', role: 'Бренд-амбассадор JK Machinery в РК', photo: 'https://dikan.kz/upload/iblock/86e/s6vcy42yqaw4yhjv85hy9w044kid3jdk.jpg' },
+  { name: 'Есмуханов Бахтияр', role: 'Руководитель отдела продаж', photo: 'https://dikan.kz/upload/iblock/705/7w0gm7dti061nwmmq0pi7twqjc82e68g.JPG' },
+  { name: 'Валлиулин Амир', role: 'Менеджер по продажам', photo: 'https://dikan.kz/upload/iblock/494/u3wm3bucnjptitkdmwv1s8b6ssl55bpu.JPG' },
+  { name: 'Жанат Байленов', role: 'Эксперт продаж', photo: 'https://dikan.kz/upload/iblock/1ed/uom8e2zvn8vogv3mztr51wadmqi0xdd5.jpg' },
+  { name: 'Талгат Омаров', role: 'Менеджер отдела продаж', photo: 'https://dikan.kz/upload/iblock/636/qp3yi36sxk81x2vmy2rvg9vjaf0xkhf4.JPG' },
+  { name: 'Зару Алинова', role: 'Специалист call-центра', photo: 'https://dikan.kz/upload/iblock/9c4/1oxc7ndl4zrm08w8yu5fcyk7e3vxh5pn.jpg' },
+  { name: 'Абильмажинов Темирлан', role: 'Бухгалтер', photo: 'https://dikan.kz/upload/iblock/90c/002d1v2exzdhx1cw9kuft2vu9x8ywf62.JPG' },
+  { name: 'Исмаилова Майра', role: 'Бухгалтер', photo: 'https://dikan.kz/upload/iblock/231/321jmdu96ew9t1jlm9egklvjxjxz6lv0.JPG' },
+  { name: 'Искакова Айнагуль', role: 'Финансовый директор', photo: 'https://dikan.kz/upload/iblock/6fd/ru4w7e9o7l8ws0mw3zvqj7t1e9wxqm86.JPG' }
 ] %}
 
 {% set certificates = [
@@ -74,7 +83,7 @@
     <div class="grid grid--4">
       {% for member in team %}
       <article class="team-member">
-        <span class="team-member__avatar" aria-hidden="true">{{ member.name[0] }}</span>
+        <img class="team-member__photo" src="{{ member.photo }}" alt="{{ member.name }}" loading="lazy" />
         <p class="team-member__name">{{ member.name }}</p>
         <p class="team-member__role text-secondary">{{ member.role }}</p>
       </article>

@@ -45,4 +45,4 @@ don't hand-edit them.
 
 - `docs/ARCHITECTURE.md` — build pipeline, conventions, known placeholders/deviations
 - `docs/UI-KIT.md` — design tokens, component catalog, how to add a component
-- `docs/BITRIX-INTEGRATION.md` — the (not-yet-started) Bitrix template migration plan
+- `docs/BITRIX-INTEGRATION.md` — the Bitrix template migration plan (`bitrix/dikan_corp/` has the initial template files; infoblocks/menu/webform work is still open)

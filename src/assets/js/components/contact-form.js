@@ -1,5 +1,6 @@
 import { qs, qsa } from '../utils/dom.js';
 import { isRequired, isValidEmail, isValidPhone } from '../utils/validators.js';
+import { buildWhatsAppMessage, openWhatsApp } from '../utils/whatsapp.js';
 
 export function initContactForm() {
   const form = qs('[data-contact-form]');
@@ -13,6 +14,7 @@ export function initContactForm() {
     const name = qs('#contact-name', form);
     const phone = qs('#contact-phone', form);
     const email = qs('#contact-email', form);
+    const message = qs('#contact-message', form);
     const fields = [name, phone, email];
 
     fields.forEach((field) => field.removeAttribute('aria-invalid'));
@@ -39,8 +41,17 @@ export function initContactForm() {
       return;
     }
 
-    // No backend endpoint yet (frontend-only phase) — confirm locally.
-    status.textContent = 'Спасибо! Мы свяжемся с вами в ближайшее время.';
+    // No backend — the "submission" is opening a pre-filled WhatsApp chat.
+    openWhatsApp(
+      buildWhatsAppMessage([
+        { emoji: '📋', label: 'Имя', value: name.value.trim() },
+        { emoji: '📞', label: 'Телефон', value: phone.value.trim() },
+        { emoji: '✉️', label: 'Email', value: email.value.trim() },
+        { emoji: '💬', label: 'Сообщение', value: message.value.trim() },
+      ])
+    );
+
+    status.textContent = 'Открываем WhatsApp, чтобы отправить заявку…';
     form.reset();
   });
 }

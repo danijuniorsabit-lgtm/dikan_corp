@@ -1,9 +1,18 @@
-# Bitrix integration plan (not started)
+# Bitrix integration plan (template files started)
 
 This is the plan for porting the finished frontend into
 `/local/templates/dikan_corp/` — step 13 of the brief, deliberately done
 **after** the frontend is complete and approved, per `PROMPT.md.txt`'s own
-"Порядок работы". Nothing in this document has been executed yet.
+"Порядок работы".
+
+The five template files (`description.php`, `.parameters.php`, `header.php`,
+`footer.php`, `template_styles.css` + `template.js`) now exist in
+`bitrix/dikan_corp/` in this repo — see that folder's own `README.md` for
+what's there, how to keep it in sync with the frontend build, and a real
+deployment gotcha it documents (three folders that must be copied to the
+Bitrix site root, not into the template). Everything else below — infoblocks
+vs. static JSON, `bitrix:menu`, real CRM webform submission, etc. — is still
+exactly as open as this document originally described.
 
 ## Target deliverables (per the brief)
 

@@ -2,6 +2,7 @@ import { gsap } from 'gsap';
 import { qs, qsa } from '../utils/dom.js';
 import { isRequired, isValidPhone } from '../utils/validators.js';
 import { prefersReducedMotion } from '../utils/motion.js';
+import { buildWhatsAppMessage, openWhatsApp } from '../utils/whatsapp.js';
 
 export function initQuoteWizard() {
   const root = qs('[data-quote-wizard]');
@@ -17,6 +18,24 @@ export function initQuoteWizard() {
   const successPanel = qs('[data-wizard-success]', root);
 
   let current = 0;
+
+  const getSelectedLabel = (name) => {
+    const checked = qs(`input[name="${name}"]:checked`, form);
+    return checked ? qs('.option-card__label', checked.closest('.option-card'))?.textContent || '' : '';
+  };
+
+  const submitToWhatsApp = () => {
+    openWhatsApp(
+      buildWhatsAppMessage([
+        { emoji: '📋', label: 'Имя', value: qs('input[name="name"]', form)?.value.trim() },
+        { emoji: '📞', label: 'Телефон', value: qs('input[name="phone"]', form)?.value.trim() },
+        { emoji: '🌱', label: 'Культура', value: getSelectedLabel('crop') },
+        { emoji: '📐', label: 'Площадь посева', value: getSelectedLabel('area') },
+        { emoji: '🔧', label: 'Текущая очистка', value: getSelectedLabel('method') },
+        { emoji: '💳', label: 'Формат покупки', value: getSelectedLabel('purchase') },
+      ])
+    );
+  };
 
   const isStepValid = (index) => {
     const step = steps[index];
@@ -56,6 +75,7 @@ export function initQuoteWizard() {
     if (!isStepValid(current)) return;
 
     if (current === steps.length - 1) {
+      submitToWhatsApp();
       form.hidden = true;
       meta.hidden = true;
       successPanel.hidden = false;

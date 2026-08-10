@@ -1,9 +1,75 @@
 {% from "ui/button.njk" import button %}
+{% from "ui/icons.njk" import arrow_left, arrow_right %}
 
-<section class="hero">
-  <div class="container hero__inner">
-    <h1 class="hero__title">Зерноочистка, которая окупается за&nbsp;1&nbsp;сезон.</h1>
-    <p class="hero__lede">Подберём технику под ваше хозяйство за 90 секунд — с расчётом окупаемости.</p>
-    {{ button('Попробовать', { href: '/calculator.html', class: 'hero__cta' }) }}
+{% set slides = [
+  {
+    modifier: 'olive',
+    accent: 'lime',
+    eyebrow: 'МОДУЛЬНЫЕ ЗЕРНООЧИСТИТЕЛИ JCM',
+    heading: 'Мы отделяем зерна от плевел',
+    subheading: 'Предназначены для первичной и вторичной очистки, калибровки семян у всех зерновых культур.',
+    ctaText: 'Подробнее',
+    ctaHref: '/products.html'
+  },
+  {
+    modifier: 'navy',
+    accent: 'gold',
+    eyebrow: 'ТОРГОВЫЙ ДОМ «DIKAN»',
+    heading: 'Комплексные решения для агробизнеса',
+    subheading: 'Модульная конструкция · Многофункциональность · Высокая производительность',
+    ctaText: 'Наши продукты',
+    ctaHref: '/products.html'
+  },
+  {
+    modifier: 'charcoal',
+    accent: 'gold',
+    eyebrow: 'ЗЕРНООЧИСТКА, КОТОРАЯ ОКУПАЕТСЯ',
+    heading: 'Зерноочистка, которая окупается за 1 сезон',
+    subheading: 'Подберём технику под ваше хозяйство за 90 секунд — с расчётом окупаемости.',
+    ctaText: 'Попробовать',
+    ctaHref: '/calculator.html'
+  }
+] %}
+
+<section class="hero-slider" data-hero-slider aria-roledescription="carousel" aria-label="Главные предложения DIKAN">
+  <h1 class="visually-hidden">Зерноочистка, которая окупается за 1 сезон — DIKAN</h1>
+
+  {% for slide in slides %}
+  <div
+    class="hero-slider__slide hero-slider__slide--{{ slide.modifier }}{% if loop.first %} is-active{% endif %}"
+    data-hero-slide
+    role="group"
+    aria-roledescription="slide"
+    aria-label="{{ loop.index }} из {{ loop.length }}"
+    {%- if not loop.first %} aria-hidden="true" inert{% endif %}
+  >
+    <div class="container hero-slider__inner">
+      <p class="hero-slider__eyebrow hero-slider__eyebrow--{{ slide.accent }}">{{ slide.eyebrow }}</p>
+      <p class="hero-slider__heading">{{ slide.heading }}</p>
+      <p class="hero-slider__subheading">{{ slide.subheading }}</p>
+      {{ button(slide.ctaText, { href: slide.ctaHref, class: 'hero-slider__cta hero-slider__cta--' ~ slide.accent }) }}
+    </div>
+  </div>
+  {% endfor %}
+
+  <button type="button" class="hero-slider__arrow hero-slider__arrow--prev" data-hero-prev aria-label="Предыдущий слайд">
+    {{ arrow_left() }}
+  </button>
+  <button type="button" class="hero-slider__arrow hero-slider__arrow--next" data-hero-next aria-label="Следующий слайд">
+    {{ arrow_right() }}
+  </button>
+
+  <div class="hero-slider__dots" data-hero-dots role="tablist" aria-label="Выбор слайда">
+    {% for slide in slides %}
+    <button
+      type="button"
+      class="hero-slider__dot{% if loop.first %} is-active{% endif %}"
+      data-hero-dot
+      data-index="{{ loop.index0 }}"
+      role="tab"
+      aria-label="Слайд {{ loop.index }}"
+      aria-selected="{{ 'true' if loop.first else 'false' }}"
+    ></button>
+    {% endfor %}
   </div>
 </section>

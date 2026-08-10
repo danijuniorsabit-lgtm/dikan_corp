@@ -1,6 +1,5 @@
 {% extends "base.njk" %}
 {% from "hero/page-hero.njk" import page_hero %}
-{% from "ui/filter-bar.njk" import filter_bar %}
 {% from "projects/project-card.njk" import project_card %}
 
 {% block content %}
@@ -10,18 +9,12 @@
 ]) }}
 
 <section class="section">
-  <div class="container" data-filter-scope>
-    {{ filter_bar(products.categories, 'Фильтр по типу оборудования') }}
-
-    <div class="grid grid--3" data-filter-grid>
+  <div class="container">
+    <div class="grid grid--3">
       {% for item in projects.items %}
       {{ project_card(item, { layout: 'grid' }) }}
       {% endfor %}
     </div>
-
-    <p class="text-secondary text-small" data-filter-empty hidden>
-      По выбранному фильтру проектов не найдено.
-    </p>
   </div>
 </section>
 {% endblock %}

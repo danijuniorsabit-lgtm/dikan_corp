@@ -1,12 +1,22 @@
+{% from "ui/icons.njk" import youtube_badge %}
+
 {#
-  project_card(item, opts) — item: { title, location, year, client, category }.
+  project_card(item, opts) — item: { title, location, year, client, category, image, description, youtubeUrl }.
   opts.layout: 'row' (default, home page list) | 'grid' (projects.html cards).
+  youtubeUrl (optional) renders a YouTube link overlay on the media area — grid layout only.
+  description is only shown in the grid layout, to keep the home page teaser compact.
 #}
 {% macro project_card(item, opts={}) %}
+{% set has_video = opts.layout == 'grid' and item.youtubeUrl %}
 <article class="project-card project-card--{{ opts.layout or 'row' }}" data-category="{{ item.category }}">
-  <div class="project-card__media" aria-hidden="true"></div>
+  <div class="project-card__media">
+    <img class="project-card__img" src="{{ item.image }}" alt="{{ item.title }}" loading="lazy" />
+  </div>
   <div class="project-card__body">
     <h3 class="project-card__title">{{ item.title }}</h3>
+    {% if opts.layout == 'grid' and item.description %}
+    <p class="project-card__description text-secondary">{{ item.description }}</p>
+    {% endif %}
     <dl class="project-card__meta">
       <div>
         <dt>Место расположения</dt>
@@ -21,6 +31,12 @@
         <dd>{{ item.client }}</dd>
       </div>
     </dl>
+    {% if has_video %}
+    <a class="project-card__video" href="{{ item.youtubeUrl }}" target="_blank" rel="noopener noreferrer">
+      <span class="project-card__video-icon" aria-hidden="true">{{ youtube_badge() }}</span>
+      <span>Смотреть на YouTube</span>
+    </a>
+    {% endif %}
   </div>
 </article>
 {% endmacro %}

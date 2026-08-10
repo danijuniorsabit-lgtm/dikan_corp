@@ -5,7 +5,7 @@
 {% from "product/similar-products.njk" import similar_products %}
 
 {% block head %}
-<script type="application/ld+json">
+<script type="application/ld+json" data-product-jsonld>
   {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -31,8 +31,19 @@
 ]) }}
 
 <section class="section">
-  <div class="container product-detail__grid">
-    {{ product_gallery(currentProduct) }}
+  <div class="container product-detail__grid" data-current-slug="{{ currentProduct.slug }}">
+    <div class="product-viewer" data-product-viewer>
+      <div class="product-viewer__tabs" role="tablist" aria-label="Просмотр товара">
+        <button type="button" class="product-viewer__tab is-active" data-viewer-tab="photo" role="tab" aria-selected="true">Фото</button>
+        <button type="button" class="product-viewer__tab" data-viewer-tab="model" role="tab" aria-selected="false" hidden>3D Модель</button>
+      </div>
+      <div class="product-viewer__panel" data-viewer-panel="photo">
+        {{ product_gallery(currentProduct) }}
+      </div>
+      <div class="product-viewer__panel" data-viewer-panel="model" hidden>
+        <div class="product-viewer__canvas" data-model-canvas></div>
+      </div>
+    </div>
     {{ product_specs(currentProduct) }}
   </div>
 </section>

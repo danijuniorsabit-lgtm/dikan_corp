@@ -7,12 +7,13 @@
 {% macro product_card(item, opts={}) %}
 <article class="product-card" data-category="{{ item.category }}">
   <div class="product-card__media">
+    <img class="product-card__img" src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" />
     {% if item.isNew %}<span class="badge badge--corner">New</span>{% endif %}
   </div>
   <div class="product-card__body">
     <div class="product-card__row">
       <span class="product-card__name">{{ item.shortName or item.name }}</span>
-      <span class="product-card__spec">{{ item.capacity }} т/ч</span>
+      <span class="product-card__spec">{{ item.specLabel }}</span>
     </div>
     <p class="product-card__price">от {{ item.priceFrom }} млн ₸</p>
     {% if opts.cta == 'quote' %}

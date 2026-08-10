@@ -16,7 +16,7 @@
 @use 'components/header';
 @use 'components/cta-banner';
 @use 'components/footer';
-@use 'components/hero';
+@use 'components/hero-slider';
 @use 'components/about';
 @use 'components/roi-banner';
 @use 'components/testimonials';
@@ -28,6 +28,7 @@
 @use 'components/filter-bar';
 @use 'components/product-card';
 @use 'components/product-gallery';
+@use 'components/product-viewer';
 @use 'components/product-specs';
 @use 'components/gauge';
 @use 'components/range-slider';
@@ -38,6 +39,7 @@
 @use 'components/partner-card';
 @use 'components/trade-in-steps';
 @use 'components/service-card';
+@use 'components/equipment';
 
 // Further components are appended here as they're built (see docs/UI-KIT.md).
 

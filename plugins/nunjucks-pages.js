@@ -10,6 +10,10 @@ const pagesDir = path.resolve(templatesDir, 'pages');
 const componentsDir = path.resolve(templatesDir, 'components');
 const layoutsDir = path.resolve(templatesDir, 'layouts');
 const dataDir = path.resolve(templatesDir, 'data');
+const publicDataDir = path.resolve(root, 'public/data');
+const imagesDir = path.resolve(root, 'src/assets/images');
+const modelsDir = path.resolve(root, 'src/assets/models');
+const publicModelsDir = path.resolve(root, 'public/models');
 
 function loadData() {
   const data = {};
@@ -23,8 +27,60 @@ function loadData() {
   return data;
 }
 
+// Mirrors data/products.json into public/data/ so client-side JS (product
+// detail page routing by ?slug=) can fetch it at runtime — public/ is served
+// as-is by both `vite dev` and the production build.
+function publishProductsData() {
+  fs.mkdirSync(publicDataDir, { recursive: true });
+  fs.copyFileSync(
+    path.join(dataDir, 'products.json'),
+    path.join(publicDataDir, 'products.json')
+  );
+}
+
+// Skips the copy once source and destination already match (mtime + size) —
+// the 3D models are tens of MB each, not worth re-copying on every unrelated
+// template edit during `vite dev`.
+function copyIfChanged(src, dest) {
+  const srcStat = fs.statSync(src);
+  if (fs.existsSync(dest)) {
+    const destStat = fs.statSync(dest);
+    if (destStat.size === srcStat.size && destStat.mtimeMs >= srcStat.mtimeMs) return;
+  }
+  fs.copyFileSync(src, dest);
+}
+
+// Assets authored under src/assets/ (logo, .glb models) that need a stable
+// runtime URL — same reasoning as publishProductsData(): src/ isn't served
+// as-is by Vite, only public/ is, so anything fetched/`<img src>`'d at
+// runtime rather than imported by JS/CSS has to be mirrored into public/.
+function publishStaticAssets(logger) {
+  const logoSrc = path.join(imagesDir, 'logo.jpg');
+  if (fs.existsSync(logoSrc)) {
+    const publicImagesDir = path.resolve(root, 'public/images');
+    fs.mkdirSync(publicImagesDir, { recursive: true });
+    copyIfChanged(logoSrc, path.join(publicImagesDir, 'logo.jpg'));
+  }
+
+  if (fs.existsSync(modelsDir)) {
+    fs.mkdirSync(publicModelsDir, { recursive: true });
+    for (const file of fs.readdirSync(modelsDir)) {
+      if (!file.endsWith('.glb')) continue;
+      try {
+        copyIfChanged(path.join(modelsDir, file), path.join(publicModelsDir, file));
+      } catch (err) {
+        const message = `[nunjucks-pages] failed to publish model ${file}: ${err.message}`;
+        if (logger) logger.error(message);
+        else console.error(message);
+      }
+    }
+  }
+}
+
 function renderPages(env, logger) {
   const data = loadData();
+  publishProductsData();
+  publishStaticAssets(logger);
   const files = fs.readdirSync(pagesDir).filter((f) => f.endsWith('.njk'));
   for (const file of files) {
     const name = path.basename(file, '.njk');

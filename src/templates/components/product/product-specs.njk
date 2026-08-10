@@ -2,23 +2,31 @@
 
 {# product_specs(item) #}
 {% macro product_specs(item) %}
-<div class="product-specs">
-  <h2 class="product-specs__title">{{ item.name }}</h2>
-  <p class="product-specs__description">{{ item.description }}</p>
+<div class="product-specs" data-product-specs>
+  <h2 class="product-specs__title" data-spec="title">{{ item.name }}</h2>
+  <p class="product-specs__description" data-spec="description">{{ item.description }}</p>
 
   <dl class="product-specs__list">
     <div>
+      <dt>Производительность</dt>
+      <dd data-spec="productivity">{{ item.productivity }}</dd>
+    </div>
+    <div{% if not item.power %} hidden{% endif %} data-spec-row="power">
       <dt>Мощность</dt>
-      <dd>{{ item.power }} кВт</dd>
+      <dd data-spec="power">{{ item.power }} кВт</dd>
     </div>
     <div>
-      <dt>Производительность</dt>
-      <dd>{{ item.capacity }} т/ч</dd>
+      <dt>Культуры</dt>
+      <dd data-spec="cultures">{{ item.cultures | join(', ') }}</dd>
+    </div>
+    <div>
+      <dt>Состояние</dt>
+      <dd data-spec="condition">{{ item.condition }}</dd>
     </div>
   </dl>
 
   <p class="product-specs__price-label">Цена:</p>
-  <p class="product-specs__price">от {{ item.priceFrom }} млн ₸</p>
+  <p class="product-specs__price" data-spec="price">от {{ item.priceFrom }} млн ₸</p>
 
   <div class="product-specs__actions">
     {{ button('Лизинг', { href: '/finance.html', variant: 'dark', icon: false }) }}

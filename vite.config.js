@@ -14,6 +14,7 @@ const pages = [
   'services',
   'about',
   'projects',
+  'equipment',
 ];
 
 export default defineConfig({

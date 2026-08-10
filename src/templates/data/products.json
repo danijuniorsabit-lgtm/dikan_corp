@@ -1,76 +1,188 @@
 {
   "categories": [
-    { "key": "all", "label": "Фильтры" },
-    { "key": "barrel", "label": "Барабанное" },
-    { "key": "vibration", "label": "Вибрационные" },
-    { "key": "air", "label": "Воздушные" }
+    { "key": "all", "label": "Все" },
+    { "key": "jcm", "label": "JCM VibroMax" },
+    { "key": "jcr", "label": "JCR сортировщики" },
+    { "key": "jcc", "label": "JCC VibroCompact" },
+    { "key": "jgc", "label": "JGC концентраторы" },
+    { "key": "jgd", "label": "JGD камнеотборники" },
+    { "key": "jgt", "label": "JGT сортировочные столы" },
+    { "key": "norii", "label": "Нории" },
+    { "key": "zernoprovod", "label": "Зернопровод" }
   ],
   "items": [
     {
-      "slug": "vibromax-jcm-10223",
-      "name": "Зерноочиститель VibroMax JCM 10223",
-      "shortName": "Зерночиститель",
-      "category": "vibration",
-      "capacity": 100,
-      "power": 9.5,
+      "slug": "jcm-10223",
+      "name": "Модульный зерноочиститель JCM 10223 VibroMax",
+      "shortName": "JCM 10223",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/2e6/d4m5n226qk4ailz4pd1337opvm5caupx.jpg",
+      "specLabel": "100 т/ч",
+      "productivity": "Предварительная очистка — 100 т/ч, промышленная очистка — 80 т/ч, точная очистка и калибровка семян — 36 т/ч",
+      "cultures": ["пшеница", "ячмень", "лён", "рапс", "подсолнечник"],
+      "condition": "Новое",
       "priceFrom": 18.5,
       "isNew": true,
-      "description": "Зерноочиститель VibroMax JCM 10223 для качественной очистки зерна. Гарантия окупаемости за 1 сезон."
+      "description": "Модульный зерноочиститель VibroMax JCM 10223 очищает зерно и семена сельхозкультур от сорной примеси ситовой сепарацией по размеру частиц и воздушной очисткой по аэродинамическим свойствам. Применяется для предварительной очистки при хранении, на элеваторах и мукомольных производствах. Быстрая замена сит одним человеком, очистка сит эластичными шариками, работа без пыли и практически без вибрации."
     },
     {
-      "slug": "barrelclean-jcm-8100",
-      "name": "Зерноочиститель BarrelClean JCM 8100",
-      "shortName": "Зерночиститель",
-      "category": "barrel",
-      "capacity": 80,
-      "power": 7.5,
-      "priceFrom": 15.2,
+      "slug": "jcm-10122",
+      "name": "Модульный зерноочиститель JCM 10122 VibroMax",
+      "shortName": "JCM 10122",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/4ba/190ap0al8hkxnbjc7l1yvsxu2j48wqo4.jpg",
+      "images": [
+        "https://dikan.kz/upload/iblock/2b6/uoj0rxkp9nz5vnp28lg7mw23q98f68o9.jpg",
+        "https://dikan.kz/upload/iblock/2b6/0lsfxajio7ud7iuqow1a293ss48npgv2.jpg",
+        "https://dikan.kz/upload/iblock/14f/jm5k3m4anh3d1thnvgycg570if6y81ae.jpg"
+      ],
+      "specLabel": "60 т/ч",
+      "productivity": "Предварительная очистка — 60 т/ч, промышленная очистка — 25 т/ч, точная очистка и калибровка семян — 12 т/ч",
+      "cultures": ["пшеница", "ячмень", "овёс", "лён"],
+      "condition": "Новое",
+      "priceFrom": 13.9,
       "isNew": false,
-      "description": "Барабанный зерноочиститель для первичной очистки крупных партий зерна."
+      "description": "Компактная модель линейки VibroMax с аспирационным шкафом и магнитным сепаратором металлопримесей. Гибкая очистка сит эластичными шариками, работа в непрерывном режиме при высоких нагрузках. Подходит для предварительной очистки зерна, подготовки семенного материала и сортировки продукции на мукомольных и элеваторных производствах."
     },
     {
-      "slug": "airflow-jcm-6000",
-      "name": "Зерноочиститель AirFlow JCM 6000",
-      "shortName": "Зерночиститель",
-      "category": "air",
-      "capacity": 60,
-      "power": 5.2,
-      "priceFrom": 11.8,
+      "slug": "jcr-08",
+      "name": "Воздушно-ситовой сортировщик JCR 08",
+      "shortName": "JCR 08",
+      "category": "jcr",
+      "image": "https://dikan.kz/upload/iblock/d54/mq3t0kn6az1oa2qf9ixbrev7hfek2rtq.jpg",
+      "specLabel": "4–6 т/ч",
+      "productivity": "Пшеница, стандартная очистка — 4–6 т/ч, семенной материал — 1–3 т/ч, мелкие семена — 0,6–3 т/ч",
+      "cultures": ["пшеница", "ячмень", "лён", "клевер"],
+      "power": 8,
+      "condition": "Новое",
+      "priceFrom": 9.4,
       "isNew": false,
-      "description": "Воздушный сепаратор для лёгкой финишной очистки семенного материала."
+      "description": "Воздушно-ситовой сортировщик JCR 08 очищает и сортирует материал воздушным потоком, проходящим через сита: тяжёлые фракции проваливаются, лёгкие остаются во взвешенном состоянии и удаляются вместе с грубой примесью. Чистота очистки — свыше 99,5%. Бережное обращение с материалом, простая замена сит, компактные размеры и низкое энергопотребление."
     },
     {
-      "slug": "vibromax-jcm-12300",
-      "name": "Зерноочиститель VibroMax JCM 12300",
-      "shortName": "Зерночиститель",
-      "category": "vibration",
-      "capacity": 120,
-      "power": 11,
-      "priceFrom": 21.4,
+      "slug": "jcc-08",
+      "name": "Модульный зерноочиститель JCC 08 VibroCompact",
+      "shortName": "JCC 08",
+      "category": "jcc",
+      "image": "https://dikan.kz/upload/iblock/f8a/9rgtnj693sgao1n5ro3eigvu1bol7ssf.jpg",
+      "images": [
+        "https://dikan.kz/upload/iblock/782/byebvwab08fsalocxg8e47jqqsiieo7a.jpg",
+        "https://dikan.kz/upload/iblock/82b/t71y5qc7q5qfaw76jco4u0w25d4nra71.jpg",
+        "https://dikan.kz/upload/iblock/b06/ehqh0pexcuqsi2xl6la55ug9i1cm0j3j.jpg"
+      ],
+      "specLabel": "15 т/ч",
+      "productivity": "Предварительная очистка — 15 т/ч, промышленная очистка — 10 т/ч, точная очистка и калибровка семян — 5 т/ч",
+      "cultures": ["пшеница", "ячмень", "овёс", "лён"],
+      "power": 2.2,
+      "condition": "Новое",
+      "priceFrom": 7.8,
       "isNew": false,
-      "description": "Увеличенная производительность для крупных хозяйств и элеваторов."
+      "description": "Компактный зерноочиститель VibroCompact JCC 08 для очистки зерновых и других сельхозкультур от сорной примеси ситовой сепарацией и воздушной очисткой со встроенной аспирацией. Малые габариты, низкое энергопотребление, простой монтаж и обслуживание, быстрая замена сит."
     },
     {
-      "slug": "barrelclean-jcm-9500",
-      "name": "Зерноочиститель BarrelClean JCM 9500",
-      "shortName": "Зерночиститель",
-      "category": "barrel",
-      "capacity": 95,
-      "power": 8.4,
-      "priceFrom": 17.1,
+      "slug": "jgc-08",
+      "name": "Гравитационный концентратор JGC 08",
+      "shortName": "JGC 08",
+      "category": "jgc",
+      "image": "https://dikan.kz/upload/iblock/53e/o2dbr20gdh1ts3so5vu6s6oqepjo7ybi.jpg",
+      "images": [
+        "https://dikan.kz/upload/iblock/f4e/49paj3csmfs4d55z1ht1x5ce94rb1nuh.jpg",
+        "https://dikan.kz/upload/iblock/346/06t8pu4x4vw87fenfwa8e7ox84bkm40f.jpg"
+      ],
+      "specLabel": "3–6 т/ч",
+      "productivity": "Производительность по пшенице — 3–6 т/ч",
+      "cultures": ["пшеница", "рожь", "рапс"],
+      "condition": "Новое",
+      "priceFrom": 6.9,
       "isNew": false,
-      "description": "Барабанный зерноочиститель со сниженным потреблением энергии."
+      "description": "Гравитационный концентратор JGC 08 разделяет поток материала на лёгкую и тяжёлую фракции: материал подаётся на наклонное сито, где воздушный поток создаёт псевдоожиженный слой, лёгкие частицы стекают вниз, тяжёлые под действием вибрации поднимаются вверх. Применяется в семяочистительных линиях, на мукомольных предприятиях и в комбикормовом производстве."
     },
     {
-      "slug": "airflow-jcm-7200",
-      "name": "Зерноочиститель AirFlow JCM 7200",
-      "shortName": "Зерночиститель",
-      "category": "air",
-      "capacity": 72,
-      "power": 6.1,
-      "priceFrom": 13.6,
+      "slug": "jgd-08",
+      "name": "Камнеотборник JGD 08",
+      "shortName": "JGD 08",
+      "category": "jgd",
+      "image": "https://dikan.kz/upload/iblock/53e/o2dbr20gdh1ts3so5vu6s6oqepjo7ybi.jpg",
+      "images": [
+        "https://dikan.kz/upload/iblock/3c5/s4swuh25qyo74uixr27qr43vj9vqjd4h.jpg",
+        "https://dikan.kz/upload/iblock/7c8/cd9fi8dkoybetx1l86fu9azmjdb9vexi.jpg"
+      ],
+      "specLabel": "6–12 т/ч",
+      "productivity": "Производительность по пшенице — 6–12 т/ч",
+      "cultures": ["пшеница", "ячмень", "рапс"],
+      "condition": "Новое",
+      "priceFrom": 7.4,
       "isNew": false,
-      "description": "Воздушный сепаратор среднего класса для фермерских хозяйств."
+      "description": "Камнеотборник JGD 08 отделяет тяжёлую фракцию — камешки, песок и другие минеральные примеси — от основного потока зерна на наклонном псевдоожиженном сите. Чистота очистки — около 99,9%. Стандартная система пылеудаления над выходом чистого продукта, опционально — рециркуляция до 90% отработанного воздуха."
+    },
+    {
+      "slug": "jgt-23",
+      "name": "Пневматический сортировочный стол JGT 23",
+      "shortName": "JGT 23",
+      "category": "jgt",
+      "image": "https://dikan.kz/upload/iblock/033/pxx6gr2wgwyxj4uj5en1zvtf1j9to9b2.jpg",
+      "images": [
+        "https://dikan.kz/upload/iblock/565/i0o6a0pd4mbm3pb23vv7j1ddne0n01je.jpg",
+        "https://dikan.kz/upload/iblock/bc7/1q8it7tu365wi0qp0ehxe3m6lf9j3zbr.jpg"
+      ],
+      "specLabel": "0,5–3,5 т/ч",
+      "productivity": "Мелкие семена (мак, тмин, клевер) — 0,5–1 т/ч, зерновые (пшеница, овёс) — 1,5–3,5 т/ч, масличные (лён, горчица) — 0,8–1,6 т/ч",
+      "cultures": ["пшеница", "овёс", "лён", "горчица", "клевер"],
+      "power": 11.4,
+      "condition": "Новое",
+      "priceFrom": 12.6,
+      "isNew": false,
+      "description": "Пневматический сортировочный стол JGT 23 сортирует материалы одинакового размера, но разного удельного веса: под сито нагнетается поток воздуха, облегчающий частицы и создающий псевдоожиженный слой для разделения по плотности. Чистота отделения примесей — свыше 99,9%. Используется для очистки семенного материала и мелких семян."
+    },
+    {
+      "slug": "nz-v-20-06",
+      "name": "Нория зерновая НЗ-В.20.06",
+      "shortName": "НЗ-В.20.06",
+      "category": "norii",
+      "image": "https://dikan.kz/upload/iblock/508/609tzgfupxlxg33hju5trprtk9pli9zn.jpg",
+      "images": [
+        "https://dikan.kz/upload/iblock/b4f/r68tirf9gvex3v4n595ajdf4cbj4e5ad.jpg",
+        "https://dikan.kz/upload/iblock/0d6/knx9gopn0dacamghnez3mbx18p1zyvpo.jpg"
+      ],
+      "specLabel": "20 т/ч",
+      "productivity": "Производительность — 20 т/ч, высота — 6 м, скорость ленты — 3,2 м/с",
+      "cultures": ["зерно", "семена"],
+      "condition": "Новое",
+      "priceFrom": 4.2,
+      "isNew": false,
+      "description": "Зерновая нория НЗ-В.20.06 изготовлена из оцинкованного металла с плотностью цинкового покрытия не менее 275 г/м², герметична к попаданию влаги, оснащена датчиками контроля и стопором обратного хода. Комплектуется стальными штампованными ковшами для зерна или пластиковыми — для семян. Плавный пуск двигателя, удобство обслуживания, большой ресурс работы."
+    },
+    {
+      "slug": "nz-s-80-18",
+      "name": "Нория зерновая НЗ-С.80.18",
+      "shortName": "НЗ-С.80.18",
+      "category": "norii",
+      "image": "https://dikan.kz/upload/iblock/508/609tzgfupxlxg33hju5trprtk9pli9zn.jpg",
+      "images": [
+        "https://dikan.kz/upload/iblock/b4f/r68tirf9gvex3v4n595ajdf4cbj4e5ad.jpg",
+        "https://dikan.kz/upload/iblock/0d6/knx9gopn0dacamghnez3mbx18p1zyvpo.jpg"
+      ],
+      "specLabel": "80 т/ч",
+      "productivity": "Производительность — 80 т/ч, высота — 18 м, скорость ленты — 3,2 м/с",
+      "cultures": ["зерно", "семена"],
+      "condition": "Новое",
+      "priceFrom": 9.1,
+      "isNew": false,
+      "description": "Зерновая нория НЗ-С.80.18 повышенной производительности для элеваторов и крупных линий подработки зерна. Оцинкованный корпус, герметичное исполнение, датчики контроля скорости и стопор обратного хода, опциональная площадка обслуживания с ограждением. Ресурс — до 1 200 000 тонн зерна."
+    },
+    {
+      "slug": "zernoprovod-150",
+      "name": "Модульная трубная система зернопровода Ø150",
+      "shortName": "Зернопровод Ø150",
+      "category": "zernoprovod",
+      "image": "https://dikan.kz/upload/iblock/83e/jo6021mw4j0iz4we1kxyjj7lytd8p691.png",
+      "specLabel": "Ø150 мм",
+      "productivity": "Диаметр Ø150 мм, толщина металла 2 мм, фланцевое соединение на 6 болтов",
+      "cultures": ["зерно", "семена"],
+      "condition": "Новое",
+      "priceFrom": 0.2,
+      "isNew": false,
+      "description": "Модульная трубная система зернопровода Ø150 собственного производства DIKAN: идеально круглая геометрия сечения, качественное окрасочное покрытие, фланцевое соединение на 6 болтов, сталь толщиной 2 мм. Применяется для сборки трубопроводов подачи зерна между узлами зерноочистительной линии."
     }
   ]
 }

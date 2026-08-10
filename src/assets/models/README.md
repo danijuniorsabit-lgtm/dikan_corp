@@ -1,19 +1,31 @@
 # 3D models
 
-No `.glb` model exists in this project yet. `src/assets/js/three/viewer.js`
-(`GLTFLoader` + `OrbitControls`, WebGL capability check, lazy
-`IntersectionObserver` init) and `fallback.js` (static poster shown when
-WebGL is unavailable or the model fails to load) are built and ready, but
-not wired into any page — the brief's hero design is a static photo, not a
-3D viewer, and no other screen in `design/` shows one either.
+Wired in on `product-detail.html` as a "3D Модель" tab next to the photo
+gallery (`src/assets/js/components/product-viewer.js`). `viewer.js`
+(`GLTFLoader` + `OrbitControls`, WebGL capability check) is code-split via a
+dynamic `import()` and only downloaded the first time someone actually
+clicks the tab — it's a heavy dependency (three.js + loaders), not worth
+adding to every page's bundle. `fallback.js` (static poster/text notice) is
+shown if WebGL is unavailable or the model fails to load.
 
-To wire it in once a model is available:
+`product-viewer.js`'s `MODEL_MAP` maps a product **slug** to a `.glb`
+**filename** in this folder. Only slugs present in that map — and only when
+they also match a real product's `slug` in `data/products.json` — get a
+visible 3D tab; everything else just shows the photo gallery, no error
+state. Several of `MODEL_MAP`'s keys currently don't match any real product
+slug in `data/products.json` (the models were provided for a slightly
+different SKU set — e.g. `jcr-05`/`jcc-05` vs. the catalog's `jcr-08`/
+`jcc-08`, and `jdg-08` vs. the catalog's `jgd-08`); those entries are inert
+until either side is reconciled.
 
-1. Drop the file here, e.g. `vibromax-jcm-10223.glb` (keep it under ~5 MB;
-   [gltf-transform](https://gltf-transform.dev/) or Blender's glTF export
-   with Draco compression gets most machine models well under that).
-2. Decide the placement (agreed candidate: an extra tab/section on
-   `product-detail.html`, alongside the existing image gallery).
-3. Call `initLazyModelViewer(containerEl, { modelUrl: '/src/assets/models/vibromax-jcm-10223.glb', onError })`
-   from a new `src/assets/js/components/product-viewer.js`, falling back to
-   `renderModelFallback()` in `onError`.
+**These files are not served directly from here.** `plugins/nunjucks-pages.js`
+mirrors every `*.glb` in this folder into `public/models/` on each build/dev
+render (same reasoning as `data/products.json` → `public/data/products.json`:
+`src/` isn't servable as-is, only `public/` is) — that's what `product-viewer.js`
+actually fetches (`/models/<file>.glb`).
+
+**Size warning:** these are large — most of the current files are 50–85 MB
+each, well over the ~5 MB this doc originally recommended (gltf-transform or
+Blender's glTF export with Draco compression gets most machine models well
+under that). At this size they meaningfully bloat `public/`/`dist/` and are
+slow to fetch even lazily-loaded; compress before shipping this for real.

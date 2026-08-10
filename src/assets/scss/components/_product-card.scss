@@ -12,6 +12,14 @@
   position: relative;
   aspect-ratio: 4 / 3;
   background: linear-gradient(155deg, #e7e7e2 0%, #cfd0c8 100%);
+  overflow: hidden;
+}
+
+.product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .product-card__body {

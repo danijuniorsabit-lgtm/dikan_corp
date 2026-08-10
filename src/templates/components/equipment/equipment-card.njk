@@ -1,0 +1,22 @@
+{% from "ui/button.njk" import button %}
+
+{#
+  equipment_card(item) — item: { name, image, description, application }.
+  image is optional — falls back to the decorative gradient when dikan.kz
+  has no dedicated product photo for that item (e.g. generic accessories/services).
+#}
+{% macro equipment_card(item) %}
+<article class="equipment-card">
+  <div class="equipment-card__media">
+    {% if item.image %}
+    <img class="equipment-card__img" src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" />
+    {% endif %}
+  </div>
+  <div class="equipment-card__body">
+    <h3 class="equipment-card__name">{{ item.name }}</h3>
+    <p class="text-secondary">{{ item.description }}</p>
+    <p class="equipment-card__application"><strong>Подходит для:</strong> {{ item.application }}</p>
+    {{ button('Запросить цену', { href: '#contact-form', class: 'btn--block equipment-card__cta' }) }}
+  </div>
+</article>
+{% endmacro %}

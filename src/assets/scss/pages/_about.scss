@@ -30,18 +30,13 @@
   background-color: color('surface');
 }
 
-.team-member__avatar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
+.team-member__photo {
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
   background-color: color('ink');
-  color: color('white');
-  font-family: $font-family-display;
-  font-weight: 700;
-  font-size: map-get($font-sizes, 'h4');
 }
 
 .team-member__name {

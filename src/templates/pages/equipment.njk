@@ -1,0 +1,46 @@
+{% extends "base.njk" %}
+{% from "hero/page-hero.njk" import page_hero %}
+{% from "ui/section-tag.njk" import section_tag %}
+{% from "equipment/equipment-card.njk" import equipment_card %}
+
+{% block content %}
+{{ page_hero('Оборудование', [
+  { label: 'Главная', href: '/index.html' },
+  { label: 'Оборудование' }
+]) }}
+
+{% include "equipment/equipment-banner.njk" %}
+
+<section class="section">
+  <div class="container">
+    {{ section_tag('Комплектующие и запчасти') }}
+    <h2 class="equipment-page__section-title">Оригинальные комплектующие для техники JK Machinery</h2>
+    <p class="text-secondary equipment-page__lede">
+      Нории, зернопровод, сита, аспирация и расходники — всё, чтобы линия JCM, JCR и JCC работала
+      без простоев.
+    </p>
+    <div class="grid grid--3">
+      {% for item in equipment.komplektuyushchie %}
+      {{ equipment_card(item) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--surface">
+  <div class="container">
+    {{ section_tag('Сопутствующее оборудование') }}
+    <h2 class="equipment-page__section-title">Для полной линии — от приёмки до отгрузки</h2>
+    <p class="text-secondary equipment-page__lede">
+      Транспортировка, аспирация и накопление зерна в составе комплексных линий и ЗАВов «под ключ».
+    </p>
+    <div class="grid grid--3">
+      {% for item in equipment.soputstvuyushchee %}
+      {{ equipment_card(item) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "contacts/contact-form.njk" %}
+{% endblock %}

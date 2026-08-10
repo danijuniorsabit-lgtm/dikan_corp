@@ -25,11 +25,14 @@
 }
 
 .header__logo {
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
-  font-family: $font-family-display;
-  font-weight: 800;
-  font-size: rem(20);
-  letter-spacing: 0.02em;
+}
+
+.header__logo-img {
+  height: 50px;
+  width: auto;
 }
 
 .header__nav {

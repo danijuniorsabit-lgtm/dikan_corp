@@ -1,46 +1,254 @@
 {
   "items": [
     {
-      "title": "Линия по очистке пшеницы и льна",
-      "location": "с. Жанкент, Коргалжынский район, Акмолинская область",
+      "title": "Линия по очистке пшеницы, льна",
+      "location": "с. Жантеке, Коргалжынский район, Акмолинская область",
       "year": "2021",
       "client": "ТОО «Агрофирма Жер 888»",
-      "category": "barrel"
+      "category": "jgc",
+      "image": "https://dikan.kz/upload/iblock/f49/e9tj8j6z05pgpvqv3ima6g3dbrkjjge5.jpg",
+      "description": "Поставка линии на базе гравитационных концентраторов JGC для очистки пшеницы и льна в ТОО «Агрофирма Жер 888».",
+      "youtubeUrl": ""
     },
     {
-      "title": "Линия по очистке пшеницы и льна",
-      "location": "с. Атамекен, Есильский район, Акмолинская область",
-      "year": "2022",
-      "client": "ТОО «Дән Агро»",
-      "category": "vibration"
+      "title": "Строительство 3-х бункерного ЗАВа «с нуля»",
+      "location": "с. Веселое, Сандыктауский район, Акмолинская область",
+      "year": "2021",
+      "client": "ТОО «СХП Байдалы-2»",
+      "category": "jgc",
+      "image": "https://dikan.kz/upload/iblock/ab3/opwjkzbvu5dne1su1wq1tqy8yulcmlsu.jpg",
+      "description": "Строительство зерноочистительного агрегата (ЗАВ) на 3 бункера «под ключ» с оборудованием JGC для ТОО «СХП Байдалы-2».",
+      "youtubeUrl": ""
     },
     {
-      "title": "Линия по очистке пшеницы и льна",
-      "location": "с. Балкашино, Сандыктауский район, Акмолинская область",
-      "year": "2022",
-      "client": "КХ «Береке»",
-      "category": "air"
+      "title": "Строительство 3-х бункерного ЗАВа «с нуля» (очистка зерновых и масличных культур)",
+      "location": "с. Веселое, Сандыктауский район, Акмолинская область",
+      "year": "2021",
+      "client": "ТОО «СХП Байдалы-2»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/621/3tg4kqqcby2hy4lp8je4frehfdcjsdp1.jpg",
+      "description": "Комплексное строительство ЗАВа на 3 бункера с модульными зерноочистителями JCM VibroMax для очистки зерновых и масличных культур.",
+      "youtubeUrl": ""
     },
     {
-      "title": "Модернизация зернотока",
-      "location": "с. Кенащи, Целиноградский район, Акмолинская область",
-      "year": "2023",
-      "client": "ТОО «Целина Агро»",
-      "category": "barrel"
+      "title": "Очистка риса",
+      "location": "с. Дуронгар, Кармакшинский район, Кызылординская область",
+      "year": "2021",
+      "client": "ТОО «Жанажол»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/83b/k0tdsot6zyrf3gsuzntx3y565kfts5ia.jpg",
+      "description": "Поставка комплексного оборудования JCM для очистки риса в ТОО «Жанажол».",
+      "youtubeUrl": ""
     },
     {
-      "title": "Установка воздушного сепаратора",
-      "location": "с. Шортанды, Шортандинский район, Акмолинская область",
-      "year": "2023",
-      "client": "КХ «Дан-Нур»",
-      "category": "air"
+      "title": "Очистка риса",
+      "location": "с. Тан, Жалагашский район, Кызылординская область",
+      "year": "2021",
+      "client": "ТОО «Тан ЛТД»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/f9a/6oezqodlaqlhz3m6wu7cfns4irhqux87.jpeg",
+      "description": "Поставка оборудования JCM для очистки риса в ТОО «Тан ЛТД».",
+      "youtubeUrl": ""
     },
     {
-      "title": "Линия по очистке ячменя",
-      "location": "с. Макинск, Буландынский район, Акмолинская область",
-      "year": "2024",
-      "client": "ТОО «Приишимье»",
-      "category": "vibration"
+      "title": "Очистка риса",
+      "location": "с. Тан, Жалагашский район, Кызылординская область",
+      "year": "2021",
+      "client": "ТОО «Тан ЛТД»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/f3b/qpdt4i9yfghglnllku87wt2j5ya7a7kf.jpeg",
+      "description": "Дополнительная поставка оборудования JCM для очистки риса в ТОО «Тан ЛТД».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы, ячменя, льна, рапса",
+      "location": "с. Талшык, Акжарский район, Северо-Казахстанская область",
+      "year": "2021",
+      "client": "ТОО «Тан ЛТД»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/83b/k0tdsot6zyrf3gsuzntx3y565kfts5ia.jpg",
+      "description": "Поставка линии JCM для очистки пшеницы, ячменя, льна и рапса в ТОО «Тан ЛТД».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы, ячменя, льна",
+      "location": "с. Озерное, Тайыншинский район, Северо-Казахстанская область",
+      "year": "2021",
+      "client": "ТОО «Озерки»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/83b/k0tdsot6zyrf3gsuzntx3y565kfts5ia.jpg",
+      "description": "Поставка оборудования JCM для очистки пшеницы, ячменя и льна в ТОО «Озерки».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Строительство 3-х бункерного ЗАВа «с нуля»",
+      "location": "с. Андреевка, Шортандинский район, Акмолинская область",
+      "year": "2021",
+      "client": "ТОО «НИВА»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/6ff/hgv04w5wd1gqstzydh2ptg6y6tmbcsf1.jpeg",
+      "description": "Строительство ЗАВа на 3 бункера с оборудованием JCM «под ключ» для ТОО «НИВА».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка льна, рапса, гречки",
+      "location": "г. Петропавловск",
+      "year": "2021",
+      "client": "ТОО «Бетеге У»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/9da/slhnk88comxvvslpnucbumr3czdhzm2e.jpg",
+      "description": "Поставка линии JCM для очистки льна, рапса и гречихи в ТОО «Бетеге У».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Строительство 3-х бункерного ЗАВа «с нуля»",
+      "location": "г. Атбасар, Акмолинская область",
+      "year": "2021",
+      "client": "ТОО «Агро Синтез-2020»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/83b/k0tdsot6zyrf3gsuzntx3y565kfts5ia.jpg",
+      "description": "Строительство ЗАВа на 3 бункера с оборудованием JCM «под ключ» для ТОО «Агро Синтез-2020».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Строительство 3-х бункерного ЗАВа «с нуля»",
+      "location": "с. Веселое, Сандыктауский район, Акмолинская область",
+      "year": "2021",
+      "client": "ТОО «СХП Байдалы-2»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/621/3tg4kqqcby2hy4lp8je4frehfdcjsdp1.jpg",
+      "description": "Строительство зерноочистительного агрегата на 3 бункера с оборудованием JCM для ТОО «СХП Байдалы-2».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы, льна",
+      "location": "п. Балкашино, Сандыктауский район, Акмолинская область",
+      "year": "2021",
+      "client": "КХ «Али»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/83b/k0tdsot6zyrf3gsuzntx3y565kfts5ia.jpg",
+      "description": "Поставка оборудования JCM для очистки пшеницы и льна в КХ «Али».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы",
+      "location": "с. Тимирязево, Тимирязевский район, Северо-Казахстанская область",
+      "year": "2021",
+      "client": "ТОО «Ерназ-Агро СК»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/83b/k0tdsot6zyrf3gsuzntx3y565kfts5ia.jpg",
+      "description": "Поставка оборудования JCM для очистки пшеницы в ТОО «Ерназ-Агро СК».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы",
+      "location": "с. Бозтумсык, Улытауский район, Карагандинская область",
+      "year": "2021",
+      "client": "ТОО «Бекетай-Баба»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/5c4/ymuzxrvjj6x3ve9y7ew65aumcyea192f.jpg",
+      "description": "Поставка оборудования JCM для очистки пшеницы в ТОО «Бекетай-Баба».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы (7 сортов)",
+      "location": "с. Есиль, Карагандинская область",
+      "year": "2021",
+      "client": "ТОО «Жатва-В.В.»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/5c4/ymuzxrvjj6x3ve9y7ew65aumcyea192f.jpg",
+      "description": "Поставка линии JCM для очистки семи сортов пшеницы в ТОО «Жатва-В.В.».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы, ячменя",
+      "location": "г. Атбасар, Акмолинская область",
+      "year": "2021",
+      "client": "ТОО «Inter Traid»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/5c4/ymuzxrvjj6x3ve9y7ew65aumcyea192f.jpg",
+      "description": "Поставка оборудования JCM для очистки пшеницы и ячменя в ТОО «Inter Traid».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы, семечки",
+      "location": "с. Иртыш, Иртышский район, Павлодарская область",
+      "year": "2021",
+      "client": "КХ «Уразбаев С.Ш.»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/83b/k0tdsot6zyrf3gsuzntx3y565kfts5ia.jpg",
+      "description": "Поставка оборудования JCM для очистки пшеницы и семян подсолнечника в КХ «Уразбаев С.Ш.».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы и ячменя",
+      "location": "с. Коксу, Абайский район, Карагандинская область",
+      "year": "2021",
+      "client": "ТОО «Астра-Агро ЛТД»",
+      "category": "jcc",
+      "image": "https://dikan.kz/upload/iblock/5c4/ymuzxrvjj6x3ve9y7ew65aumcyea192f.jpg",
+      "description": "Поставка компактных зерноочистителей JCC VibroCompact для очистки пшеницы и ячменя в ТОО «Астра-Агро ЛТД».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы, ячменя",
+      "location": "с. Узунколь, Астраханский район, Акмолинская область",
+      "year": "2021",
+      "client": "ТОО «Избасаров и К»",
+      "category": "jcc",
+      "image": "https://dikan.kz/upload/iblock/5c4/ymuzxrvjj6x3ve9y7ew65aumcyea192f.jpg",
+      "description": "Поставка оборудования JCC для очистки пшеницы и ячменя в ТОО «Избасаров и К».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы, льна, рапса, пшена, сафлора, гречки, гороха",
+      "location": "п. Макинск, Буландинский район, Акмолинская область",
+      "year": "2021",
+      "client": "ТОО «ХПП Арна»",
+      "category": "jcc",
+      "image": "https://dikan.kz/upload/iblock/5c4/ymuzxrvjj6x3ve9y7ew65aumcyea192f.jpg",
+      "description": "Поставка многофункциональной линии JCC для очистки пшеницы, льна, рапса, пшена, сафлора, гречихи и гороха в ТОО «ХПП Арна».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы, льна",
+      "location": "с. Жабай, Целиноградский район, Акмолинская область",
+      "year": "2021",
+      "client": "ТОО «Zhabay Auyly»",
+      "category": "jcc",
+      "image": "https://dikan.kz/upload/iblock/5c4/ymuzxrvjj6x3ve9y7ew65aumcyea192f.jpg",
+      "description": "Поставка оборудования JCC для очистки пшеницы и льна в ТОО «Zhabay Auyly».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы, гречки",
+      "location": "с. Иртыш, Иртышский район, Павлодарская область",
+      "year": "2021",
+      "client": "ТОО «Иртыш-Organik Foods»",
+      "category": "jcc",
+      "image": "https://dikan.kz/upload/iblock/5c4/ymuzxrvjj6x3ve9y7ew65aumcyea192f.jpg",
+      "description": "Поставка оборудования JCC для очистки пшеницы и гречихи в ТОО «Иртыш-Organik Foods».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Очистка пшеницы, гречки",
+      "location": "п. Ковалевка, Успенский район, Павлодарская область",
+      "year": "2021",
+      "client": "ТОО «Белый и К»",
+      "category": "jcc",
+      "image": "https://dikan.kz/upload/iblock/5c4/ymuzxrvjj6x3ve9y7ew65aumcyea192f.jpg",
+      "description": "Поставка оборудования JCC для очистки пшеницы и гречихи в ТОО «Белый и К».",
+      "youtubeUrl": ""
+    },
+    {
+      "title": "Семенная линия 5–7 т/ч, строительство 4-х бункерного ЗАВа",
+      "location": "п. Балкашино, Сандыктауский район, Акмолинская область",
+      "year": "2021",
+      "client": "КХ «Али»",
+      "category": "jcm",
+      "image": "https://dikan.kz/upload/iblock/fbb/y8vcni95q1snvfog76myy8fyos01ed7w.jpeg",
+      "description": "Строительство семенной линии производительностью 5–7 т/ч и зерноочистительного агрегата на 4 бункера «под ключ» для КХ «Али».",
+      "youtubeUrl": ""
     }
   ]
 }

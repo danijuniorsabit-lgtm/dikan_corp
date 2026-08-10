@@ -1,17 +1,26 @@
-{# product_gallery(item) — main image + 3 thumbnails, NEW badge #}
+{# product_gallery(item) — main image + thumbnails (only rendered when item.images has more than one real photo), NEW badge #}
 {% macro product_gallery(item) %}
 <div class="product-gallery" data-product-gallery>
   <div class="product-gallery__main">
-    {% if item.isNew %}<span class="badge badge--corner">New</span>{% endif %}
+    <img class="product-gallery__img" src="{{ item.image }}" alt="{{ item.name }}" data-gallery-main />
+    <span class="badge badge--corner" data-gallery-badge{% if not item.isNew %} hidden{% endif %}>New</span>
   </div>
-  <div class="product-gallery__thumbs">
-    {% for i in range(0, 3) %}
+  <div class="product-gallery__thumbs" data-gallery-thumbs{% if not (item.images and item.images.length) %} hidden{% endif %}>
     <button
       type="button"
-      class="product-gallery__thumb{% if loop.first %} is-active{% endif %}"
+      class="product-gallery__thumb is-active"
       data-gallery-thumb
-      aria-label="Изображение {{ i + 1 }}"
-    ></button>
+      data-full="{{ item.image }}"
+      aria-label="Изображение 1"
+    ><img src="{{ item.image }}" alt="" loading="lazy" /></button>
+    {% for src in item.images %}
+    <button
+      type="button"
+      class="product-gallery__thumb"
+      data-gallery-thumb
+      data-full="{{ src }}"
+      aria-label="Изображение {{ loop.index + 1 }}"
+    ><img src="{{ src }}" alt="" loading="lazy" /></button>
     {% endfor %}
   </div>
 </div>
