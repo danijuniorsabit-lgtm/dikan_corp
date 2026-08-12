@@ -34,14 +34,34 @@
   padding: space(4);
   display: flex;
   align-items: flex-end;
-}
-
-.about-stats__item--image {
   color: color('white');
-  background: linear-gradient(160deg, #8a7a3c 0%, #4d4324 100%);
+  background-color: color('ink');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &[data-tone='wheat'] {
+    background-image:
+      linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)),
+      url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80');
+  }
+
+  &[data-tone='hands'] {
+    background-image:
+      linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)),
+      url('https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&q=80');
+  }
 
   &[data-tone='grain'] {
-    background: linear-gradient(160deg, #c9b463 0%, #7a6a34 100%);
+    background-image:
+      linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)),
+      url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80');
+  }
+
+  &[data-tone='field'] {
+    background-image:
+      linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)),
+      url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80');
   }
 }
 
@@ -50,7 +70,6 @@
   align-items: flex-start;
   justify-content: center;
   gap: space(2);
-  background-color: color('brand');
 }
 
 .about-stats__value {
