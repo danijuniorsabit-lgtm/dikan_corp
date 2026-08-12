@@ -1,0 +1,101 @@
+@use '../abstracts' as *;
+
+.faq-section__more {
+  display: flex;
+  justify-content: center;
+  margin-top: space(7);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  border-bottom: 1px solid color('border');
+}
+
+.faq-item__question {
+  margin: 0;
+}
+
+.faq-item__trigger {
+  @include button-reset;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: space(4);
+  width: 100%;
+  padding: space(5) space(4);
+  border-left: 3px solid transparent;
+  text-align: left;
+  font-weight: 700;
+  transition: border-color 0.2s ease;
+}
+
+.faq-item.is-open .faq-item__trigger {
+  border-left-color: color('brand');
+}
+
+.faq-item__icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: color('text-secondary');
+  transition: transform 0.25s ease;
+}
+
+.faq-item.is-open .faq-item__icon {
+  transform: rotate(180deg);
+  color: color('ink');
+}
+
+// Smooth height animation without JS-measured heights: the row track
+// animates between 0fr and 1fr; the inner wrapper clips overflow so content
+// doesn't show/reflow before the track has grown.
+.faq-item__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-item.is-open .faq-item__panel {
+  grid-template-rows: 1fr;
+}
+
+.faq-item__panel-inner {
+  overflow: hidden;
+}
+
+.faq-item__answer {
+  max-width: 60ch;
+  padding: 0 space(4) space(5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item__panel,
+  .faq-item__icon {
+    transition: none;
+  }
+}
+
+// Full FAQ page (faq.html)
+.faq-page__category-title {
+  margin-block: space(3) space(6);
+  max-width: 40ch;
+}
+
+.faq-page__cta {
+  text-align: center;
+}
+
+.faq-page__cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(4);
+  max-width: 40rem;
+  margin-inline: auto;
+}

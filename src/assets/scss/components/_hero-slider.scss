@@ -11,6 +11,19 @@ $hero-slider-accents: (
   'gold': #c8a94a,
 );
 
+// Background photos + dark overlay per slide — colors above stay as the
+// no-image fallback (shows through if a photo fails to load).
+$hero-slider-photos: (
+  'navy': 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80',
+  'olive': 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1920&q=80',
+  'charcoal': 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80',
+);
+$hero-slider-overlays: (
+  'navy': rgb(13 27 46 / 72%),
+  'olive': rgb(30 40 10 / 70%),
+  'charcoal': rgb(20 20 20 / 72%),
+);
+
 .hero-slider {
   position: relative;
   min-height: 100vh;
@@ -26,6 +39,9 @@ $hero-slider-accents: (
   opacity: 0;
   pointer-events: none;
   z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   &.is-active {
     opacity: 1;
@@ -33,14 +49,31 @@ $hero-slider-accents: (
     z-index: 2;
   }
 
+  // Dark overlay between the photo and the text — absolutely positioned so
+  // it's pulled out of the flex flow instead of pushing .hero-slider__inner.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
   @each $name, $value in $hero-slider-colors {
     &--#{$name} {
       background-color: $value;
+      background-image: url('#{map-get($hero-slider-photos, $name)}');
+
+      &::before {
+        background-color: map-get($hero-slider-overlays, $name);
+      }
     }
   }
 }
 
 .hero-slider__inner {
+  position: relative;
+  z-index: 1;
   padding-block: space(11);
 
   @include respond-max('sm') {

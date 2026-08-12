@@ -10,19 +10,21 @@
   { label: 'Зерноочистители' }
 ]) }}
 
-<section class="section">
-  <div class="container" data-filter-scope>
-    {{ filter_bar(products.categories, 'Фильтр по типу техники') }}
+<div data-filter-scope>
+  {{ filter_bar(products.categories, 'Фильтр по типу техники') }}
 
-    <div class="grid grid--3" data-filter-grid>
-      {% for item in products.items %}
-      {{ product_card(item) }}
-      {% endfor %}
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3" data-filter-grid>
+        {% for item in products.items %}
+        {{ product_card(item) }}
+        {% endfor %}
+      </div>
+
+      <p class="text-secondary text-small" data-filter-empty hidden>
+        По выбранному фильтру техники не найдено.
+      </p>
     </div>
-
-    <p class="text-secondary text-small" data-filter-empty hidden>
-      По выбранному фильтру техники не найдено.
-    </p>
-  </div>
-</section>
+  </section>
+</div>
 {% endblock %}

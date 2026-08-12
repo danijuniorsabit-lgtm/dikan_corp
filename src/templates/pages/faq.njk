@@ -1,0 +1,32 @@
+{% extends "base.njk" %}
+{% from "hero/page-hero.njk" import page_hero %}
+{% from "ui/section-tag.njk" import section_tag %}
+{% from "ui/button.njk" import button %}
+{% from "faq/faq-accordion.njk" import faq_list %}
+
+{% block content %}
+{{ page_hero('Часто задаваемые вопросы', [
+  { label: 'Главная', href: '/index.html' },
+  { label: 'FAQ' }
+]) }}
+
+{% for category in faq.categories %}
+<section class="section faq-page__category{% if loop.index0 is even %} section--surface{% endif %}">
+  <div class="container">
+    {{ section_tag('Категория ' ~ loop.index) }}
+    <h2 class="faq-page__category-title">{{ category.label }}</h2>
+    {{ faq_list(category.items, 'cat' ~ loop.index) }}
+  </div>
+</section>
+{% endfor %}
+
+<section class="section faq-page__cta">
+  <div class="container faq-page__cta-inner">
+    <h2>Остались вопросы?</h2>
+    <p class="text-secondary">Свяжитесь с нами — ответим и подберём решение под ваше хозяйство.</p>
+    {{ button('Свяжитесь с нами', { href: '#contact-form' }) }}
+  </div>
+</section>
+
+{% include "contacts/contact-form.njk" %}
+{% endblock %}

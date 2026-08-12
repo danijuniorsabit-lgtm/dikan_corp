@@ -15,6 +15,7 @@ import { initQuoteWizard } from './components/quote-wizard.js';
 import { initFinanceTabs } from './components/finance-tabs.js';
 import { initLeasingCalculator } from './components/leasing-calculator.js';
 import { initHeroSlider } from './components/hero-slider.js';
+import { initFaqAccordion } from './components/faq-accordion.js';
 import { initScrollReveal } from './components/scroll-reveal.js';
 
 onReady(() => {
@@ -34,6 +35,7 @@ onReady(() => {
   initFinanceTabs();
   initLeasingCalculator();
   initHeroSlider();
+  initFaqAccordion();
   initScrollReveal();
 
   // Page-specific modules are wired in as each page is built (see

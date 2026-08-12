@@ -1,14 +1,24 @@
-{# filter_bar(categories, label) — reused by the product catalog and the projects grid; categories: [{key,label}] #}
+{# filter_bar(categories, label) — the product catalog's category filter; categories: [{key,label}].
+   Renders as a full-width light bar (desktop: horizontal-scroll pill row, mobile <= 768px: a <select>). #}
 {% macro filter_bar(categories, label) %}
-<div class="filter-bar" data-filter role="tablist" aria-label="{{ label }}">
-  {% for cat in categories %}
-  <button
-    type="button"
-    class="filter-bar__pill{% if loop.first %} is-active{% endif %}"
-    data-filter-value="{{ cat.key }}"
-    role="tab"
-    aria-selected="{{ 'true' if loop.first else 'false' }}"
-  >{{ cat.label }}</button>
-  {% endfor %}
-</div>
+<section class="filter-bar-wrap">
+  <div class="container">
+    <div class="filter-bar" data-filter role="tablist" aria-label="{{ label }}">
+      {% for cat in categories %}
+      <button
+        type="button"
+        class="filter-bar__pill{% if loop.first %} is-active{% endif %}"
+        data-filter-value="{{ cat.key }}"
+        role="tab"
+        aria-selected="{{ 'true' if loop.first else 'false' }}"
+      >{{ cat.label }}</button>
+      {% endfor %}
+    </div>
+    <select class="filter-bar__select" data-filter-select aria-label="{{ label }}">
+      {% for cat in categories %}
+      <option value="{{ cat.key }}">{{ cat.label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</section>
 {% endmacro %}

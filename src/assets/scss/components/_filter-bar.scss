@@ -1,39 +1,66 @@
 @use '../abstracts' as *;
 
+// Full-width bar sitting directly under .page-hero — deliberately its own
+// light section (not nested inside the padded .section/.container) so it
+// reads as a clean break from the dark hero above, not a continuation of it.
+.filter-bar-wrap {
+  background-color: #f7f8fa;
+  border-bottom: 1px solid color('border');
+  padding-block: space(4);
+}
+
 .filter-bar {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: space(2);
-  padding: space(2);
-  margin-bottom: space(7);
-  border-radius: $radius-pill;
-  background-color: color('ink');
-  width: fit-content;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .filter-bar__pill {
   @include button-reset;
 
+  flex: 0 0 auto;
   padding: space(2) space(5);
   border-radius: $radius-pill;
   font-weight: 700;
   font-size: map-get($font-sizes, 'small');
   color: color('white');
+  background-color: #222;
+  white-space: nowrap;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
 
   &.is-active {
     background-color: color('brand');
-    color: color('ink');
+    color: #222;
   }
 
   &:not(.is-active):hover {
-    background-color: rgb(255 255 255 / 10%);
+    background-color: #3a3a3a;
   }
 }
 
-@include respond-max('xs') {
+.filter-bar__select {
+  display: none;
+}
+
+@include respond-max('sm') {
   .filter-bar {
+    display: none;
+  }
+
+  .filter-bar__select {
+    display: block;
     width: 100%;
-    overflow-x: auto;
+    padding: space(3) space(4);
+    border-radius: $radius-sm;
+    border: 1px solid color('border');
+    background-color: color('white');
+    font-weight: 600;
+    font-size: map-get($font-sizes, 'small');
+    color: #222;
   }
 }

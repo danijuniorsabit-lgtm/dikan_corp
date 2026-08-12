@@ -6,10 +6,11 @@ import { qs, qsa } from '../utils/dom.js';
 export function initFilterBars() {
   qsa('[data-filter-scope]').forEach((scope) => {
     const filter = qs('[data-filter]', scope);
+    const select = qs('[data-filter-select]', scope);
     const grid = qs('[data-filter-grid]', scope);
-    if (!filter || !grid) return;
+    if ((!filter && !select) || !grid) return;
 
-    const pills = qsa('[data-filter-value]', filter);
+    const pills = filter ? qsa('[data-filter-value]', filter) : [];
     const items = qsa('[data-category]', grid);
     const empty = qs('[data-filter-empty]', scope);
 
@@ -23,19 +24,33 @@ export function initFilterBars() {
       if (empty) empty.hidden = visibleCount > 0;
     };
 
-    pills.forEach((pill) => {
-      pill.addEventListener('click', () => {
-        pills.forEach((p) => {
-          p.classList.toggle('is-active', p === pill);
-          p.setAttribute('aria-selected', String(p === pill));
-        });
-        applyFilter(pill.dataset.filterValue);
+    // Desktop pills and the mobile <select> are two views of the same
+    // state — keep them in sync regardless of which one the user drives.
+    const setActive = (value) => {
+      pills.forEach((p) => {
+        const isActive = p.dataset.filterValue === value;
+        p.classList.toggle('is-active', isActive);
+        p.setAttribute('aria-selected', String(isActive));
       });
+      if (select) select.value = value;
+      applyFilter(value);
+    };
+
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => setActive(pill.dataset.filterValue));
     });
+
+    if (select) {
+      select.addEventListener('change', () => setActive(select.value));
+    }
 
     const params = new URLSearchParams(window.location.search);
     const category = params.get('category');
-    const initialPill = category && qs(`[data-filter-value="${category}"]`, filter);
-    if (initialPill) initialPill.click();
+    const hasCategory =
+      category &&
+      ((filter && qs(`[data-filter-value="${category}"]`, filter)) ||
+        (select && qs(`option[value="${category}"]`, select)));
+
+    setActive(hasCategory ? category : pills[0]?.dataset.filterValue || select?.value || 'all');
   });
 }

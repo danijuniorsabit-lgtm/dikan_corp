@@ -9,4 +9,5 @@
   <url><loc>https://dikan.kz/services.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://dikan.kz/about.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://dikan.kz/projects.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dikan.kz/faq.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

@@ -21,6 +21,7 @@ const REVEAL_GROUPS = [
   '.about-stats__item',
   '.partner-card',
   '.gauge',
+  '.faq-item',
 ];
 
 export function initScrollReveal(root = document) {

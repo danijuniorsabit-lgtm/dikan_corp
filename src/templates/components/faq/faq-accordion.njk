@@ -1,0 +1,41 @@
+{% from "ui/icons.njk" import chevron_down %}
+
+{#
+  faq_item(item, uid) — single accordion row: item = { question, answer }.
+  uid must be unique across the page — used to wire the trigger/panel aria-* ids.
+#}
+{% macro faq_item(item, uid) %}
+<div class="faq-item" data-faq-item>
+  <h3 class="faq-item__question">
+    <button
+      type="button"
+      class="faq-item__trigger"
+      id="faq-trigger-{{ uid }}"
+      aria-expanded="false"
+      aria-controls="faq-panel-{{ uid }}"
+    >
+      <span>{{ item.question }}</span>
+      <span class="faq-item__icon" aria-hidden="true">{{ chevron_down() }}</span>
+    </button>
+  </h3>
+  <div
+    class="faq-item__panel"
+    id="faq-panel-{{ uid }}"
+    role="region"
+    aria-labelledby="faq-trigger-{{ uid }}"
+  >
+    <div class="faq-item__panel-inner">
+      <p class="faq-item__answer text-secondary">{{ item.answer }}</p>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{# faq_list(items, prefix) — items: [{question, answer}]; prefix makes uids unique per list on the page. #}
+{% macro faq_list(items, prefix) %}
+<div class="faq-list" data-faq-list>
+  {% for item in items %}
+  {{ faq_item(item, prefix ~ '-' ~ loop.index) }}
+  {% endfor %}
+</div>
+{% endmacro %}

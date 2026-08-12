@@ -1,0 +1,21 @@
+{% from "ui/section-tag.njk" import section_tag %}
+{% from "ui/button.njk" import button %}
+{% from "faq/faq-accordion.njk" import faq_list %}
+
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__intro">
+        {{ section_tag('FAQ') }}
+        <h2>Часто задаваемые вопросы</h2>
+        <p class="text-secondary">Не нашли ответ? Свяжитесь с нами</p>
+      </div>
+    </div>
+
+    {{ faq_list(faq.homepage, 'home') }}
+
+    <div class="faq-section__more">
+      {{ button('Все вопросы', { href: '/faq.html', variant: 'outline' }) }}
+    </div>
+  </div>
+</section>

@@ -1,8 +1,9 @@
 {% from "ui/breadcrumbs.njk" import breadcrumbs %}
 
-{# page_hero(title, crumbs) — the short photo-band hero used on interior pages (products, product-detail). #}
-{% macro page_hero(title, crumbs) %}
-<section class="page-hero">
+{# page_hero(title, crumbs, opts) — the short photo-band hero used on interior pages.
+   opts.photo: true -> swaps the flat gradient for the wheat-field background photo. #}
+{% macro page_hero(title, crumbs, opts={}) %}
+<section class="page-hero{% if opts.photo %} page-hero--photo{% endif %}">
   <div class="container">
     {{ breadcrumbs(crumbs, { dark: true }) }}
     <h1 class="page-hero__title">{{ title }}</h1>

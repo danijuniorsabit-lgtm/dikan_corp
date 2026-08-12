@@ -89,6 +89,20 @@
   height: 1.25rem;
 }
 
+// Shown instead of .project-card__video while youtubeUrl is still empty —
+// a dev-only placeholder marking where the real button will sit, styled
+// deliberately unlike the red YouTube button so it can't be mistaken for it.
+.project-card__video-placeholder {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: space(2) space(4);
+  border-radius: $radius-pill;
+  border: 1px dashed color('border');
+  color: color('text-secondary');
+  font-weight: 600;
+  font-size: map-get($font-sizes, 'small');
+}
+
 .project-card__body {
   display: flex;
   flex-direction: column;
@@ -106,8 +120,8 @@
 
 .project-card__meta {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: space(5);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: space(3) space(5);
   font-size: map-get($font-sizes, 'small');
 
   @include respond-max('sm') {
@@ -122,4 +136,11 @@
   dd {
     font-weight: 600;
   }
+}
+
+// Location text (a full street/district/region address) runs much longer
+// than year/client — give it its own full-width row instead of squeezing
+// it into a column even with two short values.
+.project-card__meta-location {
+  grid-column: 1 / -1;
 }
