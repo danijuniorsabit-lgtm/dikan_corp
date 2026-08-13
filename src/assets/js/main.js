@@ -3,6 +3,7 @@ import '../scss/main.scss';
 import { onReady } from './core/dom-ready.js';
 import { initLazyBackgrounds } from './core/lazy-load.js';
 import { initHeader } from './components/header.js';
+import { initSearch } from './components/search.js';
 import { initFooter } from './components/footer.js';
 import { initContactForm } from './components/contact-form.js';
 import { initFilterBars } from './components/filter-bar.js';
@@ -21,6 +22,7 @@ import { initScrollReveal } from './components/scroll-reveal.js';
 onReady(() => {
   // Shared across every page.
   initHeader();
+  initSearch();
   initFooter();
   initContactForm();
   initLazyBackgrounds();

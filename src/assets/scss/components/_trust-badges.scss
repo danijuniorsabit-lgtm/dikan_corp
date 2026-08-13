@@ -3,6 +3,10 @@
 .trust-badges {
   padding-block: space(8);
   background: linear-gradient(180deg, rgb(20 19 14 / 55%) 0%, rgb(20 19 14 / 55%) 100%), #7a6a34;
+
+  @include respond-max('sm') {
+    padding-block: space(6);
+  }
 }
 
 .trust-badges__inner {

@@ -13,6 +13,10 @@
       transparent 14px
     ),
     #2a2718;
+
+  @include respond-max('sm') {
+    padding-block: space(4);
+  }
 }
 
 .equipment-banner__inner {

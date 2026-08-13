@@ -1,4 +1,4 @@
-{% from "ui/icons.njk" import facebook, twitter, youtube, instagram %}
+{% from "ui/icons.njk" import youtube, instagram, tiktok %}
 
 <footer class="footer">
   <div class="container footer__inner">
@@ -8,18 +8,22 @@
         Зерноочистительное оборудование, которое окупается за 1 сезон.
       </p>
       <ul class="footer__socials">
+        {% for item in media.socials %}
         <li>
-          <a class="footer__social-link" href="#" aria-label="DIKAN во Facebook">{{ facebook() }}</a>
+          <a
+            class="footer__social-link"
+            href="{{ item.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="DIKAN {{ item.name }}"
+          >
+            {% if item.icon == 'youtube' %}{{ youtube() }}
+            {% elif item.icon == 'instagram' %}{{ instagram() }}
+            {% elif item.icon == 'tiktok' %}{{ tiktok() }}
+            {% endif %}
+          </a>
         </li>
-        <li>
-          <a class="footer__social-link" href="#" aria-label="DIKAN в Twitter">{{ twitter() }}</a>
-        </li>
-        <li>
-          <a class="footer__social-link" href="#" aria-label="DIKAN на YouTube">{{ youtube() }}</a>
-        </li>
-        <li>
-          <a class="footer__social-link" href="#" aria-label="DIKAN в Instagram">{{ instagram() }}</a>
-        </li>
+        {% endfor %}
       </ul>
     </div>
 

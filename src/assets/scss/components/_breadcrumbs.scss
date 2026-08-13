@@ -35,6 +35,12 @@
   font-weight: 600;
 }
 
+// Standalone breadcrumb strip for pages whose hero doesn't route through
+// page_hero() (e.g. calculator.html, which goes straight into the wizard).
+.breadcrumbs-bar {
+  padding-top: space(6);
+}
+
 .breadcrumbs--on-dark {
   color: rgb(255 255 255 / 75%);
 

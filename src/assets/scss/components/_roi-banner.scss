@@ -9,6 +9,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @include respond-max('sm') {
+    padding-block: space(8);
+  }
 }
 
 .roi-banner__inner {

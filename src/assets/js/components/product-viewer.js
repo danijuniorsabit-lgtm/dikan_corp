@@ -5,16 +5,19 @@ import { renderModelFallback } from '../three/fallback.js';
 // public/models/ at build time — see plugins/nunjucks-pages.js). Slugs not
 // listed here, or not present in the current catalog, simply never show the
 // 3D tab — see initProductViewer().
+//
+// jcr-08/jcc-08/jgd-08 are keyed to models originally provided for an older
+// SKU numbering (jcr-05/jcc-05, and jdg-08 with transposed letters) — see
+// src/assets/models/README.md. Reconciled here since it's the same product
+// family; jcm-10222/jgt-12/jhc-03 have no counterpart anywhere in the
+// current catalog, so those models stay unmapped.
 const MODEL_MAP = {
   'jcm-10223': 'jcm_10223.glb',
   'jcm-10122': 'jcm_10122.glb',
-  'jcm-10222': 'jcm_10222.glb',
-  'jcr-05': 'jcr_05.glb',
-  'jcc-05': 'jcc_05.glb',
-  'jdg-08': 'jdg_08.glb',
-  'jgt-12': 'jgt_12.glb',
+  'jcr-08': 'jcr_05.glb',
+  'jcc-08': 'jcc_05.glb',
+  'jgd-08': 'jdg_08.glb',
   'jgt-23': 'jgt_23.glb',
-  'jhc-03': 'jhc_03.glb',
 };
 
 function activateTab(refs, name) {

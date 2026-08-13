@@ -12,11 +12,11 @@ shown if WebGL is unavailable or the model fails to load.
 **filename** in this folder. Only slugs present in that map — and only when
 they also match a real product's `slug` in `data/products.json` — get a
 visible 3D tab; everything else just shows the photo gallery, no error
-state. Several of `MODEL_MAP`'s keys currently don't match any real product
-slug in `data/products.json` (the models were provided for a slightly
-different SKU set — e.g. `jcr-05`/`jcc-05` vs. the catalog's `jcr-08`/
-`jcc-08`, and `jdg-08` vs. the catalog's `jgd-08`); those entries are inert
-until either side is reconciled.
+state. `jcr-05`/`jcc-05`/`jdg-08` (transposed letters) were provided for a
+slightly different SKU numbering than the current catalog — `MODEL_MAP` now
+keys those files to the catalog's actual `jcr-08`/`jcc-08`/`jgd-08` slugs.
+`jcm_10222.glb`, `jgt_12.glb`, `jhc_03.glb`, and `маленькая установка.glb`
+have no counterpart in the current catalog at all, so they stay unmapped.
 
 **These files are not served directly from here.** `plugins/nunjucks-pages.js`
 mirrors every `*.glb` in this folder into `public/models/` on each build/dev

@@ -101,6 +101,22 @@
   }
 }
 
+// 44px is the WCAG/Apple/Material minimum comfortable touch target — the
+// 2.5rem (40px) desktop size is fine for a mouse pointer but too small to
+// reliably tap, so mobile gets a larger button + icon on top of it.
+@include respond-max('sm') {
+  .header__icon-btn,
+  .header__burger {
+    width: 2.75rem;
+    height: 2.75rem;
+
+    .header__icon {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+}
+
 .header__lang {
   @include button-reset;
 
@@ -110,36 +126,6 @@
 
 .header__burger {
   display: none;
-}
-
-.header__search {
-  position: absolute;
-  inset-inline: 0;
-  top: 100%;
-  display: flex;
-  align-items: center;
-  gap: space(2);
-  padding: space(3) $container-padding-inline;
-  background-color: color('bg');
-  border-bottom: 1px solid color('border');
-
-  &[hidden] {
-    display: none;
-  }
-}
-
-.header__search-input {
-  flex: 1;
-  min-width: 0;
-  padding: space(2) space(4);
-  border: 1px solid color('border');
-  border-radius: $radius-pill;
-}
-
-.header__search-submit {
-  @include button-reset;
-
-  display: inline-flex;
 }
 
 @include respond-max('lg') {

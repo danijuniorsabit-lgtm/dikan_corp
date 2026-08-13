@@ -17,7 +17,11 @@
   gap: space(5);
   padding: space(4);
 
-  @include respond-max('xs') {
+  // Matches .project-card__meta's own collapse point ('sm') — the media
+  // column and the 2-col meta grid inside .project-card__body are tightly
+  // coupled, so keeping them in sync avoids a squeezed row layout fighting
+  // a still-2-column meta grid between 'xs' and 'sm'.
+  @include respond-max('sm') {
     flex-direction: column;
   }
 }
@@ -26,7 +30,7 @@
   flex: 0 0 12rem;
   border-radius: $radius-sm;
 
-  @include respond-max('xs') {
+  @include respond-max('sm') {
     flex-basis: 10rem;
   }
 }

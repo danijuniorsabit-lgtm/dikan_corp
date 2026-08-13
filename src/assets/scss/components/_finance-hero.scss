@@ -6,6 +6,10 @@
   background:
     linear-gradient(180deg, rgb(20 19 14 / 55%) 0%, rgb(20 19 14 / 82%) 100%),
     linear-gradient(120deg, #3d4a63 0%, #6b7a99 100%);
+
+  @include respond-max('sm') {
+    padding-block: space(8) space(6);
+  }
 }
 
 .finance-hero__title {

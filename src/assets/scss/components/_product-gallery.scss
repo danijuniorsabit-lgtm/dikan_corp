@@ -19,17 +19,23 @@
   display: flex;
   gap: space(3);
   margin-top: space(3);
+  overflow-x: auto;
+  padding-bottom: space(1);
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
 }
 
 .product-gallery__thumb {
   @include button-reset;
 
+  flex-shrink: 0;
   width: 5rem;
   height: 3.75rem;
   border-radius: $radius-sm;
   background: linear-gradient(155deg, #e7e7e2 0%, #cfd0c8 100%);
   border: 2px solid transparent;
   overflow: hidden;
+  scroll-snap-align: start;
 
   img {
     width: 100%;

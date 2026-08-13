@@ -33,7 +33,7 @@
         type="button"
         data-search-toggle
         aria-expanded="false"
-        aria-controls="header-search"
+        aria-controls="search-overlay"
       >
         <span class="visually-hidden">Поиск по сайту</span>
         <span class="header__icon" aria-hidden="true">{{ search() }}</span>
@@ -54,20 +54,32 @@
       </button>
     </div>
 
-    <form class="header__search" id="header-search" data-search-form hidden>
-      <label class="visually-hidden" for="header-search-input">Поиск по сайту</label>
-      <input
-        id="header-search-input"
-        class="header__search-input"
-        type="search"
-        name="q"
-        placeholder="Найти технику, услугу…"
-        autocomplete="off"
-      />
-      <button type="submit" class="header__search-submit">
-        <span class="visually-hidden">Найти</span>
-        <span class="header__icon" aria-hidden="true">{{ search() }}</span>
-      </button>
-    </form>
   </div>
 </header>
+
+<div class="search-overlay" id="search-overlay" data-search-overlay hidden>
+  <div class="search-overlay__backdrop" data-search-backdrop></div>
+  <div class="search-overlay__panel" role="dialog" aria-modal="true" aria-label="Поиск по каталогу">
+    <div class="search-overlay__field">
+      <span class="search-overlay__icon" aria-hidden="true">{{ search() }}</span>
+      <label class="visually-hidden" for="header-search-input">Поиск по каталогу</label>
+      <input
+        id="header-search-input"
+        class="search-overlay__input"
+        type="search"
+        placeholder="Поиск по каталогу..."
+        autocomplete="off"
+        role="combobox"
+        aria-expanded="false"
+        aria-autocomplete="list"
+        aria-controls="search-results"
+        data-search-input
+      />
+      <button type="button" class="search-overlay__close" data-search-close>
+        <span class="visually-hidden">Закрыть поиск</span>
+        <span class="header__icon" aria-hidden="true">{{ close() }}</span>
+      </button>
+    </div>
+    <ul class="search-results" id="search-results" role="listbox" aria-label="Результаты поиска" data-search-results></ul>
+  </div>
+</div>

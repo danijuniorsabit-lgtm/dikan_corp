@@ -6,8 +6,6 @@ export function initHeader() {
 
   const menuToggle = qs('[data-menu-toggle]', header);
   const nav = qs('[data-header-nav]', header);
-  const searchToggle = qs('[data-search-toggle]', header);
-  const searchForm = qs('[data-search-form]', header);
   const iconOpen = qs('[data-icon-open]', header);
   const iconClose = qs('[data-icon-close]', header);
 
@@ -19,18 +17,8 @@ export function initHeader() {
     document.body.style.overflow = open ? 'hidden' : '';
   };
 
-  const setSearchOpen = (open) => {
-    searchForm.hidden = !open;
-    searchToggle.setAttribute('aria-expanded', String(open));
-    if (open) qs('input', searchForm)?.focus();
-  };
-
   menuToggle?.addEventListener('click', () => {
     setMenuOpen(!nav.classList.contains('is-open'));
-  });
-
-  searchToggle?.addEventListener('click', () => {
-    setSearchOpen(searchForm.hidden);
   });
 
   nav?.addEventListener('click', (event) => {
@@ -40,14 +28,6 @@ export function initHeader() {
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
     setMenuOpen(false);
-    setSearchOpen(false);
-  });
-
-  document.addEventListener('click', (event) => {
-    if (searchForm.hidden) return;
-    if (!searchForm.contains(event.target) && event.target !== searchToggle) {
-      setSearchOpen(false);
-    }
   });
 
   let lastScrolled = false;

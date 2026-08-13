@@ -57,6 +57,16 @@
     border-color: color('brand');
     color: color('ink');
   }
+
+  @include respond-max('sm') {
+    width: 2.75rem;
+    height: 2.75rem;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
 }
 
 .footer__heading {

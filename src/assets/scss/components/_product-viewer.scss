@@ -13,6 +13,10 @@
 .product-viewer__tab {
   @include button-reset;
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   padding: space(2) space(5);
   border-radius: $radius-pill;
   font-weight: 700;

@@ -1,7 +1,12 @@
 {% from "ui/button.njk" import button %}
+{% from "ui/breadcrumbs.njk" import breadcrumbs %}
 
 <section class="finance-hero">
   <div class="container finance-hero__inner">
+    {{ breadcrumbs([
+      { label: 'Главная', href: '/index.html' },
+      { label: 'Финансовые решения' }
+    ], { dark: true }) }}
     <h1 class="finance-hero__title">Финансовые решения для вашего хозяйства</h1>
     {{ button('Подробнее', { href: '#finance-panel', icon: false }) }}
 

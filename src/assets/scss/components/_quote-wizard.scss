@@ -136,6 +136,10 @@
 .quote-wizard__back {
   @include button-reset;
 
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: space(3);
   font-weight: 600;
   color: color('text-secondary');
 
