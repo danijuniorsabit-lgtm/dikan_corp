@@ -1,0 +1,48 @@
+{% from "ui/section-tag.njk" import section_tag %}
+{% from "ui/icons.njk" import youtube_badge, youtube, instagram, tiktok %}
+
+<section class="section media-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__intro">
+        {{ section_tag('Медиа') }}
+        <h2>{{ media.sectionTitle }}</h2>
+        <p class="text-secondary">{{ media.sectionSubtitle }}</p>
+      </div>
+    </div>
+
+    <div class="grid grid--3">
+      {% for video in media.videos %}
+      <a class="media-video-card" href="{{ video.url }}" target="_blank" rel="noopener noreferrer">
+        <div class="media-video-card__thumb">
+          <img src="{{ video.thumbnail }}" alt="{{ video.title }}" loading="lazy" />
+          <span class="media-video-card__overlay" aria-hidden="true">{{ youtube_badge() }}</span>
+        </div>
+        <p class="media-video-card__title">{{ video.title }}</p>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="media-social">
+      <p class="media-social__title">{{ media.socialTitle }}</p>
+      <div class="media-social__list">
+        {% for item in media.socials %}
+        <a
+          class="media-social__btn media-social__btn--{{ item.icon }}"
+          href="{{ item.url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="media-social__icon" aria-hidden="true">
+            {% if item.icon == 'youtube' %}{{ youtube() }}
+            {% elif item.icon == 'instagram' %}{{ instagram() }}
+            {% elif item.icon == 'tiktok' %}{{ tiktok() }}
+            {% endif %}
+          </span>
+          <span>{{ item.name }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
