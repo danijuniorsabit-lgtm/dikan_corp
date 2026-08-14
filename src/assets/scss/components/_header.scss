@@ -140,26 +140,89 @@
   }
 }
 
+.header__nav-backdrop {
+  display: none;
+}
+
+.header__nav-close {
+  display: none;
+}
+
+.header__nav-lang {
+  display: none;
+}
+
 @include respond-max('sm') {
-  .header__nav {
+  // .header__actions (search/lang/burger) is otherwise a plain in-flow flex
+  // child — position:fixed elements always paint above non-positioned
+  // content regardless of DOM order, so without this the burger button
+  // would end up visually covered (and unclickable) by the nav drawer once
+  // it opens, the same way it did before this button was made to toggle.
+  .header__actions {
+    position: relative;
+    z-index: z('overlay') + 1;
+  }
+
+  .header__nav-backdrop {
+    display: block;
     position: fixed;
     inset: 0;
-    padding: space(11) $container-padding-inline space(6);
-    background-color: color('bg');
-    transform: translateY(-8px);
+    z-index: z('overlay');
+    background-color: rgb(20 19 14 / 50%);
     opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s;
+
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+
+  .header__nav {
+    position: fixed;
+    inset-block: 0;
+    right: 0;
+    width: min(320px, 85vw);
+    z-index: z('overlay');
+    padding: space(9) space(5) space(6);
+    background-color: color('bg');
+    box-shadow: -8px 0 32px rgb(0 0 0 / 12%);
+    transform: translateX(100%);
     visibility: hidden;
     overflow-y: auto;
     transition:
-      opacity 0.2s ease,
-      transform 0.2s ease,
-      visibility 0.2s;
+      transform 0.3s ease,
+      visibility 0.3s;
   }
 
   .header__nav.is-open {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
     visibility: visible;
+  }
+
+  .header__nav-close {
+    @include button-reset;
+
+    position: absolute;
+    top: space(4);
+    right: space(4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background-color: color('surface');
+
+    .header__icon {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   }
 
   .header__nav-list {
@@ -170,6 +233,34 @@
 
   .header__nav-link {
     font-size: map-get($font-sizes, 'h4');
+  }
+
+  .header__nav-lang {
+    display: flex;
+    gap: space(2);
+    margin-top: space(7);
+    padding-top: space(6);
+    border-top: 1px solid color('border');
+  }
+
+  .header__nav-lang-btn {
+    @include button-reset;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding-inline: space(5);
+    border-radius: $radius-pill;
+    border: 1px solid color('border');
+    font-weight: 700;
+    font-size: map-get($font-sizes, 'small');
+
+    &.is-active {
+      background-color: color('ink');
+      color: color('white');
+      border-color: color('ink');
+    }
   }
 
   .header__lang {

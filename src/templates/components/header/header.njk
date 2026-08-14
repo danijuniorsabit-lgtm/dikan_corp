@@ -8,7 +8,13 @@
       <img class="header__logo-img" src="/images/logo.jpg" alt="DIKAN" />
     </a>
 
+    <div class="header__nav-backdrop" data-nav-backdrop></div>
+
     <nav class="header__nav" id="primary-navigation" data-header-nav aria-label="Основная навигация">
+      <button type="button" class="header__nav-close" data-nav-close aria-label="Закрыть меню">
+        <span class="header__icon" aria-hidden="true">{{ close() }}</span>
+      </button>
+
       <ul class="header__nav-list">
         {% for item in nav.items %}
         <li class="header__nav-item">
@@ -20,6 +26,13 @@
         </li>
         {% endfor %}
       </ul>
+
+      <div class="header__nav-lang" data-lang-switch>
+        <button type="button" class="header__nav-lang-btn is-active" data-lang-option="ru" aria-pressed="true">
+          RU
+        </button>
+        <button type="button" class="header__nav-lang-btn" data-lang-option="kz" aria-pressed="false">KZ</button>
+      </div>
     </nav>
 
     <div class="header__actions">
