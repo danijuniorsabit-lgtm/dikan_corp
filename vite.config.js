@@ -20,7 +20,7 @@ const pages = [
 
 export default defineConfig({
   root: __dirname,
-  base: '/',
+  base: '/dikan_corp/',
   plugins: [nunjucksPages()],
   resolve: {
     alias: {
