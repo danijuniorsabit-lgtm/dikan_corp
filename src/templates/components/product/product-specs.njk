@@ -29,10 +29,10 @@
   <p class="product-specs__price" data-spec="price">от {{ item.priceFrom }} млн ₸</p>
 
   <div class="product-specs__actions">
-    {{ button('Лизинг', { href: '/finance.html', variant: 'dark', icon: false }) }}
+    {{ button('Лизинг', { href: 'finance.html', variant: 'dark', icon: false }) }}
     {{ button('Сравнить', { tag: 'button', type: 'button', variant: 'outline', icon: false, attrs: 'data-compare-toggle' }) }}
   </div>
 
-  {{ button('Заказать КП', { href: '/calculator.html', class: 'btn--block product-specs__cta' }) }}
+  {{ button('Заказать КП', { href: 'calculator.html', class: 'btn--block product-specs__cta' }) }}
 </div>
 {% endmacro %}

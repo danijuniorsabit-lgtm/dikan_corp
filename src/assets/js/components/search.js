@@ -54,7 +54,7 @@ export function initSearch() {
 
   const loadData = () => {
     if (loadPromise) return loadPromise;
-    loadPromise = fetch('/data/products.json')
+    loadPromise = fetch(`${import.meta.env.BASE_URL}data/products.json`)
       .then((res) => {
         if (!res.ok) throw new Error(`products.json responded with ${res.status}`);
         return res.json();
@@ -103,7 +103,7 @@ export function initSearch() {
   };
 
   const goToProduct = (slug) => {
-    window.location.href = `/product-detail.html?slug=${encodeURIComponent(slug)}`;
+    window.location.href = `${import.meta.env.BASE_URL}product-detail.html?slug=${encodeURIComponent(slug)}`;
   };
 
   const setOpen = (open) => {

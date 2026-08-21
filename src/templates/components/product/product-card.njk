@@ -17,9 +17,9 @@
     </div>
     <p class="product-card__price">от {{ item.priceFrom }} млн ₸</p>
     {% if opts.cta == 'quote' %}
-    {{ button('Заказать КП', { href: '/calculator.html', class: 'btn--block', icon: 'right' }) }}
+    {{ button('Заказать КП', { href: 'calculator.html', class: 'btn--block', icon: 'right' }) }}
     {% else %}
-    {{ button('Подробнее', { href: '/product-detail.html?slug=' ~ item.slug, class: 'btn--block' }) }}
+    {{ button('Подробнее', { href: 'product-detail.html?slug=' ~ item.slug, class: 'btn--block' }) }}
     {% endif %}
   </div>
 </article>

@@ -1,11 +1,11 @@
 {
   "phone": "+7 771 020 01 00",
   "items": [
-    { "label": "Главная", "href": "/index.html" },
-    { "label": "Услуги", "href": "/services.html" },
-    { "label": "Наши Продукты", "href": "/products.html" },
-    { "label": "Оборудование", "href": "/equipment.html" },
-    { "label": "Проекты", "href": "/projects.html" },
-    { "label": "О компании", "href": "/about.html" }
+    { "label": "Главная", "href": "index.html" },
+    { "label": "Услуги", "href": "services.html" },
+    { "label": "Наши Продукты", "href": "products.html" },
+    { "label": "Оборудование", "href": "equipment.html" },
+    { "label": "Проекты", "href": "projects.html" },
+    { "label": "О компании", "href": "about.html" }
   ]
 }

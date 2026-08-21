@@ -162,7 +162,7 @@ export async function initProductDetail() {
   if (!slug) return;
 
   try {
-    const response = await fetch('/data/products.json');
+    const response = await fetch(`${import.meta.env.BASE_URL}data/products.json`);
     if (!response.ok) throw new Error(`products.json responded with ${response.status}`);
     const data = await response.json();
     const items = data.items || [];
