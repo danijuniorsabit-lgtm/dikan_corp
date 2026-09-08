@@ -3,9 +3,7 @@
 {#
   project_card(item, opts) — item: { title, location, year, client, category, image, description, youtubeUrl }.
   opts.layout: 'row' (default, home page list) | 'grid' (projects.html cards).
-  youtubeUrl (optional) renders a YouTube link — grid layout only. While it's empty ("") a
-  grey "video not added yet" placeholder renders instead, so the slot's position is visible
-  before real URLs are filled in — remove the placeholder branch once every item has a URL.
+  youtubeUrl (optional) renders a YouTube link — grid layout only, and only when non-empty.
   description is only shown in the grid layout, to keep the home page teaser compact.
 #}
 {% macro project_card(item, opts={}) %}
@@ -33,15 +31,11 @@
         <dd>{{ item.client }}</dd>
       </div>
     </dl>
-    {% if is_grid %}
-      {% if item.youtubeUrl %}
+    {% if is_grid and item.youtubeUrl and item.youtubeUrl != "" %}
       <a class="project-card__video" href="{{ item.youtubeUrl }}" target="_blank" rel="noopener noreferrer">
         <span class="project-card__video-icon" aria-hidden="true">{{ youtube_badge() }}</span>
         <span>Смотреть на YouTube</span>
       </a>
-      {% else %}
-      <span class="project-card__video-placeholder">▶ Добавить видео</span>
-      {% endif %}
     {% endif %}
   </div>
 </article>

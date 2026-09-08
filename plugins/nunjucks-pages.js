@@ -14,6 +14,7 @@ const publicDataDir = path.resolve(root, 'public/data');
 const imagesDir = path.resolve(root, 'src/assets/images');
 const modelsDir = path.resolve(root, 'src/assets/models');
 const publicModelsDir = path.resolve(root, 'public/models');
+const publicImagesDir = path.resolve(root, 'public/images');
 
 function loadData() {
   const data = {};
@@ -54,13 +55,40 @@ function copyIfChanged(src, dest) {
 // runtime URL — same reasoning as publishProductsData(): src/ isn't served
 // as-is by Vite, only public/ is, so anything fetched/`<img src>`'d at
 // runtime rather than imported by JS/CSS has to be mirrored into public/.
-function publishStaticAssets(logger) {
-  const logoSrc = path.join(imagesDir, 'logo.jpg');
-  if (fs.existsSync(logoSrc)) {
-    const publicImagesDir = path.resolve(root, 'public/images');
-    fs.mkdirSync(publicImagesDir, { recursive: true });
-    copyIfChanged(logoSrc, path.join(publicImagesDir, 'logo.jpg'));
+function publishImageDir(subdir, logger) {
+  const srcDir = path.join(imagesDir, subdir);
+  if (!fs.existsSync(srcDir)) return;
+  const destDir = path.join(publicImagesDir, subdir);
+  fs.mkdirSync(destDir, { recursive: true });
+  for (const file of fs.readdirSync(srcDir)) {
+    const srcFile = path.join(srcDir, file);
+    if (!fs.statSync(srcFile).isFile()) continue;
+    try {
+      copyIfChanged(srcFile, path.join(destDir, file));
+    } catch (err) {
+      const message = `[nunjucks-pages] failed to publish image ${subdir}/${file}: ${err.message}`;
+      if (logger) logger.error(message);
+      else console.error(message);
+    }
   }
+}
+
+function publishStaticAssets(logger) {
+  fs.mkdirSync(publicImagesDir, { recursive: true });
+
+  const logoSvgSrc = path.join(imagesDir, 'logo.svg');
+  if (fs.existsSync(logoSvgSrc)) {
+    copyIfChanged(logoSvgSrc, path.join(publicImagesDir, 'logo.svg'));
+  }
+  const logoJpgSrc = path.join(imagesDir, 'logo.jpg');
+  if (fs.existsSync(logoJpgSrc)) {
+    copyIfChanged(logoJpgSrc, path.join(publicImagesDir, 'logo.jpg'));
+  }
+
+  // Staff and product photography — src/assets/images/{team,products}/ ->
+  // public/images/{team,products}/, same "src isn't served as-is" reasoning.
+  publishImageDir('team', logger);
+  publishImageDir('products', logger);
 
   if (fs.existsSync(modelsDir)) {
     fs.mkdirSync(publicModelsDir, { recursive: true });

@@ -16,7 +16,7 @@
       "name": "Модульный зерноочиститель JCM 10223 VibroMax",
       "shortName": "JCM 10223",
       "category": "jcm",
-      "image": "https://dikan.kz/upload/iblock/2e6/d4m5n226qk4ailz4pd1337opvm5caupx.jpg",
+      "image": "/images/products/jcm_10223.jpg",
       "specLabel": "100 т/ч",
       "productivity": "Предварительная очистка — 100 т/ч, промышленная очистка — 80 т/ч, точная очистка и калибровка семян — 36 т/ч",
       "cultures": ["пшеница", "ячмень", "лён", "рапс", "подсолнечник"],
@@ -30,7 +30,7 @@
       "name": "Модульный зерноочиститель JCM 10122 VibroMax",
       "shortName": "JCM 10122",
       "category": "jcm",
-      "image": "https://dikan.kz/upload/iblock/4ba/190ap0al8hkxnbjc7l1yvsxu2j48wqo4.jpg",
+      "image": "/images/products/jcm_10122.jpg",
       "images": [
         "https://dikan.kz/upload/iblock/2b6/uoj0rxkp9nz5vnp28lg7mw23q98f68o9.jpg",
         "https://dikan.kz/upload/iblock/2b6/0lsfxajio7ud7iuqow1a293ss48npgv2.jpg",
@@ -49,7 +49,7 @@
       "name": "Воздушно-ситовой сортировщик JCR 08",
       "shortName": "JCR 08",
       "category": "jcr",
-      "image": "https://dikan.kz/upload/iblock/d54/mq3t0kn6az1oa2qf9ixbrev7hfek2rtq.jpg",
+      "image": "/images/products/jcr_08.jpg",
       "specLabel": "4–6 т/ч",
       "productivity": "Пшеница, стандартная очистка — 4–6 т/ч, семенной материал — 1–3 т/ч, мелкие семена — 0,6–3 т/ч",
       "cultures": ["пшеница", "ячмень", "лён", "клевер"],
@@ -64,7 +64,7 @@
       "name": "Модульный зерноочиститель JCC 08 VibroCompact",
       "shortName": "JCC 08",
       "category": "jcc",
-      "image": "https://dikan.kz/upload/iblock/f8a/9rgtnj693sgao1n5ro3eigvu1bol7ssf.jpg",
+      "image": "/images/products/jcc_08121.jpg",
       "images": [
         "https://dikan.kz/upload/iblock/782/byebvwab08fsalocxg8e47jqqsiieo7a.jpg",
         "https://dikan.kz/upload/iblock/82b/t71y5qc7q5qfaw76jco4u0w25d4nra71.jpg",
@@ -84,7 +84,7 @@
       "name": "Гравитационный концентратор JGC 08",
       "shortName": "JGC 08",
       "category": "jgc",
-      "image": "https://dikan.kz/upload/iblock/53e/o2dbr20gdh1ts3so5vu6s6oqepjo7ybi.jpg",
+      "image": "/images/products/jgc_08.jpg",
       "images": [
         "https://dikan.kz/upload/iblock/f4e/49paj3csmfs4d55z1ht1x5ce94rb1nuh.jpg",
         "https://dikan.kz/upload/iblock/346/06t8pu4x4vw87fenfwa8e7ox84bkm40f.jpg"
@@ -102,7 +102,7 @@
       "name": "Камнеотборник JGD 08",
       "shortName": "JGD 08",
       "category": "jgd",
-      "image": "https://dikan.kz/upload/iblock/53e/o2dbr20gdh1ts3so5vu6s6oqepjo7ybi.jpg",
+      "image": "/images/products/jgd_08.jpg",
       "images": [
         "https://dikan.kz/upload/iblock/3c5/s4swuh25qyo74uixr27qr43vj9vqjd4h.jpg",
         "https://dikan.kz/upload/iblock/7c8/cd9fi8dkoybetx1l86fu9azmjdb9vexi.jpg"
@@ -120,7 +120,7 @@
       "name": "Пневматический сортировочный стол JGT 23",
       "shortName": "JGT 23",
       "category": "jgt",
-      "image": "https://dikan.kz/upload/iblock/033/pxx6gr2wgwyxj4uj5en1zvtf1j9to9b2.jpg",
+      "image": "/images/products/jgt_23.jpg",
       "images": [
         "https://dikan.kz/upload/iblock/565/i0o6a0pd4mbm3pb23vv7j1ddne0n01je.jpg",
         "https://dikan.kz/upload/iblock/bc7/1q8it7tu365wi0qp0ehxe3m6lf9j3zbr.jpg"

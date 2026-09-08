@@ -3,25 +3,25 @@
 {% from "ui/section-tag.njk" import section_tag %}
 
 {% set team = [
-  { name: 'Динара Искакова', role: 'Учредитель компании', photo: 'https://dikan.kz/upload/iblock/ec2/k8xxa7v2oj9xo9ovv835lr2ynjy5umvr.jpg' },
-  { name: 'Кайрат Искаков', role: 'Генеральный директор', photo: 'https://dikan.kz/upload/iblock/7f0/5ucyo3sw0n4agz8cnffog31n7l76qhrk.jpg' },
-  { name: 'Марат Искаков', role: 'Технический директор', photo: 'https://dikan.kz/upload/iblock/95a/x32vc9jwmd2qzrqixlkfn22o9k0gayec.jpg' },
-  { name: 'Ерканат Рыспаев', role: 'Исполнительный директор', photo: 'https://dikan.kz/upload/iblock/1ec/7j2wbu1dlidbfftegbykr6hp81dy9vo1.jpg' },
-  { name: 'Анатолий Баранов', role: 'Бренд-амбассадор JK Machinery в РК', photo: 'https://dikan.kz/upload/iblock/86e/s6vcy42yqaw4yhjv85hy9w044kid3jdk.jpg' },
-  { name: 'Есмуханов Бахтияр', role: 'Руководитель отдела продаж', photo: 'https://dikan.kz/upload/iblock/705/7w0gm7dti061nwmmq0pi7twqjc82e68g.JPG' },
-  { name: 'Валлиулин Амир', role: 'Менеджер по продажам', photo: 'https://dikan.kz/upload/iblock/494/u3wm3bucnjptitkdmwv1s8b6ssl55bpu.JPG' },
-  { name: 'Жанат Байленов', role: 'Эксперт продаж', photo: 'https://dikan.kz/upload/iblock/1ed/uom8e2zvn8vogv3mztr51wadmqi0xdd5.jpg' },
-  { name: 'Талгат Омаров', role: 'Менеджер отдела продаж', photo: 'https://dikan.kz/upload/iblock/636/qp3yi36sxk81x2vmy2rvg9vjaf0xkhf4.JPG' },
-  { name: 'Зару Алинова', role: 'Специалист call-центра', photo: 'https://dikan.kz/upload/iblock/9c4/1oxc7ndl4zrm08w8yu5fcyk7e3vxh5pn.jpg' },
-  { name: 'Абильмажинов Темирлан', role: 'Бухгалтер', photo: 'https://dikan.kz/upload/iblock/90c/002d1v2exzdhx1cw9kuft2vu9x8ywf62.JPG' },
-  { name: 'Исмаилова Майра', role: 'Бухгалтер', photo: 'https://dikan.kz/upload/iblock/231/321jmdu96ew9t1jlm9egklvjxjxz6lv0.JPG' },
-  { name: 'Искакова Айнагуль', role: 'Финансовый директор', photo: 'https://dikan.kz/upload/iblock/6fd/ru4w7e9o7l8ws0mw3zvqj7t1e9wxqm86.JPG' }
+  { name: 'Динара Искакова', role: 'Учредитель компании', photo: '/images/team/iskakova.jpg' },
+  { name: 'Кайрат Искаков', role: 'Генеральный директор', photo: '/images/team/team.jpg' },
+  { name: 'Марат Искаков', role: 'Технический директор', photo: '/images/team/team.jpg' },
+  { name: 'Ерканат Рыспаев', role: 'Исполнительный директор', photo: '/images/team/team.jpg' },
+  { name: 'Анатолий Баранов', role: 'Бренд-амбассадор JK Machinery в РК', photo: '/images/team/team.jpg' },
+  { name: 'Есмуханов Бахтияр', role: 'Руководитель отдела продаж', photo: '/images/team/esmukhanov.jpg' },
+  { name: 'Валлиулин Амир', role: 'Менеджер по продажам', photo: '/images/team/valliulin.jpg' },
+  { name: 'Жанат Байленов', role: 'Эксперт продаж', photo: '/images/team/team.jpg' },
+  { name: 'Талгат Омаров', role: 'Менеджер отдела продаж', photo: '/images/team/omarov.jpg' },
+  { name: 'Зару Алинова', role: 'Специалист call-центра', photo: '/images/team/team.jpg' },
+  { name: 'Абильмажинов Темирлан', role: 'Бухгалтер', photo: '/images/team/abilmazhinov.jpg' },
+  { name: 'Исмаилова Майра', role: 'Бухгалтер', photo: '/images/team/ismailova.jpg' },
+  { name: 'Искакова Айнагуль', role: 'Финансовый директор', photo: '/images/team/team.jpg' }
 ] %}
 
 {% set certificates = [
-  'Официальный дилер завода «ARTAYUS» в Казахстане',
+  'Эксклюзивный партнёр JK Machinery в Центральной Азии',
   'Сертификат соответствия ГОСТ на монтаж и наладку',
-  'Член Ассоциации машиностроителей Казахстана'
+  'Партнёр компании «Агропромтехника»'
 ] %}
 
 {% block content %}
@@ -46,15 +46,26 @@
     {{ section_tag('История') }}
     <h2>С 2005 года — на рынке сельхозтехники Казахстана</h2>
     <p class="text-secondary">
-      Компания «DIKAN» была основана в 2005 году и на сегодняшний день представляет собой
-      компанию с широкой товарной линейкой сельскохозяйственной техники различного назначения.
-      «DIKAN» является эксклюзивным дилером завода по производству техники для обработки почвы
-      «ARTAYUS» в Республике Казахстан.
+      ТОО «Торговый дом ДИКАН» — казахстанская компания, основанная в 2005 году. Сегодня ДИКАН
+      специализируется на проектировании и строительстве объектов послеуборочной обработки зерна,
+      создании зерноочистительных и семенных линий, поставке технологического оборудования,
+      монтаже, запуске и сервисном обслуживании объектов.
     </p>
     <p class="text-secondary">
-      За два десятилетия мы прошли путь от поставок отдельных единиц техники до собственной
-      сервисной сети, склада запчастей и инженерной службы, способной реализовать линию по
-      очистке зерна под ключ — от расчёта экономики до пусконаладки.
+      За годы работы компания прошла путь от поставщика сельскохозяйственной техники и запасных
+      частей до комплексной инженерной компании, реализующей проекты от разработки технологического
+      решения до запуска готового объекта.
+    </p>
+    <p class="text-secondary">
+      ДИКАН является эксклюзивным партнёром JK Machinery и представляет современные европейские
+      технологии очистки, сортировки и калибровки зерна и семян на рынке Центральной Азии. Сегодня
+      оборудование JK Machinery представлено компанией ДИКАН на территории Казахстана, Узбекистана
+      и Кыргызстана.
+    </p>
+    <p class="text-secondary">
+      В 2022 году ДИКАН открыл представительство в Ташкенте. Сегодня ТОО «Торговый дом ДИКАН» —
+      это команда из более чем 50 специалистов. За годы работы: 1500+ клиентов, 100+ реализованных
+      проектов, 20+ лет на аграрном рынке.
     </p>
 
     <div class="about-stats">
@@ -62,15 +73,25 @@
         <span class="about-stats__value">2005</span>
         <span class="about-stats__caption">год основания компании</span>
       </div>
-      <div class="about-stats__item about-stats__item--photo" data-tone="wheat-grain">
-        <span class="about-stats__caption">Экономия зерна при уборке</span>
+      <div class="about-stats__item about-stats__item--photo about-stats__item--stat" data-tone="wheat-grain">
+        <span class="about-stats__value">20+</span>
+        <span class="about-stats__caption">лет на рынке</span>
       </div>
       <div class="about-stats__item about-stats__item--stat">
         <span class="about-stats__value">94%</span>
         <span class="about-stats__caption">запчастей в наличии на складе</span>
       </div>
-      <div class="about-stats__item about-stats__item--photo" data-tone="grain-seeds">
-        <span class="about-stats__caption">Собственная сервисная служба</span>
+      <div class="about-stats__item about-stats__item--photo about-stats__item--stat" data-tone="grain-seeds">
+        <span class="about-stats__value">100+</span>
+        <span class="about-stats__caption">реализованных проектов</span>
+      </div>
+      <div class="about-stats__item about-stats__item--stat">
+        <span class="about-stats__value">1500+</span>
+        <span class="about-stats__caption">клиентов</span>
+      </div>
+      <div class="about-stats__item about-stats__item--stat">
+        <span class="about-stats__value">50+</span>
+        <span class="about-stats__caption">специалистов</span>
       </div>
     </div>
   </div>

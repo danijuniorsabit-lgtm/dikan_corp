@@ -31,8 +31,14 @@
 }
 
 .header__logo-img {
-  height: 50px;
+  height: 56px;
   width: auto;
+}
+
+@include respond-max('sm') {
+  .header__logo-img {
+    height: 44px;
+  }
 }
 
 .header__nav {
