@@ -3,12 +3,19 @@
 .finance-hero {
   padding-block: space(11) space(9);
   color: color('white');
-  background:
-    linear-gradient(180deg, rgb(20 19 14 / 55%) 0%, rgb(20 19 14 / 82%) 100%),
-    linear-gradient(120deg, #3d4a63 0%, #6b7a99 100%);
+
+  // Same banner-3 artwork as the homepage hero slider's "charcoal" slide and
+  // the equipment/faq/calculator page-hero bands — no dark overlay, the
+  // banner already carries its own design; bottom-position crops clear of
+  // its baked-in heading text (see _page-hero.scss for the same reasoning).
+  background: url('/images/banner-3-desktop.png');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
 
   @include respond-max('sm') {
     padding-block: space(8) space(6);
+    background-image: url('/images/banner-3-mobile.png');
   }
 }
 

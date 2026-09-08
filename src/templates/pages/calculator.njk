@@ -1,12 +1,10 @@
 {% extends "base.njk" %}
-{% from "ui/breadcrumbs.njk" import breadcrumbs %}
+{% from "hero/page-hero.njk" import page_hero %}
 
 {% block content %}
-<div class="container breadcrumbs-bar">
-  {{ breadcrumbs([
-    { label: 'Главная', href: 'index.html' },
-    { label: 'Расчет КП' }
-  ]) }}
-</div>
+{{ page_hero('Расчет коммерческого предложения', [
+  { label: 'Главная', href: 'index.html' },
+  { label: 'Расчет КП' }
+], { banner: 3 }) }}
 {% include "calculator/quote-wizard.njk" %}
 {% endblock %}

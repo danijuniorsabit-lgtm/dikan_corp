@@ -38,7 +38,7 @@ $hero-slider-photos-mobile: (
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   opacity: 0;
   pointer-events: none;
   z-index: 1;
@@ -110,6 +110,11 @@ $hero-slider-photos-mobile: (
 }
 
 .hero-slider__cta {
+  // Pushes the button clear of the banner artwork's own baked-in subheading
+  // text — a static offset rather than absolute positioning, since the
+  // banners don't expose a real DOM anchor to measure against.
+  margin-top: space(6);
+
   @each $name, $value in $hero-slider-accents {
     &--#{$name} {
       background-color: $value;

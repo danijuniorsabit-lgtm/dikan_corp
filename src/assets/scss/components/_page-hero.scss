@@ -1,5 +1,19 @@
 @use '../abstracts' as *;
 
+// Same banner artwork as the homepage hero slider (see _hero-slider.scss) —
+// reused here for interior pages instead of a stock photo. Desktop/mobile
+// pairs, no dark overlay: the banners already carry their own design.
+$page-hero-banners: (
+  1: '/images/banner-1-desktop.png',
+  2: '/images/banner-2-desktop.png',
+  3: '/images/banner-3-desktop.png',
+);
+$page-hero-banners-mobile: (
+  1: '/images/banner-1-mobile.png',
+  2: '/images/banner-2-mobile.png',
+  3: '/images/banner-3-mobile.png',
+);
+
 .page-hero {
   padding-block: space(9) space(8);
   color: color('white');
@@ -16,13 +30,23 @@
   color: color('white');
 }
 
-// Used on about/services/projects/equipment — products.html and
-// product-detail.html keep the plain gradient (not requested for photos).
-.page-hero--photo {
-  background:
-    linear-gradient(180deg, rgb(20 19 14 / 40%) 0%, rgb(20 19 14 / 75%) 100%),
-    url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1920&q=80');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+// product-detail.html keeps the plain gradient (single-product page, no
+// banner assigned to it).
+@each $n, $file in $page-hero-banners {
+  .page-hero--banner-#{$n} {
+    background: url('#{$file}');
+    background-size: cover;
+
+    // The banners' own heading/subheading text sits in the top half of the
+    // artwork (it's the same source image as the homepage hero slides) —
+    // this short interior-page band is nowhere near tall enough to show
+    // that text properly, so it crops to the bottom half instead, which is
+    // clear of it on all three banners.
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    @include respond-max('sm') {
+      background-image: url('#{map-get($page-hero-banners-mobile, $n)}');
+    }
+  }
 }
