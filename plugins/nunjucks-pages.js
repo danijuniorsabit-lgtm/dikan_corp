@@ -80,10 +80,12 @@ function publishStaticAssets(logger) {
   // that need a stable runtime URL — mirrored 1:1 into public/images/.
   publishImageDir('.', logger);
 
-  // Staff and product photography — src/assets/images/{team,products}/ ->
-  // public/images/{team,products}/, same "src isn't served as-is" reasoning.
-  publishImageDir('team', logger);
-  publishImageDir('products', logger);
+  // Photography subfolders — src/assets/images/<subdir>/ ->
+  // public/images/<subdir>/, same "src isn't served as-is" reasoning.
+  // Discovered automatically so a new subfolder doesn't need a code change.
+  for (const entry of fs.readdirSync(imagesDir, { withFileTypes: true })) {
+    if (entry.isDirectory()) publishImageDir(entry.name, logger);
+  }
 
   if (fs.existsSync(modelsDir)) {
     fs.mkdirSync(publicModelsDir, { recursive: true });

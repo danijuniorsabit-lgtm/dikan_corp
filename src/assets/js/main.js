@@ -10,6 +10,7 @@ import { initFilterBars } from './components/filter-bar.js';
 import { initProductGallery } from './components/product-gallery.js';
 import { initProductDetail } from './components/product-detail.js';
 import { initProductViewer } from './components/product-viewer.js';
+import { initProjectShowcase } from './components/project-showcase.js';
 import { initRangeSliders } from './components/range-slider.js';
 import { initEconomyCalculator } from './components/economy-calculator.js';
 import { initQuoteWizard } from './components/quote-wizard.js';
@@ -31,6 +32,7 @@ onReady(() => {
   initFilterBars();
   initProductGallery();
   initProductDetail().then(initProductViewer);
+  initProjectShowcase();
   initRangeSliders();
   initEconomyCalculator();
   initQuoteWizard();

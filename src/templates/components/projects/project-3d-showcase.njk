@@ -1,0 +1,29 @@
+{% from "ui/section-tag.njk" import section_tag %}
+
+{% set models = [
+  { title: 'JCM + МПО + Триер с бункером', file: 'project-jcm-mpo-trier.glb' },
+  { title: 'Малая установка', file: 'project-malaya-ustanovka.glb' },
+  { title: 'Зернокомплекс 90 т/ч', file: 'project-zernokomlex-90t.glb' },
+  { title: 'Булаево Марат', file: 'project-bulaevo-marat.glb' }
+] %}
+
+<section class="section project-3d-showcase">
+  <div class="container">
+    {{ section_tag('3D-модели') }}
+    <h2 class="project-3d-showcase__title">3D-визуализации наших проектов</h2>
+    <p class="text-secondary project-3d-showcase__lede">
+      Интерактивные модели — вращайте и изучайте детали
+    </p>
+
+    <div class="grid grid--2">
+      {% for model in models %}
+      <article class="project-3d-card">
+        <div class="project-3d-card__canvas" data-project-viewer data-model-url="/models/{{ model.file }}">
+          <span class="project-3d-card__spinner" data-model-spinner aria-hidden="true"></span>
+        </div>
+        <p class="project-3d-card__title">{{ model.title }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

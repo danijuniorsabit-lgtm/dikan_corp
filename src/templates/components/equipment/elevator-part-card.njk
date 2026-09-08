@@ -1,0 +1,21 @@
+{#
+  elevator_part_card(item) — item: { name, image, description, specs, details? }.
+  Used for the "Комплектующие для элеваторов и ЗАВов" grid on equipment.html —
+  distinct from equipment_card() (which targets JK Machinery-branded gear):
+  white cards with a visible border and hover lift, no CTA button.
+#}
+{% macro elevator_part_card(item) %}
+<article class="elevator-part-card">
+  <div class="elevator-part-card__media">
+    <img class="elevator-part-card__img" src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" />
+  </div>
+  <div class="elevator-part-card__body">
+    <h3 class="elevator-part-card__name">{{ item.name }}</h3>
+    <p class="text-secondary">{{ item.description }}</p>
+    <p class="elevator-part-card__specs">{{ item.specs }}</p>
+    {% if item.details %}
+    <p class="text-secondary text-small">{{ item.details }}</p>
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}

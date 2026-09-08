@@ -2,6 +2,7 @@
 {% from "hero/page-hero.njk" import page_hero %}
 {% from "ui/section-tag.njk" import section_tag %}
 {% from "equipment/equipment-card.njk" import equipment_card %}
+{% from "equipment/elevator-part-card.njk" import elevator_part_card %}
 
 {% block content %}
 {{ page_hero('Оборудование', [
@@ -37,6 +38,22 @@
     <div class="grid grid--3">
       {% for item in equipment.soputstvuyushchee %}
       {{ equipment_card(item) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{ section_tag('Комплектующие') }}
+    <h2 class="equipment-page__section-title">Комплектующие для элеваторов и ЗАВов</h2>
+    <p class="text-secondary equipment-page__lede">
+      Зернопровод, повороты, клапаны и переходы для сборки трубопроводов зерновых и
+      аспирационных систем.
+    </p>
+    <div class="grid grid--4">
+      {% for item in equipment.elevatorParts %}
+      {{ elevator_part_card(item) }}
       {% endfor %}
     </div>
   </div>

@@ -134,3 +134,55 @@
 .project-card__meta-location {
   grid-column: 1 / -1;
 }
+
+// "3D-визуализации наших проектов" — homepage section, see
+// components/projects/project-3d-showcase.njk and
+// assets/js/components/project-showcase.js (lazy-loaded three.js viewers).
+.project-3d-showcase__lede {
+  margin-top: space(2);
+  margin-bottom: space(7);
+}
+
+.project-3d-card {
+  border-radius: $radius-md;
+  overflow: hidden;
+  background-color: color('surface');
+}
+
+.project-3d-card__canvas {
+  position: relative;
+  height: 300px;
+  background-color: color('ink');
+
+  @include respond-max('sm') {
+    height: 220px;
+  }
+
+  canvas {
+    display: block;
+  }
+}
+
+.project-3d-card__title {
+  padding: space(4) space(5);
+  font-weight: 600;
+}
+
+.project-3d-card__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin: -1rem;
+  border: 3px solid rgb(255 255 255 / 20%);
+  border-top-color: color('brand');
+  border-radius: 50%;
+  animation: project-3d-spin 0.8s linear infinite;
+}
+
+@keyframes project-3d-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

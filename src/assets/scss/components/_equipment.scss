@@ -109,3 +109,54 @@
 .equipment-card__cta {
   margin-top: auto;
 }
+
+// "Комплектующие для элеваторов и ЗАВов" — plain parts catalog, styled
+// distinctly from .equipment-card (white + visible border + hover lift,
+// no CTA) since there's no per-item price/quote action for these.
+.elevator-part-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: $radius-md;
+  background-color: color('white');
+  border: 1px solid color('border');
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: color('brand');
+    box-shadow: 0 12px 24px rgb(0 0 0 / 8%);
+  }
+}
+
+.elevator-part-card__media {
+  aspect-ratio: 4 / 3;
+  background-color: color('surface');
+}
+
+.elevator-part-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.elevator-part-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: space(2);
+  padding: space(5);
+}
+
+.elevator-part-card__name {
+  font-size: map-get($font-sizes, 'h4');
+}
+
+.elevator-part-card__specs {
+  font-size: map-get($font-sizes, 'small');
+  font-weight: 700;
+  color: color('ink');
+}

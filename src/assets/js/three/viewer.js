@@ -1,10 +1,11 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 
-// Not wired into any page yet (no .glb model exists in this project —
-// see src/assets/models/README.md). Ready to use once a model and a page
-// slot are decided: createModelViewer(containerEl, { modelUrl }).
+// Used by product-viewer.js (product-detail.html) and project-showcase.js
+// (homepage "3D-визуализации наших проектов") — createModelViewer(containerEl,
+// { modelUrl }).
 
 export function isWebGLAvailable() {
   try {
@@ -52,7 +53,7 @@ export function createModelViewer(container, opts = {}) {
   keyLight.position.set(3, 5, 2);
   scene.add(keyLight);
 
-  new GLTFLoader().load(
+  new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).load(
     modelUrl,
     (gltf) => {
       scene.add(gltf.scene);
@@ -91,12 +92,17 @@ export function createModelViewer(container, opts = {}) {
 }
 
 // Defers viewer creation (and the three.js/model download) until the
-// container scrolls near the viewport.
+// container scrolls near the viewport. opts.onCreate(viewer), if given, runs
+// right after createModelViewer() returns (synchronous — the model itself
+// still loads async) — the only way callers can reach `controls`/`camera`
+// to e.g. turn on autoRotate, since the viewer instance itself isn't
+// returned from here (creation happens later, inside the observer).
 export function initLazyModelViewer(container, opts = {}) {
   if (!container) return;
 
   if (!('IntersectionObserver' in window)) {
-    createModelViewer(container, opts);
+    const viewer = createModelViewer(container, opts);
+    if (viewer) opts.onCreate?.(viewer);
     return;
   }
 
@@ -104,7 +110,8 @@ export function initLazyModelViewer(container, opts = {}) {
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        createModelViewer(container, opts);
+        const viewer = createModelViewer(container, opts);
+        if (viewer) opts.onCreate?.(viewer);
         observer.disconnect();
       });
     },
