@@ -21,6 +21,14 @@ const pages = [
 export default defineConfig({
   root: __dirname,
   base: '/',
+  // Vite copies this directory's contents to the dist root as-is, on both
+  // `vite dev` and `vite build` — this is what puts public/favicon.ico,
+  // favicon.svg and images/logo.jpg (the DIKAN gear+wheat mark, referenced
+  // from base.njk's <link rel="icon">/<link rel="apple-touch-icon"> tags)
+  // at the site root without any extra copy step. logo/team/product photos
+  // under src/assets/images/ are mirrored into public/images/ first, by
+  // plugins/nunjucks-pages.js, then land here the same way.
+  publicDir: 'public',
   plugins: [nunjucksPages()],
   resolve: {
     alias: {

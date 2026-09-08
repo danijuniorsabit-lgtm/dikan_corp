@@ -76,14 +76,9 @@ function publishImageDir(subdir, logger) {
 function publishStaticAssets(logger) {
   fs.mkdirSync(publicImagesDir, { recursive: true });
 
-  const logoSvgSrc = path.join(imagesDir, 'logo.svg');
-  if (fs.existsSync(logoSvgSrc)) {
-    copyIfChanged(logoSvgSrc, path.join(publicImagesDir, 'logo.svg'));
-  }
-  const logoJpgSrc = path.join(imagesDir, 'logo.jpg');
-  if (fs.existsSync(logoJpgSrc)) {
-    copyIfChanged(logoJpgSrc, path.join(publicImagesDir, 'logo.jpg'));
-  }
+  // Loose files directly under src/assets/images/ (logo, hero banners, …)
+  // that need a stable runtime URL — mirrored 1:1 into public/images/.
+  publishImageDir('.', logger);
 
   // Staff and product photography — src/assets/images/{team,products}/ ->
   // public/images/{team,products}/, same "src isn't served as-is" reasoning.

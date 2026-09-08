@@ -25,7 +25,7 @@
     accent: 'gold',
     eyebrow: 'ЗЕРНООЧИСТКА, КОТОРАЯ ОКУПАЕТСЯ',
     heading: 'Зерноочистка, которая окупается за 1 сезон',
-    subheading: 'Подберём технику под ваше хозяйство за 90 секунд — с расчётом окупаемости.',
+    subheading: 'Подберем технику под ваше хозяйство за 90 секунд — с расчетом окупаемости.',
     ctaText: 'Попробовать',
     ctaHref: 'calculator.html'
   }
@@ -44,9 +44,13 @@
     {%- if not loop.first %} aria-hidden="true" inert{% endif %}
   >
     <div class="container hero-slider__inner">
-      <p class="hero-slider__eyebrow hero-slider__eyebrow--{{ slide.accent }}">{{ slide.eyebrow }}</p>
-      <p class="hero-slider__heading">{{ slide.heading }}</p>
-      <p class="hero-slider__subheading">{{ slide.subheading }}</p>
+      {#- Eyebrow/heading/subheading are baked into the banner artwork itself
+          (see src/assets/images/banner-*.png) — kept here visually-hidden so
+          screen readers still get the slide's text, without drawing it a
+          second time on top of the image. #}
+      <p class="visually-hidden">{{ slide.eyebrow }}</p>
+      <p class="visually-hidden">{{ slide.heading }}</p>
+      <p class="visually-hidden">{{ slide.subheading }}</p>
       {{ button(slide.ctaText, { href: slide.ctaHref, class: 'hero-slider__cta hero-slider__cta--' ~ slide.accent }) }}
     </div>
   </div>

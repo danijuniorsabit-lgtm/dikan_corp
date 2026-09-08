@@ -11,17 +11,20 @@ $hero-slider-accents: (
   'gold': #c8a94a,
 );
 
-// Background photos + dark overlay per slide — colors above stay as the
-// no-image fallback (shows through if a photo fails to load).
+// Background photos per slide — colors above stay as the no-image fallback
+// (shows through if a photo fails to load). Each banner has its heading,
+// eyebrow and subheading baked into the artwork already, so there's no dark
+// overlay here (it would just fight the image's own contrast) and the live
+// text in .hero-slider__inner is visually-hidden rather than drawn on top.
 $hero-slider-photos: (
-  'navy': 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80',
-  'olive': 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1920&q=80',
-  'charcoal': 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&q=80',
+  'navy': '/images/banner-1-desktop.png',
+  'olive': '/images/banner-2-desktop.png',
+  'charcoal': '/images/banner-3-desktop.png',
 );
-$hero-slider-overlays: (
-  'navy': rgb(13 27 46 / 72%),
-  'olive': rgb(30 40 10 / 70%),
-  'charcoal': rgb(20 20 20 / 72%),
+$hero-slider-photos-mobile: (
+  'navy': '/images/banner-1-mobile.png',
+  'olive': '/images/banner-2-mobile.png',
+  'charcoal': '/images/banner-3-mobile.png',
 );
 
 .hero-slider {
@@ -49,23 +52,13 @@ $hero-slider-overlays: (
     z-index: 2;
   }
 
-  // Dark overlay between the photo and the text — absolutely positioned so
-  // it's pulled out of the flex flow instead of pushing .hero-slider__inner.
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-  }
-
   @each $name, $value in $hero-slider-colors {
     &--#{$name} {
       background-color: $value;
       background-image: url('#{map-get($hero-slider-photos, $name)}');
 
-      &::before {
-        background-color: map-get($hero-slider-overlays, $name);
+      @include respond-max('sm') {
+        background-image: url('#{map-get($hero-slider-photos-mobile, $name)}');
       }
     }
   }

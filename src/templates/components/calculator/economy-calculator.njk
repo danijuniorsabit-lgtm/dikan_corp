@@ -28,7 +28,7 @@
 
     <div class="economy-calculator__grid">
       <div class="economy-calculator__inputs">
-        {{ range_field({ id: 'economy-volume', label: 'Объём зерна за сезон, т', min: 0, max: 1000, value: 400, suffix: ' т', format: 'thousands' }) }}
+        {{ range_field({ id: 'economy-volume', label: 'Объем зерна за сезон, т', min: 0, max: 1000, value: 400, suffix: ' т', format: 'thousands' }) }}
         {{ range_field({ id: 'economy-loss', label: 'Текущие потери при очистке, %', min: 0, max: 30, value: 12, suffix: '%' }) }}
         {{ range_field({ id: 'economy-price', label: 'Цена реализации зерна, ₸/т', min: 30000, max: 120000, step: 1000, value: 70000, suffix: ' ₸', format: 'thousands' }) }}
       </div>
