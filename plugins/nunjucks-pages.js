@@ -28,15 +28,17 @@ function loadData() {
   return data;
 }
 
-// Mirrors data/products.json into public/data/ so client-side JS (product
-// detail page routing by ?slug=) can fetch it at runtime — public/ is served
-// as-is by both `vite dev` and the production build.
-function publishProductsData() {
+// Mirrors every src/templates/data/*.json into public/data/ so client-side
+// JS (product detail page routing by ?slug=, the projects map) can fetch it
+// at runtime — public/ is served as-is by both `vite dev` and the
+// production build.
+function publishData() {
+  if (!fs.existsSync(dataDir)) return;
   fs.mkdirSync(publicDataDir, { recursive: true });
-  fs.copyFileSync(
-    path.join(dataDir, 'products.json'),
-    path.join(publicDataDir, 'products.json')
-  );
+  for (const file of fs.readdirSync(dataDir)) {
+    if (!file.endsWith('.json')) continue;
+    fs.copyFileSync(path.join(dataDir, file), path.join(publicDataDir, file));
+  }
 }
 
 // Skips the copy once source and destination already match (mtime + size) —
@@ -52,7 +54,7 @@ function copyIfChanged(src, dest) {
 }
 
 // Assets authored under src/assets/ (logo, .glb models) that need a stable
-// runtime URL — same reasoning as publishProductsData(): src/ isn't served
+// runtime URL — same reasoning as publishData(): src/ isn't served
 // as-is by Vite, only public/ is, so anything fetched/`<img src>`'d at
 // runtime rather than imported by JS/CSS has to be mirrored into public/.
 function publishImageDir(subdir, logger) {
@@ -104,7 +106,7 @@ function publishStaticAssets(logger) {
 
 function renderPages(env, logger) {
   const data = loadData();
-  publishProductsData();
+  publishData();
   publishStaticAssets(logger);
   const files = fs.readdirSync(pagesDir).filter((f) => f.endsWith('.njk'));
   for (const file of files) {

@@ -1,0 +1,39 @@
+{
+  "sectionTitle": "Мы в медиа",
+  "sectionSubtitle": "Смотрите наши видео о зерноочистке и агробизнесе",
+  "videos": [
+    {
+      "url": "https://www.youtube.com/watch?v=Ly7pY90-iKw",
+      "thumbnail": "https://img.youtube.com/vi/Ly7pY90-iKw/maxresdefault.jpg",
+      "title": "Видео DIKAN #1"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=xgReHhw_jeE",
+      "thumbnail": "https://img.youtube.com/vi/xgReHhw_jeE/maxresdefault.jpg",
+      "title": "Видео DIKAN #2"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ylrlHcJGmr8",
+      "thumbnail": "https://img.youtube.com/vi/ylrlHcJGmr8/maxresdefault.jpg",
+      "title": "Видео DIKAN #3"
+    }
+  ],
+  "socialTitle": "Следите за нами",
+  "socials": [
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/@dikan.kazakhstan",
+      "icon": "youtube"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/tddikan/",
+      "icon": "instagram"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://tiktok.com/@dikan_01kz1?_t=ZM-8uAy9JFQHBO&_r=1",
+      "icon": "tiktok"
+    }
+  ]
+}

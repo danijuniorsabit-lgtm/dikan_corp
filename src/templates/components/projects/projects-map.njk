@@ -1,0 +1,12 @@
+{% from "ui/section-tag.njk" import section_tag %}
+{% from "ui/badge.njk" import badge %}
+
+<section class="section projects-map-section">
+  <div class="container">
+    {{ section_tag('География') }}
+    <h2 class="projects-map-section__title">Наши проекты на карте</h2>
+    {{ badge('25+ реализованных проектов по всему Казахстану', { variant: 'dark', class: 'projects-map-section__count' }) }}
+
+    <div class="projects-map" data-projects-map role="application" aria-label="Карта реализованных проектов DIKAN по Казахстану"></div>
+  </div>
+</section>
