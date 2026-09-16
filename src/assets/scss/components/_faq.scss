@@ -34,6 +34,24 @@
   transition: border-color 0.2s ease;
 }
 
+.faq-item__question,
+.faq-item__answer {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@include respond-max('xs') {
+  .faq-item__trigger {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  .faq-item__answer {
+    padding: 0 16px 12px;
+    font-size: 14px;
+  }
+}
+
 .faq-item.is-open .faq-item__trigger {
   border-left-color: color('brand');
 }
