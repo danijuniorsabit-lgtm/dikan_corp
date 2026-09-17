@@ -12,6 +12,7 @@
 
 {% include "equipment/equipment-banner.njk" %}
 
+{% if equipment.komplektuyushchie.length %}
 <section class="section">
   <div class="container">
     {{ section_tag('Комплектующие и запчасти') }}
@@ -27,7 +28,9 @@
     </div>
   </div>
 </section>
+{% endif %}
 
+{% if equipment.soputstvuyushchee.length %}
 <section class="section section--surface">
   <div class="container">
     {{ section_tag('Сопутствующее оборудование') }}
@@ -42,6 +45,7 @@
     </div>
   </div>
 </section>
+{% endif %}
 
 <section class="section">
   <div class="container">
