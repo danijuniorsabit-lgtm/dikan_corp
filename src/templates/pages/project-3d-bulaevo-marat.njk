@@ -1,0 +1,6 @@
+{% extends "base.njk" %}
+{% from "projects/project-3d-viewer.njk" import project_3d_viewer %}
+
+{% block content %}
+{{ project_3d_viewer('Булаево Марат', 'project-bulaevo-marat.glb', 'projects.html') }}
+{% endblock %}

@@ -16,6 +16,10 @@ const pages = [
   'projects',
   'equipment',
   'faq',
+  'project-3d-jcm-mpo-trier',
+  'project-3d-malaya-ustanovka',
+  'project-3d-zernokomlex-90t',
+  'project-3d-bulaevo-marat',
 ];
 
 export default defineConfig({

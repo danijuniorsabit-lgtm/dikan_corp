@@ -11,6 +11,7 @@ import { initProductGallery } from './components/product-gallery.js';
 import { initProductDetail } from './components/product-detail.js';
 import { initProductViewer } from './components/product-viewer.js';
 import { initProjectShowcase } from './components/project-showcase.js';
+import { initProject3dFullscreen } from './components/project-3d-fullscreen.js';
 import { initProjectsMap } from './components/projects-map.js';
 import { initRangeSliders } from './components/range-slider.js';
 import { initEconomyCalculator } from './components/economy-calculator.js';
@@ -34,6 +35,7 @@ onReady(() => {
   initProductGallery();
   initProductDetail().then(initProductViewer);
   initProjectShowcase();
+  initProject3dFullscreen();
   initProjectsMap();
   initRangeSliders();
   initEconomyCalculator();

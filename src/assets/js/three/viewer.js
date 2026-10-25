@@ -23,7 +23,7 @@ export function isWebGLAvailable() {
 // Returns null (and calls opts.onError) if WebGL or the model fail to load —
 // callers should fall back to fallback.js's static poster in that case.
 export function createModelViewer(container, opts = {}) {
-  const { modelUrl, onError, onLoad } = opts;
+  const { modelUrl, onError, onLoad, onProgress, ambientLight } = opts;
   if (!container || !modelUrl) return null;
 
   if (!isWebGLAvailable()) {
@@ -48,6 +48,12 @@ export function createModelViewer(container, opts = {}) {
   controls.minDistance = 1;
   controls.maxDistance = 10;
 
+  // opts.ambientLight is opt-in (defaults off) so existing callers — the
+  // homepage showcase cards and the product-detail tab — keep their current
+  // look; the full-page project viewers turn it on to get the
+  // ambient+directional+hemisphere three-point setup they need on a much
+  // bigger canvas.
+  if (ambientLight) scene.add(new THREE.AmbientLight(0xffffff, 0.4));
   scene.add(new THREE.HemisphereLight(0xffffff, 0x444444, 1.2));
   const keyLight = new THREE.DirectionalLight(0xffffff, 1);
   keyLight.position.set(3, 5, 2);
@@ -59,7 +65,7 @@ export function createModelViewer(container, opts = {}) {
       scene.add(gltf.scene);
       onLoad?.(gltf);
     },
-    undefined,
+    onProgress,
     (error) => onError?.(error)
   );
 

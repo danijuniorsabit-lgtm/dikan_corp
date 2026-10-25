@@ -1,0 +1,29 @@
+{#
+  project_3d_viewer(title, modelFile, backHref) — full-page 3D model viewer,
+  used by the project-3d-*.njk pages (one GLB each, see
+  src/assets/models/README.md and project-3d-showcase.njk for the
+  homepage-card version of the same models). Behavior lives in
+  assets/js/components/project-3d-fullscreen.js.
+#}
+{% macro project_3d_viewer(title, modelFile, backHref) %}
+<section class="section project-3d-viewer-page">
+  <div class="container">
+    <a class="project-3d-viewer-page__back" href="{{ backHref }}">← Назад к проектам</a>
+    <h1 class="project-3d-viewer-page__title">{{ title }}</h1>
+    <p class="text-secondary project-3d-viewer-page__hint">
+      Вращайте модель мышью, масштабируйте колесом, перемещайте зажав правую кнопку
+    </p>
+
+    <div
+      class="project-3d-viewer-page__canvas"
+      data-project-viewer-full
+      data-model-url="/models/{{ modelFile }}"
+    >
+      <div class="project-3d-viewer-page__loading" data-model-loading>
+        <span class="project-3d-viewer-page__spinner" aria-hidden="true"></span>
+        <span class="project-3d-viewer-page__percent" data-model-percent>0%</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endmacro %}

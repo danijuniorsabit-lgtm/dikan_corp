@@ -38,7 +38,7 @@
       "category": "jgc",
       "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
       "description": "Поставка линии на базе гравитационных концентраторов JGC для очистки пшеницы и льна в ТОО «Агрофирма Жер 888».",
-      "youtubeUrl": "https://www.youtube.com/watch?v=qxu62V9giCg"
+      "youtubeUrl": "https://www.youtube.com/watch?v=tHo9Wp2ZvzY"
     },
     {
       "title": "Строительство 3-х бункерного ЗАВа «с нуля»",
@@ -66,7 +66,7 @@
       "year": "2021",
       "client": "ТОО «ХПП Арна»",
       "category": "jcc",
-      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      "image": "/images/projects/hpp-arna.jpg",
       "description": "Поставка многофункциональной линии JCC для очистки пшеницы, льна, рапса, пшена, сафлора, гречихи и гороха в ТОО «ХПП Арна».",
       "youtubeUrl": "https://www.youtube.com/watch?v=SpgLi8IHFiw"
     },
@@ -76,7 +76,7 @@
       "year": "2021",
       "client": "КХ «Али»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "image": "/images/projects/kh-ali.jpg",
       "description": "Строительство семенной линии производительностью 5–7 т/ч и зерноочистительного агрегата на 4 бункера «под ключ» для КХ «Али».",
       "youtubeUrl": "https://www.youtube.com/watch?v=4HybhhRtk28"
     },
@@ -146,9 +146,9 @@
       "year": "2021",
       "client": "ТОО «Бетеге У»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",
+      "image": "/images/projects/betege-u.jpg",
       "description": "Поставка линии JCM для очистки льна, рапса и гречихи в ТОО «Бетеге У».",
-      "youtubeUrl": ""
+      "youtubeUrl": "https://www.youtube.com/watch?v=qDahiQyOfHc"
     },
     {
       "title": "Строительство 3-х бункерного ЗАВа «с нуля»",
@@ -176,7 +176,7 @@
       "year": "2021",
       "client": "КХ «Али»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",
+      "image": "/images/projects/kh-ali.jpg",
       "description": "Поставка оборудования JCM для очистки пшеницы и льна в КХ «Али».",
       "youtubeUrl": ""
     },

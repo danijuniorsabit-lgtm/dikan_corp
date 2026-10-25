@@ -1,10 +1,10 @@
 {% from "ui/section-tag.njk" import section_tag %}
 
 {% set models = [
-  { title: 'JCM + МПО + Триер с бункером', file: 'project-jcm-mpo-trier.glb' },
-  { title: 'Малая установка', file: 'project-malaya-ustanovka.glb' },
-  { title: 'Зернокомплекс 90 т/ч', file: 'project-zernokomlex-90t.glb' },
-  { title: 'Булаево Марат', file: 'project-bulaevo-marat.glb' }
+  { title: 'JCM + МПО + Триер с бункером', file: 'project-jcm-mpo-trier.glb', page: 'project-3d-jcm-mpo-trier.html' },
+  { title: 'Малая установка', file: 'project-malaya-ustanovka.glb', page: 'project-3d-malaya-ustanovka.html' },
+  { title: 'Зернокомплекс 90 т/ч', file: 'project-zernokomlex-90t.glb', page: 'project-3d-zernokomlex-90t.html' },
+  { title: 'Булаево Марат', file: 'project-bulaevo-marat.glb', page: 'project-3d-bulaevo-marat.html' }
 ] %}
 
 <section class="section project-3d-showcase">
@@ -22,6 +22,7 @@
           <span class="project-3d-card__spinner" data-model-spinner aria-hidden="true"></span>
         </div>
         <p class="project-3d-card__title">{{ model.title }}</p>
+        <a class="project-3d-card__fullscreen-link" href="{{ model.page }}">Открыть полноэкранно →</a>
       </article>
       {% endfor %}
     </div>
