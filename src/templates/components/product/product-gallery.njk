@@ -2,7 +2,7 @@
 {% macro product_gallery(item) %}
 <div class="product-gallery" data-product-gallery>
   <div class="product-gallery__main">
-    <img class="product-gallery__img" src="{{ item.image }}" alt="{{ item.name }}" data-gallery-main />
+    <img class="product-gallery__img" src="{{ item.image }}" alt="{{ item.name }}" {{ item.image | imgsize("800x600") }} decoding="async" data-gallery-main />
     <span class="badge badge--corner" data-gallery-badge{% if not item.isNew %} hidden{% endif %}>New</span>
   </div>
   <div class="product-gallery__thumbs" data-gallery-thumbs{% if not (item.images and item.images.length) %} hidden{% endif %}>
@@ -12,7 +12,7 @@
       data-gallery-thumb
       data-full="{{ item.image }}"
       aria-label="Изображение 1"
-    ><img src="{{ item.image }}" alt="" loading="lazy" /></button>
+    ><img src="{{ item.image }}" alt="" {{ item.image | imgsize("800x600") }} loading="lazy" decoding="async" /></button>
     {% for src in item.images %}
     <button
       type="button"
@@ -20,7 +20,7 @@
       data-gallery-thumb
       data-full="{{ src }}"
       aria-label="Изображение {{ loop.index + 1 }}"
-    ><img src="{{ src }}" alt="" loading="lazy" /></button>
+    ><img src="{{ src }}" alt="" {{ src | imgsize("800x600") }} loading="lazy" decoding="async" /></button>
     {% endfor %}
   </div>
 </div>

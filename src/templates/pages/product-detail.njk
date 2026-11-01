@@ -14,8 +14,8 @@
     "brand": { "@type": "Brand", "name": "DIKAN" },
     "offers": {
       "@type": "Offer",
-      "priceCurrency": "KZT",
-      "price": "{{ (currentProduct.priceFrom * 1000000) | int }}",
+      "priceCurrency": "KZT",{% if currentProduct.price %}
+      "price": "{{ currentProduct.price | replace(' ₸', '') | replace(' ', '') }}",{% endif %}
       "availability": "https://schema.org/InStock",
       "url": "https://dikan.kz/product-detail.html"
     }

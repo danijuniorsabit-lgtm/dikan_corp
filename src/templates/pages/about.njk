@@ -3,20 +3,20 @@
 {% from "ui/section-tag.njk" import section_tag %}
 
 {% set team = [
-  { name: 'Динара Искакова', role: 'Учредитель компании', photo: '/images/team/iskakova.jpg' },
-  { name: 'Кайрат Искаков', role: 'Генеральный директор', photo: '/images/team/iskakov-kayrat.jpg' },
-  { name: 'Марат Искаков', role: 'Технический директор', photo: '/images/team/iskakov-marat.jpg' },
-  { name: 'Ерканат Рыспаев', role: 'Исполнительный директор', photo: '/images/team/ryspayev.jpg' },
-  { name: 'Анатолий Баранов', role: 'Бренд-амбассадор JK Machinery в РК', photo: '/images/team/baranov.jpg' },
-  { name: 'Есмуханов Бахтияр', role: 'Руководитель отдела продаж', photo: '/images/team/esmukhanov.jpg' },
-  { name: 'Валлиулин Амир', role: 'Менеджер по продажам', photo: '/images/team/valliulin.jpg' },
-  { name: 'Жанат Байленов', role: 'Эксперт продаж', photo: '/images/team/bailenov.jpg' },
-  { name: 'Талгат Омаров', role: 'Менеджер отдела продаж', photo: '/images/team/omarov.jpg' },
-  { name: 'Зару Алинова', role: 'Специалист call-центра', photo: '/images/team/alinova.jpg' },
-  { name: 'Динара Тен', role: '', photo: '/images/team/ten-dinara.jpg' },
-  { name: 'Абильмажинов Темирлан', role: 'Бухгалтер', photo: '/images/team/abilmazhinov.jpg' },
-  { name: 'Исмаилова Майра', role: 'Бухгалтер', photo: '/images/team/ismailova.jpg' },
-  { name: 'Искакова Айнагуль', role: 'Финансовый директор', photo: '/images/team/team.jpg' }
+  { name: 'Динара Искакова', role: 'Учредитель компании', photo: '/images/team/iskakova.webp' },
+  { name: 'Кайрат Искаков', role: 'Генеральный директор', photo: '/images/team/iskakov-kayrat.webp' },
+  { name: 'Марат Искаков', role: 'Технический директор', photo: '/images/team/iskakov-marat.webp' },
+  { name: 'Ерканат Рыспаев', role: 'Исполнительный директор', photo: '/images/team/ryspayev.webp' },
+  { name: 'Анатолий Баранов', role: 'Бренд-амбассадор JK Machinery в РК', photo: '/images/team/baranov.webp' },
+  { name: 'Есмуханов Бахтияр', role: 'Руководитель отдела продаж', photo: '/images/team/esmukhanov.webp' },
+  { name: 'Валлиулин Амир', role: 'Менеджер по продажам', photo: '/images/team/valliulin.webp' },
+  { name: 'Жанат Байленов', role: 'Эксперт продаж', photo: '/images/team/bailenov.webp' },
+  { name: 'Талгат Омаров', role: 'Менеджер отдела продаж', photo: '/images/team/omarov.webp' },
+  { name: 'Зару Алинова', role: 'Специалист call-центра', photo: '/images/team/alinova.webp' },
+  { name: 'Динара Тен', role: '', photo: '/images/team/ten-dinara.webp' },
+  { name: 'Абильмажинов Темирлан', role: 'Бухгалтер', photo: '/images/team/abilmazhinov.webp' },
+  { name: 'Исмаилова Майра', role: 'Бухгалтер', photo: '/images/team/ismailova.webp' },
+  { name: 'Искакова Айнагуль', role: 'Финансовый директор', photo: '/images/team/team.webp' }
 ] %}
 
 {% set certificates = [
@@ -105,7 +105,7 @@
     <div class="grid grid--4">
       {% for member in team %}
       <article class="team-member">
-        <img class="team-member__photo" src="{{ member.photo }}" alt="{{ member.name }}" loading="lazy" />
+        <img class="team-member__photo" src="{{ member.photo }}" alt="{{ member.name }}" {{ member.photo | imgsize("600x900") }} loading="lazy" decoding="async" />
         <p class="team-member__name">{{ member.name }}</p>
         <p class="team-member__role text-secondary">{{ member.role }}</p>
       </article>

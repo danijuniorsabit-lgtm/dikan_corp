@@ -104,6 +104,40 @@ function publishStaticAssets(logger) {
   }
 }
 
+// Reads width/height straight from a .webp header (VP8 / VP8L / VP8X) so
+// templates can emit explicit <img width height> and reserve layout space
+// without a runtime image library. Falls back to `fallback` for remote or
+// unreadable images.
+function webpSize(file) {
+  try {
+    const fd = fs.openSync(file, 'r');
+    const b = Buffer.alloc(32);
+    fs.readSync(fd, b, 0, 32, 0);
+    fs.closeSync(fd);
+    if (b.toString('ascii', 0, 4) !== 'RIFF' || b.toString('ascii', 8, 12) !== 'WEBP') return null;
+    const kind = b.toString('ascii', 12, 16);
+    if (kind === 'VP8X') return { width: 1 + b.readUIntLE(24, 3), height: 1 + b.readUIntLE(27, 3) };
+    if (kind === 'VP8L') {
+      const bits = b.readUInt32LE(21);
+      return { width: 1 + (bits & 0x3fff), height: 1 + ((bits >> 14) & 0x3fff) };
+    }
+    if (kind === 'VP8 ') return { width: b.readUInt16LE(26) & 0x3fff, height: b.readUInt16LE(28) & 0x3fff };
+  } catch {
+    // fall through to the caller's fallback
+  }
+  return null;
+}
+
+// `{{ item.image | imgsize }}` -> `width="W" height="H"` for local /images/*.webp.
+// Remote images (dikan.kz CDN, YouTube thumbnails) can't be probed at build
+// time, so they get the caller-supplied fallback ("640x480").
+function imgSizeAttrs(src, fallback = '800x600') {
+  const local = typeof src === 'string' && src.startsWith('/images/') ? webpSize(path.join(imagesDir, src.slice('/images/'.length))) : null;
+  const [fw, fh] = fallback.split('x');
+  const { width, height } = local || { width: fw, height: fh };
+  return new nunjucks.runtime.SafeString(`width="${width}" height="${height}"`);
+}
+
 function renderPages(env, logger) {
   const data = loadData();
   publishData();
@@ -149,6 +183,7 @@ export default function nunjucksPages() {
     trimBlocks: true,
     lstripBlocks: true,
   });
+  env.addFilter('imgsize', imgSizeAttrs);
 
   return {
     name: 'nunjucks-pages',

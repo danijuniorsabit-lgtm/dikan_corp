@@ -4,14 +4,14 @@
 // reused here for interior pages instead of a stock photo. Desktop/mobile
 // pairs, no dark overlay: the banners already carry their own design.
 $page-hero-banners: (
-  1: '/images/banner-1-desktop.png',
-  2: '/images/banner-2-desktop.png',
-  3: '/images/banner-3-desktop.png',
+  1: '/images/banner-1-desktop.webp',
+  2: '/images/banner-2-desktop.webp',
+  3: '/images/banner-3-desktop.webp',
 );
 $page-hero-banners-mobile: (
-  1: '/images/banner-1-mobile.png',
-  2: '/images/banner-2-mobile.png',
-  3: '/images/banner-3-mobile.png',
+  1: '/images/banner-1-mobile.webp',
+  2: '/images/banner-2-mobile.webp',
+  3: '/images/banner-3-mobile.webp',
 );
 
 .page-hero {

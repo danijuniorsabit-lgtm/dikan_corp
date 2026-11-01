@@ -20,6 +20,11 @@
   div {
     display: flex;
     justify-content: space-between;
+    gap: space(4);
+
+    &[hidden] {
+      display: none;
+    }
   }
 
   dt {
@@ -28,6 +33,7 @@
 
   dd {
     font-weight: 700;
+    text-align: right;
   }
 }
 

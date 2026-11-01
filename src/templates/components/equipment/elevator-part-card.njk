@@ -7,7 +7,7 @@
 {% macro elevator_part_card(item) %}
 <article class="elevator-part-card">
   <div class="elevator-part-card__media">
-    <img class="elevator-part-card__img" src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" />
+    <img class="elevator-part-card__img" src="{{ item.image }}" alt="{{ item.name }}" {{ item.image | imgsize("800x600") }} loading="lazy" decoding="async" />
   </div>
   <div class="elevator-part-card__body">
     <h3 class="elevator-part-card__name">{{ item.name }}</h3>

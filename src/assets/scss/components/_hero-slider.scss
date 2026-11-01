@@ -17,14 +17,14 @@ $hero-slider-accents: (
 // overlay here (it would just fight the image's own contrast) and the live
 // text in .hero-slider__inner is visually-hidden rather than drawn on top.
 $hero-slider-photos: (
-  'navy': '/images/banner-1-desktop.png',
-  'olive': '/images/banner-2-desktop.png',
-  'charcoal': '/images/banner-3-desktop.png',
+  'navy': '/images/banner-1-desktop.webp',
+  'olive': '/images/banner-2-desktop.webp',
+  'charcoal': '/images/banner-3-desktop.webp',
 );
 $hero-slider-photos-mobile: (
-  'navy': '/images/banner-1-mobile.png',
-  'olive': '/images/banner-2-mobile.png',
-  'charcoal': '/images/banner-3-mobile.png',
+  'navy': '/images/banner-1-mobile.webp',
+  'olive': '/images/banner-2-mobile.webp',
+  'charcoal': '/images/banner-3-mobile.webp',
 );
 
 .hero-slider {

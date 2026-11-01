@@ -29,3 +29,17 @@ each, well over the ~5 MB this doc originally recommended (gltf-transform or
 Blender's glTF export with Draco compression gets most machine models well
 under that). At this size they meaningfully bloat `public/`/`dist/` and are
 slow to fetch even lazily-loaded; compress before shipping this for real.
+
+## Compression (applied)
+
+All `.glb` files here were optimised with `@gltf-transform` (dedup, prune, weld,
+quantize, **meshopt** geometry compression, textures resized to max 1024 px and
+re-encoded as **WebP**). Result: ~5 MB per product model (was 50–85 MB).
+`three/viewer.js` already registers `MeshoptDecoder`, and `GLTFLoader` handles
+`EXT_meshopt_compression`, `KHR_mesh_quantization` and `EXT_texture_webp`, so
+no loader change is needed. Re-run the same pipeline on any new model before
+adding it.
+
+Still above the 8 MB target: `project-malaya-ustanovka.glb` (~13 MB) and the
+unused `маленькая установка.glb` (~17 MB) — their geometry (>1M vertices of
+unwelded CAD triangles) does not simplify further without visible damage.

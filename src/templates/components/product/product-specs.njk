@@ -13,7 +13,7 @@
     </div>
     <div{% if not item.power %} hidden{% endif %} data-spec-row="power">
       <dt>Мощность</dt>
-      <dd data-spec="power">{{ item.power }} кВт</dd>
+      <dd data-spec="power">{{ item.power }}</dd>
     </div>
     <div>
       <dt>Культуры</dt>
@@ -23,10 +23,16 @@
       <dt>Состояние</dt>
       <dd data-spec="condition">{{ item.condition }}</dd>
     </div>
+    {% for spec in item.specs %}
+    <div data-spec-extra-row>
+      <dt>{{ spec.label }}</dt>
+      <dd>{{ spec.value }}</dd>
+    </div>
+    {% endfor %}
   </dl>
 
   <p class="product-specs__price-label">Цена:</p>
-  <p class="product-specs__price" data-spec="price">от {{ item.priceFrom }} млн ₸</p>
+  <p class="product-specs__price" data-spec="price">{{ item.price or "Цена по запросу" }}</p>
 
   <div class="product-specs__actions">
     {{ button('Лизинг', { href: 'finance.html', variant: 'dark', icon: false }) }}

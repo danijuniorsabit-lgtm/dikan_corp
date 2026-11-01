@@ -1,5 +1,10 @@
 {% extends "base.njk" %}
 
+{% block head %}
+<link rel="preload" as="image" href="/images/banner-2-mobile.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high" />
+<link rel="preload" as="image" href="/images/banner-2-desktop.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high" />
+{% endblock %}
+
 {% block content %}
 {% include "hero/hero.njk" %}
 {% include "about/about-section.njk" %}

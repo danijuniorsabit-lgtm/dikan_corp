@@ -6,7 +6,7 @@
       "year": "2026",
       "client": "КазНИИР",
       "category": "",
-      "image": "/images/projects/kazniiir.jpeg",
+      "image": "/images/projects/kazniiir.webp",
       "description": "Строительство семенной линии по производству высококачественных семян кормовых культур для КазНИИР.",
       "youtubeUrl": ""
     },
@@ -16,7 +16,7 @@
       "year": "2026",
       "client": "ТОО Даниловское",
       "category": "",
-      "image": "/images/projects/danilovskoe.jpg",
+      "image": "/images/projects/danilovskoe.webp",
       "description": "Строительство семенной линии и 3-х бункерного зерноочистительного агрегата (ЗАВ) для ТОО «Даниловское».",
       "youtubeUrl": ""
     },
@@ -26,7 +26,7 @@
       "year": "2025",
       "client": "Mustona Bustoni MCHJ",
       "category": "",
-      "image": "/images/projects/uzbekistan-mustoni.jpg",
+      "image": "/images/projects/uzbekistan-mustoni.webp",
       "description": "Строительство зерноперерабатывающего комплекса производительностью 7-8 т/ч для Mustona Bustoni MCHJ.",
       "youtubeUrl": ""
     },
@@ -36,7 +36,7 @@
       "year": "2021",
       "client": "ТОО «Агрофирма Жер 888»",
       "category": "jgc",
-      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      "image": "/images/stock/stock-c-900.webp",
       "description": "Поставка линии на базе гравитационных концентраторов JGC для очистки пшеницы и льна в ТОО «Агрофирма Жер 888».",
       "youtubeUrl": "https://www.youtube.com/watch?v=tHo9Wp2ZvzY"
     },
@@ -46,7 +46,7 @@
       "year": "2021",
       "client": "ТОО «СХП Байдалы-2»",
       "category": "jgc",
-      "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "image": "/images/projects/baidaly-2.webp",
       "description": "Строительство зерноочистительного агрегата (ЗАВ) на 3 бункера «под ключ» с оборудованием JGC для ТОО «СХП Байдалы-2».",
       "youtubeUrl": "https://www.youtube.com/watch?v=P8sakt8EpPg"
     },
@@ -56,7 +56,7 @@
       "year": "2021",
       "client": "ТОО «НИВА»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",
+      "image": "/images/projects/niva.webp",
       "description": "Строительство ЗАВа на 3 бункера с оборудованием JCM «под ключ» для ТОО «НИВА».",
       "youtubeUrl": "https://www.youtube.com/watch?v=2fn6FvS7Aso"
     },
@@ -66,7 +66,7 @@
       "year": "2021",
       "client": "ТОО «ХПП Арна»",
       "category": "jcc",
-      "image": "/images/projects/hpp-arna.jpg",
+      "image": "/images/projects/hpp-arna.webp",
       "description": "Поставка многофункциональной линии JCC для очистки пшеницы, льна, рапса, пшена, сафлора, гречихи и гороха в ТОО «ХПП Арна».",
       "youtubeUrl": "https://www.youtube.com/watch?v=SpgLi8IHFiw"
     },
@@ -76,7 +76,7 @@
       "year": "2021",
       "client": "КХ «Али»",
       "category": "jcm",
-      "image": "/images/projects/kh-ali.jpg",
+      "image": "/images/projects/kh-ali.webp",
       "description": "Строительство семенной линии производительностью 5–7 т/ч и зерноочистительного агрегата на 4 бункера «под ключ» для КХ «Али».",
       "youtubeUrl": "https://www.youtube.com/watch?v=4HybhhRtk28"
     },
@@ -86,7 +86,7 @@
       "year": "2021",
       "client": "ТОО «СХП Байдалы-2»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",
+      "image": "/images/projects/baidaly-2.webp",
       "description": "Комплексное строительство ЗАВа на 3 бункера с модульными зерноочистителями JCM VibroMax для очистки зерновых и масличных культур.",
       "youtubeUrl": ""
     },
@@ -96,7 +96,7 @@
       "year": "2021",
       "client": "ТОО «Жанажол»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      "image": "/images/stock/stock-c-900.webp",
       "description": "Поставка комплексного оборудования JCM для очистки риса в ТОО «Жанажол».",
       "youtubeUrl": ""
     },
@@ -106,7 +106,7 @@
       "year": "2021",
       "client": "ТОО «Тан ЛТД»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "image": "/images/stock/stock-e-900.webp",
       "description": "Поставка оборудования JCM для очистки риса в ТОО «Тан ЛТД».",
       "youtubeUrl": ""
     },
@@ -116,7 +116,7 @@
       "year": "2021",
       "client": "ТОО «Тан ЛТД»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",
+      "image": "/images/stock/stock-a-900.webp",
       "description": "Дополнительная поставка оборудования JCM для очистки риса в ТОО «Тан ЛТД».",
       "youtubeUrl": ""
     },
@@ -126,7 +126,7 @@
       "year": "2021",
       "client": "ТОО «Тан ЛТД»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      "image": "/images/stock/stock-c-900.webp",
       "description": "Поставка линии JCM для очистки пшеницы, ячменя, льна и рапса в ТОО «Тан ЛТД».",
       "youtubeUrl": ""
     },
@@ -136,7 +136,7 @@
       "year": "2021",
       "client": "ТОО «Озерки»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "image": "/images/stock/stock-e-900.webp",
       "description": "Поставка оборудования JCM для очистки пшеницы, ячменя и льна в ТОО «Озерки».",
       "youtubeUrl": ""
     },
@@ -146,7 +146,7 @@
       "year": "2021",
       "client": "ТОО «Бетеге У»",
       "category": "jcm",
-      "image": "/images/projects/betege-u.jpg",
+      "image": "/images/projects/betege-u.webp",
       "description": "Поставка линии JCM для очистки льна, рапса и гречихи в ТОО «Бетеге У».",
       "youtubeUrl": "https://www.youtube.com/watch?v=qDahiQyOfHc"
     },
@@ -156,7 +156,7 @@
       "year": "2021",
       "client": "ТОО «Агро Синтез-2020»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      "image": "/images/projects/agro-sintez-2020.webp",
       "description": "Строительство ЗАВа на 3 бункера с оборудованием JCM «под ключ» для ТОО «Агро Синтез-2020».",
       "youtubeUrl": ""
     },
@@ -166,7 +166,7 @@
       "year": "2021",
       "client": "ТОО «СХП Байдалы-2»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "image": "/images/projects/baidaly-2.webp",
       "description": "Строительство зерноочистительного агрегата на 3 бункера с оборудованием JCM для ТОО «СХП Байдалы-2».",
       "youtubeUrl": ""
     },
@@ -176,7 +176,7 @@
       "year": "2021",
       "client": "КХ «Али»",
       "category": "jcm",
-      "image": "/images/projects/kh-ali.jpg",
+      "image": "/images/projects/kh-ali.webp",
       "description": "Поставка оборудования JCM для очистки пшеницы и льна в КХ «Али».",
       "youtubeUrl": ""
     },
@@ -186,7 +186,7 @@
       "year": "2021",
       "client": "ТОО «Ерназ-Агро СК»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      "image": "/images/stock/stock-c-900.webp",
       "description": "Поставка оборудования JCM для очистки пшеницы в ТОО «Ерназ-Агро СК».",
       "youtubeUrl": ""
     },
@@ -196,7 +196,7 @@
       "year": "2021",
       "client": "ТОО «Бекетай-Баба»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "image": "/images/stock/stock-e-900.webp",
       "description": "Поставка оборудования JCM для очистки пшеницы в ТОО «Бекетай-Баба».",
       "youtubeUrl": ""
     },
@@ -206,7 +206,7 @@
       "year": "2021",
       "client": "ТОО «Жатва-В.В.»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",
+      "image": "/images/stock/stock-a-900.webp",
       "description": "Поставка линии JCM для очистки семи сортов пшеницы в ТОО «Жатва-В.В.».",
       "youtubeUrl": ""
     },
@@ -216,7 +216,7 @@
       "year": "2021",
       "client": "ТОО «Inter Traid»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      "image": "/images/stock/stock-c-900.webp",
       "description": "Поставка оборудования JCM для очистки пшеницы и ячменя в ТОО «Inter Traid».",
       "youtubeUrl": ""
     },
@@ -226,7 +226,7 @@
       "year": "2021",
       "client": "КХ «Уразбаев С.Ш.»",
       "category": "jcm",
-      "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "image": "/images/stock/stock-e-900.webp",
       "description": "Поставка оборудования JCM для очистки пшеницы и семян подсолнечника в КХ «Уразбаев С.Ш.».",
       "youtubeUrl": ""
     },
@@ -236,7 +236,7 @@
       "year": "2021",
       "client": "ТОО «Астра-Агро ЛТД»",
       "category": "jcc",
-      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",
+      "image": "/images/stock/stock-a-900.webp",
       "description": "Поставка компактных зерноочистителей JCC VibroCompact для очистки пшеницы и ячменя в ТОО «Астра-Агро ЛТД».",
       "youtubeUrl": ""
     },
@@ -246,7 +246,7 @@
       "year": "2021",
       "client": "ТОО «Избасаров и К»",
       "category": "jcc",
-      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      "image": "/images/stock/stock-c-900.webp",
       "description": "Поставка оборудования JCC для очистки пшеницы и ячменя в ТОО «Избасаров и К».",
       "youtubeUrl": ""
     },
@@ -256,7 +256,7 @@
       "year": "2021",
       "client": "ТОО «Zhabay Auyly»",
       "category": "jcc",
-      "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
+      "image": "/images/stock/stock-e-900.webp",
       "description": "Поставка оборудования JCC для очистки пшеницы и льна в ТОО «Zhabay Auyly».",
       "youtubeUrl": ""
     },
@@ -266,7 +266,7 @@
       "year": "2021",
       "client": "ТОО «Иртыш-Organik Foods»",
       "category": "jcc",
-      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",
+      "image": "/images/stock/stock-a-900.webp",
       "description": "Поставка оборудования JCC для очистки пшеницы и гречихи в ТОО «Иртыш-Organik Foods».",
       "youtubeUrl": ""
     },
@@ -276,7 +276,7 @@
       "year": "2021",
       "client": "ТОО «Белый и К»",
       "category": "jcc",
-      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
+      "image": "/images/stock/stock-c-900.webp",
       "description": "Поставка оборудования JCC для очистки пшеницы и гречихи в ТОО «Белый и К».",
       "youtubeUrl": ""
     }

@@ -23,7 +23,7 @@ function resultItemHTML(item, categoryLabel, index) {
       data-search-result
       data-slug="${escapeHTML(item.slug)}"
     >
-      <img class="search-results__thumb" src="${escapeHTML(item.image)}" alt="" loading="lazy" />
+      <img class="search-results__thumb" src="${escapeHTML(item.image)}" alt="" width="48" height="48" loading="lazy" decoding="async" />
       <span class="search-results__body">
         <span class="search-results__name">${escapeHTML(item.shortName || item.name)}</span>
         <span class="search-results__category">${escapeHTML(categoryLabel)}</span>

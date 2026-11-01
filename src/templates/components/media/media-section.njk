@@ -15,7 +15,7 @@
       {% for video in media.videos %}
       <a class="media-video-card" href="{{ video.url }}" target="_blank" rel="noopener noreferrer">
         <div class="media-video-card__thumb">
-          <img src="{{ video.thumbnail }}" alt="{{ video.title }}" loading="lazy" />
+          <img src="{{ video.thumbnail }}" alt="{{ video.title }}" width="1280" height="720" loading="lazy" decoding="async" />
           <span class="media-video-card__overlay" aria-hidden="true">{{ youtube_badge() }}</span>
         </div>
         <p class="media-video-card__title">{{ video.title }}</p>

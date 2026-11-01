@@ -5,50 +5,50 @@
   "elevatorParts": [
     {
       "name": "Зернопровод",
-      "image": "/images/equipment/zernoprovod.jpeg",
+      "image": "/images/equipment/zernoprovod.webp",
       "description": "Для транспортировки зерна и сыпучих материалов в пневмосистемах.",
       "specs": "Диаметры: D 150 / D 200 / D 250 / D 300",
       "details": "Абсолютно круглая геометрия, высокопрочная сталь, футеровка полиуретаном 3 мм, высококачественная покраска."
     },
     {
       "name": "Сектор поворотный",
-      "image": "/images/equipment/sektor-povorotny.jpeg",
+      "image": "/images/equipment/sektor-povorotny.webp",
       "description": "Позволяет изменять направление движения зерна в системе.",
       "specs": "Углы: 15° / 30° / 45° / 90°"
     },
     {
       "name": "Перекидной клапан",
-      "image": "/images/equipment/perekladnoj-klapan.jpeg",
+      "image": "/images/equipment/perekladnoj-klapan.webp",
       "description": "Предназначен для распределения потока зерна между линиями.",
       "specs": "Диаметры: D 150 / D 200 / D 250"
     },
     {
       "name": "Переход с квадрата на круг",
-      "image": "/images/equipment/perekhod-kvadrat-krug.jpeg",
+      "image": "/images/equipment/perekhod-kvadrat-krug.webp",
       "description": "Обеспечивает плавный переход от квадратного сечения к круглому.",
       "specs": "Диаметры: D 200 / D 250"
     },
     {
       "name": "Воздуховод",
-      "image": "/images/equipment/vozdukhovod.jpeg",
+      "image": "/images/equipment/vozdukhovod.webp",
       "description": "Для подачи воздуха в аспирационные системы.",
       "specs": "Диаметр: D 300"
     },
     {
       "name": "Отвод 45°",
-      "image": "/images/equipment/otvod-45.jpeg",
+      "image": "/images/equipment/otvod-45.webp",
       "description": "Позволяет изменять направление воздушного или зернового потока.",
       "specs": "D 300, 45°"
     },
     {
       "name": "Отвод 90°",
-      "image": "/images/equipment/otvod-90.jpeg",
+      "image": "/images/equipment/otvod-90.webp",
       "description": "Применяется для поворота трубопровода в ограниченном пространстве.",
       "specs": "D 300, 90°"
     },
     {
       "name": "Задвижка",
-      "image": "/images/equipment/zadvizhka.jpeg",
+      "image": "/images/equipment/zadvizhka.webp",
       "description": "Используется для перекрытия потока зерна в трубопроводе.",
       "specs": "300×300"
     }

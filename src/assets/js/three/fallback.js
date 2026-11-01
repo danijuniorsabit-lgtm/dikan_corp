@@ -11,6 +11,7 @@ export function renderModelFallback(container, opts = {}) {
     img.src = posterUrl;
     img.alt = alt;
     img.loading = 'lazy';
+    img.decoding = 'async';
     container.appendChild(img);
     return;
   }
