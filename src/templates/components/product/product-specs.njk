@@ -32,7 +32,7 @@
   </dl>
 
   <p class="product-specs__price-label">Цена:</p>
-  <p class="product-specs__price" data-spec="price">{{ item.price or "Цена по запросу" }}</p>
+  <p class="product-specs__price" data-spec="price">{{ item.price | pricefrom }}</p>
 
   <div class="product-specs__actions">
     {{ button('Лизинг', { href: 'finance.html', variant: 'dark', icon: false }) }}

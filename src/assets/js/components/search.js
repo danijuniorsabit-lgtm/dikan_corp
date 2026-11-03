@@ -1,4 +1,5 @@
 import { qs, qsa } from '../utils/dom.js';
+import { formatPriceFrom } from '../utils/format.js';
 
 const MIN_QUERY_LENGTH = 2;
 const MAX_RESULTS = 8;
@@ -28,6 +29,7 @@ function resultItemHTML(item, categoryLabel, index) {
         <span class="search-results__name">${escapeHTML(item.shortName || item.name)}</span>
         <span class="search-results__category">${escapeHTML(categoryLabel)}</span>
       </span>
+      <span class="search-results__price">${escapeHTML(formatPriceFrom(item.price))}</span>
     </li>
   `;
 }

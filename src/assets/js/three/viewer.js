@@ -3,9 +3,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 
-// Used by product-viewer.js (product-detail.html) and project-showcase.js
-// (homepage "3D-визуализации наших проектов") — createModelViewer(containerEl,
-// { modelUrl }).
+// Used by product-viewer.js (product-detail.html) and project-3d-fullscreen.js
+// (project-3d-*.html) — createModelViewer(containerEl, { modelUrl }).
 
 export function isWebGLAvailable() {
   try {
@@ -95,33 +94,4 @@ export function createModelViewer(container, opts = {}) {
   };
 
   return { scene, camera, renderer, controls, destroy };
-}
-
-// Defers viewer creation (and the three.js/model download) until the
-// container scrolls near the viewport. opts.onCreate(viewer), if given, runs
-// right after createModelViewer() returns (synchronous — the model itself
-// still loads async) — the only way callers can reach `controls`/`camera`
-// to e.g. turn on autoRotate, since the viewer instance itself isn't
-// returned from here (creation happens later, inside the observer).
-export function initLazyModelViewer(container, opts = {}) {
-  if (!container) return;
-
-  if (!('IntersectionObserver' in window)) {
-    const viewer = createModelViewer(container, opts);
-    if (viewer) opts.onCreate?.(viewer);
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const viewer = createModelViewer(container, opts);
-        if (viewer) opts.onCreate?.(viewer);
-        observer.disconnect();
-      });
-    },
-    { rootMargin: '200px' }
-  );
-  observer.observe(container);
 }

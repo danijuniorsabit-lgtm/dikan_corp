@@ -2,6 +2,7 @@ import nunjucks from 'nunjucks';
 import path from 'node:path';
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { formatPriceFrom } from '../src/assets/js/utils/format.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -184,6 +185,7 @@ export default function nunjucksPages() {
     lstripBlocks: true,
   });
   env.addFilter('imgsize', imgSizeAttrs);
+  env.addFilter('pricefrom', formatPriceFrom);
 
   return {
     name: 'nunjucks-pages',

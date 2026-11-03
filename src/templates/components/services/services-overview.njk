@@ -1,0 +1,25 @@
+{% from "ui/section-tag.njk" import section_tag %}
+{% from "ui/button.njk" import button %}
+
+{# Homepage "Чем мы занимаемся" — items come from data/services.json, shared with services.html. #}
+<section class="section section--dark services-overview" data-services-overview>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header__intro">
+        {{ section_tag('ЧТО МЫ ДЕЛАЕМ') }}
+        <h2 class="services-overview__title">Полный цикл работ — от проекта до сервиса</h2>
+      </div>
+      {{ button('Все услуги', { href: 'services.html' }) }}
+    </div>
+
+    <ol class="services-overview__grid">
+      {% for service in services.items %}
+      <li class="service-tile" data-service-tile>
+        <span class="service-tile__number" aria-hidden="true">{{ ('0' if loop.index < 10 else '') ~ loop.index }}</span>
+        <h3 class="service-tile__title">{{ service.title }}</h3>
+        <p class="service-tile__text">{{ service.description }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

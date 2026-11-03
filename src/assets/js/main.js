@@ -10,7 +10,6 @@ import { initFilterBars } from './components/filter-bar.js';
 import { initProductGallery } from './components/product-gallery.js';
 import { initProductDetail } from './components/product-detail.js';
 import { initProductViewer } from './components/product-viewer.js';
-import { initProjectShowcase } from './components/project-showcase.js';
 import { initProject3dFullscreen } from './components/project-3d-fullscreen.js';
 import { initProjectsMap } from './components/projects-map.js';
 import { initRangeSliders } from './components/range-slider.js';
@@ -20,6 +19,8 @@ import { initFinanceTabs } from './components/finance-tabs.js';
 import { initLeasingCalculator } from './components/leasing-calculator.js';
 import { initHeroSlider } from './components/hero-slider.js';
 import { initFaqAccordion } from './components/faq-accordion.js';
+import { initServicesOverview } from './components/services-overview.js';
+import { initExpertise } from './components/expertise.js';
 import { initScrollReveal } from './components/scroll-reveal.js';
 
 onReady(() => {
@@ -34,7 +35,6 @@ onReady(() => {
   initFilterBars();
   initProductGallery();
   initProductDetail().then(initProductViewer);
-  initProjectShowcase();
   initProject3dFullscreen();
   initProjectsMap();
   initRangeSliders();
@@ -44,6 +44,8 @@ onReady(() => {
   initLeasingCalculator();
   initHeroSlider();
   initFaqAccordion();
+  initServicesOverview();
+  initExpertise();
   initScrollReveal();
 
   // Page-specific modules are wired in as each page is built (see

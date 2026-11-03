@@ -1,0 +1,307 @@
+@use '../abstracts' as *;
+
+// About page "Собственная инженерная экспертиза" — see
+// components/about/expertise.njk and assets/js/components/expertise.js.
+$expertise-bg: #0d1b2e;
+$expertise-lime: #cff248;
+$expertise-node: 3.5rem;
+
+.expertise {
+  overflow: hidden;
+  background-color: $expertise-bg;
+  color: color('white');
+}
+
+.expertise__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: space(7);
+  align-items: end;
+
+  @include respond-max('md') {
+    grid-template-columns: minmax(0, 1fr);
+    gap: space(5);
+  }
+}
+
+.expertise__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: space(4);
+}
+
+.expertise__title {
+  margin: 0;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  color: color('white');
+}
+
+.expertise__lede {
+  max-width: 44ch;
+  margin: 0;
+  color: rgb(255 255 255 / 70%);
+}
+
+.expertise__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.expertise__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: space(2);
+  padding: space(2) space(4);
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: $radius-pill;
+  font-weight: 600;
+}
+
+.expertise__pill-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: $expertise-lime;
+}
+
+.expertise__lead-in {
+  margin: space(9) 0 space(6);
+  font-weight: 700;
+  font-size: map-get($font-sizes, 'h4');
+
+  @include respond-max('sm') {
+    margin-top: space(7);
+  }
+}
+
+// ---- Route -------------------------------------------------------------
+.expertise-route {
+  position: relative;
+  margin-bottom: space(9);
+}
+
+.expertise-route__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.expertise-route__track,
+.expertise-route__progress {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.expertise-route__track {
+  stroke: rgb(255 255 255 / 15%);
+}
+
+.expertise-route__progress {
+  stroke: $expertise-lime;
+}
+
+.expertise-route__list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  row-gap: space(9);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include respond-max('sm') {
+    display: flex;
+    flex-direction: column;
+    gap: space(5);
+  }
+}
+
+.expertise-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(3);
+  padding-inline: space(2);
+  text-align: center;
+
+  @include respond-max('sm') {
+    display: grid;
+    grid-template-columns: $expertise-node minmax(0, 1fr);
+    grid-template-areas:
+      'node phase'
+      'node label';
+    gap: space(1) space(4);
+    align-items: center;
+    padding-inline: 0;
+    text-align: left;
+  }
+}
+
+.expertise-step__phase {
+  min-height: 1.25rem;
+  font-size: map-get($font-sizes, 'tiny');
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $expertise-lime;
+
+  @include respond-max('sm') {
+    grid-area: phase;
+    min-height: 0;
+    align-self: end;
+  }
+}
+
+.expertise-step__phase--empty {
+  visibility: hidden;
+}
+
+// Row-start repeats only exist for the two-row desktop route.
+.expertise-step__phase--row,
+.expertise-step__phase--empty {
+  @include respond-max('sm') {
+    display: none;
+  }
+}
+
+.expertise-step__node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $expertise-node;
+  height: $expertise-node;
+  border: 2px solid $expertise-lime;
+  border-radius: 50%;
+  background-color: $expertise-lime;
+  color: color('ink');
+  font-family: $font-family-display;
+  font-weight: 800;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+
+  @include respond-max('sm') {
+    grid-area: node;
+  }
+
+  @include respond-max('md') {
+    width: 3rem;
+    height: 3rem;
+    font-size: map-get($font-sizes, 'small');
+  }
+}
+
+.expertise-step__label {
+  max-width: 16ch;
+  font-size: map-get($font-sizes, 'small');
+  font-weight: 600;
+  line-height: 1.3;
+
+  @include respond-max('sm') {
+    grid-area: label;
+    max-width: none;
+    font-size: map-get($font-sizes, 'body');
+  }
+}
+
+// Only once expertise.js has measured the route do nodes start "unlit" and
+// light up while scrolling — without JS the whole route simply stays lime.
+.expertise-route.is-enhanced .expertise-step__node:not(.is-lit) {
+  border-color: rgb(207 242 72 / 35%);
+  background-color: $expertise-bg;
+  color: rgb(255 255 255 / 55%);
+}
+
+.expertise-route.is-enhanced .expertise-step__node.is-lit {
+  transform: scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .expertise-step__node {
+    transition: none;
+  }
+}
+
+// ---- Closing banner ------------------------------------------------------
+.expertise-banner {
+  display: flex;
+  flex-direction: column;
+  gap: space(5);
+  padding: space(8);
+  border-radius: $radius-md * 1.5;
+  background-color: $expertise-lime;
+  color: color('ink');
+
+  @include respond-max('sm') {
+    padding: space(6) space(5);
+  }
+}
+
+.expertise-banner__big {
+  display: flex;
+  align-items: center;
+  gap: space(5);
+  margin: 0;
+  font-family: $font-family-display;
+  font-size: clamp(2rem, 5.5vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+
+  span {
+    white-space: nowrap;
+  }
+
+  @include respond-max('sm') {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: space(2);
+  }
+}
+
+.expertise-banner__arrow {
+  flex: 1 1 4rem;
+  min-width: 4rem;
+  height: 2.5rem;
+
+  @include respond-max('sm') {
+    flex: none;
+    width: 4rem;
+    height: 2rem;
+    margin: space(3) 0 space(3) space(2);
+    transform: rotate(90deg);
+  }
+}
+
+.expertise-banner__text {
+  max-width: 60ch;
+  margin: 0;
+  font-size: map-get($font-sizes, 'h4');
+  font-weight: 600;
+  line-height: 1.4;
+
+  @include respond-max('sm') {
+    font-size: map-get($font-sizes, 'body');
+  }
+}
+
+// Vertical timeline: a step without a phase label centres its title on the node.
+.expertise-step__phase--empty + .expertise-step__node + .expertise-step__label,
+.expertise-step__phase--row + .expertise-step__node + .expertise-step__label {
+  @include respond-max('sm') {
+    grid-area: 1 / 2 / 3 / 3;
+    align-self: center;
+  }
+}

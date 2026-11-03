@@ -15,7 +15,7 @@
     "offers": {
       "@type": "Offer",
       "priceCurrency": "KZT",{% if currentProduct.price %}
-      "price": "{{ currentProduct.price | replace(' ₸', '') | replace(' ', '') }}",{% endif %}
+      "price": "{{ currentProduct.price }}",{% endif %}
       "availability": "https://schema.org/InStock",
       "url": "https://dikan.kz/product-detail.html"
     }

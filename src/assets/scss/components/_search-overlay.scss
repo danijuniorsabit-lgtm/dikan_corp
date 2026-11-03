@@ -142,3 +142,12 @@
     border-radius: 0;
   }
 }
+
+.search-results__price {
+  margin-left: auto;
+  padding-left: space(3);
+  font-family: $font-family-display;
+  font-size: map-get($font-sizes, 'small');
+  font-weight: 700;
+  white-space: nowrap;
+}

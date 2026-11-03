@@ -15,7 +15,7 @@
       <span class="product-card__name">{{ item.shortName or item.name }}</span>
       <span class="product-card__spec">{{ item.specLabel }}</span>
     </div>
-    <p class="product-card__price">{{ item.price or "Цена по запросу" }}</p>
+    <p class="product-card__price">{{ item.price | pricefrom }}</p>
     {% if opts.cta == 'quote' %}
     {{ button('Заказать КП', { href: 'calculator.html', class: 'btn--block', icon: 'right' }) }}
     {% else %}

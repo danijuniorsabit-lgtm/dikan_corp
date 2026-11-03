@@ -1,10 +1,9 @@
 import { qs } from '../utils/dom.js';
+import { formatPriceFrom } from '../utils/format.js';
 import { initProductGallery } from './product-gallery.js';
 
 const ARROW_RIGHT_SVG =
   '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 8h11.5M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-
-const PRICE_ON_REQUEST = 'Цена по запросу';
 
 const ESCAPE_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
 const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (ch) => ESCAPE_MAP[ch]);
@@ -28,7 +27,7 @@ function productCardHTML(item, { cta } = {}) {
           <span class="product-card__name">${escapeHTML(item.shortName || item.name)}</span>
           <span class="product-card__spec">${escapeHTML(item.specLabel)}</span>
         </div>
-        <p class="product-card__price">${escapeHTML(item.price || PRICE_ON_REQUEST)}</p>
+        <p class="product-card__price">${escapeHTML(formatPriceFrom(item.price))}</p>
         <a class="btn btn--primary btn--block" href="${ctaHref}">
           <span>${escapeHTML(ctaText)}</span>
           <span class="btn__icon" aria-hidden="true">${ARROW_RIGHT_SVG}</span>
@@ -97,7 +96,7 @@ function renderSpecs(item) {
 
   qs('[data-spec="cultures"]', specs).textContent = (item.cultures || []).join(', ');
   qs('[data-spec="condition"]', specs).textContent = item.condition;
-  qs('[data-spec="price"]', specs).textContent = item.price || PRICE_ON_REQUEST;
+  qs('[data-spec="price"]', specs).textContent = formatPriceFrom(item.price);
 
   const list = qs('.product-specs__list', specs);
   if (list) {
@@ -124,7 +123,7 @@ function renderJsonLd(item) {
     offers: {
       '@type': 'Offer',
       priceCurrency: 'KZT',
-      ...(item.price ? { price: item.price.replace(/[^\d]/g, '') } : {}),
+      ...(item.price ? { price: String(item.price) } : {}),
       availability: 'https://schema.org/InStock',
       url: 'https://dikan.kz/product-detail.html',
     },

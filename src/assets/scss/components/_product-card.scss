@@ -50,3 +50,8 @@
   font-family: $font-family-display;
   font-weight: 800;
 }
+
+.products-note {
+  margin-top: space(6);
+  font-size: map-get($font-sizes, 'small');
+}
