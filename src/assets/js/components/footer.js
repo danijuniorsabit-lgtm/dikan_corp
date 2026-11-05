@@ -19,7 +19,7 @@ export function initFooter() {
 
     input.removeAttribute('aria-invalid');
     // No backend endpoint yet (frontend-only phase) — confirm locally.
-    status.textContent = 'Спасибо! Мы подписали вас на рассылку.';
+    status.textContent = 'Спасибо! Вы подписаны на рассылку.';
     form.reset();
   });
 }
