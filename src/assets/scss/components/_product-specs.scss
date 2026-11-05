@@ -28,6 +28,8 @@
   }
 
   dt {
+    flex: 0 0 auto;
+    max-width: 45%;
     color: color('text-secondary');
   }
 
@@ -67,4 +69,17 @@
 
 .product-specs__cta {
   justify-content: center;
+}
+
+.product-specs__features {
+  display: flex;
+  flex-direction: column;
+  gap: space(2);
+  margin: 0 0 space(5);
+  padding-left: space(5);
+  color: color('text-secondary');
+
+  &[hidden] {
+    display: none;
+  }
 }

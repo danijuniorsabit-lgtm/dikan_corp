@@ -15,11 +15,11 @@
       <dt>Мощность</dt>
       <dd data-spec="power">{{ item.power }}</dd>
     </div>
-    <div>
+    <div{% if not item.cultures %} hidden{% endif %} data-spec-row="cultures">
       <dt>Культуры</dt>
       <dd data-spec="cultures">{{ item.cultures | join(', ') }}</dd>
     </div>
-    <div>
+    <div{% if not item.condition %} hidden{% endif %} data-spec-row="condition">
       <dt>Состояние</dt>
       <dd data-spec="condition">{{ item.condition }}</dd>
     </div>
@@ -30,6 +30,12 @@
     </div>
     {% endfor %}
   </dl>
+
+  <ul class="product-specs__features" data-spec-features{% if not item.features %} hidden{% endif %}>
+    {% for feature in item.features %}
+    <li>{{ feature }}</li>
+    {% endfor %}
+  </ul>
 
   <p class="product-specs__price-label">Цена:</p>
   <p class="product-specs__price" data-spec="price">{{ item.price | pricefrom }}</p>

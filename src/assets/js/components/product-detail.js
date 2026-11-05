@@ -94,8 +94,17 @@ function renderSpecs(item) {
     if (item.power) qs('[data-spec="power"]', powerRow).textContent = item.power;
   }
 
-  qs('[data-spec="cultures"]', specs).textContent = (item.cultures || []).join(', ');
-  qs('[data-spec="condition"]', specs).textContent = item.condition;
+  const cultures = item.cultures || [];
+  qs('[data-spec-row="cultures"]', specs).hidden = cultures.length === 0;
+  qs('[data-spec="cultures"]', specs).textContent = cultures.join(', ');
+  qs('[data-spec-row="condition"]', specs).hidden = !item.condition;
+  qs('[data-spec="condition"]', specs).textContent = item.condition || '';
+
+  const features = qs('[data-spec-features]', specs);
+  if (features) {
+    features.hidden = !(item.features && item.features.length);
+    features.innerHTML = (item.features || []).map((f) => `<li>${escapeHTML(f)}</li>`).join('');
+  }
   qs('[data-spec="price"]', specs).textContent = formatPriceFrom(item.price);
 
   const list = qs('.product-specs__list', specs);
@@ -149,7 +158,16 @@ function renderSimilarProducts(item, allItems) {
   }
 }
 
-function renderProduct(item, allItems) {
+// The page ships with the "Зерноочистители" breadcrumb; other categories use
+// their own label from products.json.
+function renderBreadcrumb(item, categories) {
+  const current = qs('.breadcrumbs__item[aria-current="page"]');
+  if (!current) return;
+  const category = categories.find((c) => c.key === item.category);
+  current.textContent = item.category === 'transport' && category ? category.label : 'Зерноочистители';
+}
+
+function renderProduct(item, allItems, categories = []) {
   document.title = `${item.name} — DIKAN`;
   const metaDescription = qs('meta[name="description"]');
   if (metaDescription) metaDescription.setAttribute('content', item.description);
@@ -160,6 +178,7 @@ function renderProduct(item, allItems) {
   const grid = qs('[data-current-slug]');
   if (grid) grid.dataset.currentSlug = item.slug;
 
+  renderBreadcrumb(item, categories);
   renderGallery(item);
   renderSpecs(item);
   renderJsonLd(item);
@@ -188,7 +207,7 @@ export async function initProductDetail() {
       return;
     }
 
-    renderProduct(item, items);
+    renderProduct(item, items, data.categories || []);
   } catch (err) {
     console.error('[product-detail] failed to load product data', err);
   }
